@@ -69,12 +69,6 @@
 	var/light_power_coefficient = 200
 	var/setting = FLOODLIGHT_OFF
 
-/obj/machinery/power/floodlight/update_overlays()
-	. = ..()
-	if(setting == FLOODLIGHT_OFF)
-		return
-	. += bloom_appearance(BLOOM_SIZE_LARGE)
-
 /obj/machinery/power/floodlight/process()
 	var/turf/T = get_turf(src)
 	var/obj/structure/cable/C = locate() in T

@@ -409,7 +409,7 @@
 
 
 /obj/effect/abstract/eye_lighting
-	light_system = MOVABLE_LIGHT
+	light_system = STATIC_LIGHT
 	var/obj/item/organ/eyes/robotic/glow/parent
 
 

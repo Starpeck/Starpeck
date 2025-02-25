@@ -144,8 +144,6 @@
 	. = ..()
 	if(grill)
 		. += "bonfire_grill"
-	if(burning)
-		. += bloom_appearance(BLOOM_SIZE_LARGE, BLOOM_STRONG_ALPHA, LIGHT_COLOR_FIRE)
 
 /obj/structure/bonfire/attackby(obj/item/W, mob/living/user, params)
 	if(istype(W, /obj/item/stack/rods) && !can_buckle && !grill)

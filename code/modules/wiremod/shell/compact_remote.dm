@@ -11,7 +11,7 @@
 	worn_icon_state = "electronic"
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
-	light_system = MOVABLE_LIGHT_DIRECTIONAL
+	light_system = STATIC_LIGHT
 	light_on = FALSE
 
 /obj/item/compact_remote/Initialize()

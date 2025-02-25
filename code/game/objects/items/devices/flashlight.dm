@@ -13,7 +13,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	custom_materials = list(/datum/material/iron=50, /datum/material/glass=20)
 	actions_types = list(/datum/action/item_action/toggle_light)
-	light_system = MOVABLE_LIGHT_DIRECTIONAL
+	light_system = STATIC_LIGHT
 	light_range = 4
 	light_power = 1
 	light_on = FALSE
@@ -240,12 +240,6 @@
 	custom_materials = null
 	on = TRUE
 
-/obj/item/flashlight/lamp/update_overlays()
-	. = ..()
-	if(!on)
-		return
-	. += bloom_appearance(BLOOM_SIZE_MEDIUM, BLOOM_WEAK_ALPHA, light_color)
-
 // green-shaded desk lamp
 /obj/item/flashlight/lamp/green
 	desc = "A classic green-shaded desk lamp."
@@ -286,14 +280,8 @@
 	var/produce_heat = 1500
 	heat = 1000
 	light_color = LIGHT_COLOR_FLARE
-	light_system = MOVABLE_LIGHT
+	light_system = STATIC_LIGHT
 	grind_results = list(/datum/reagent/sulfur = 15)
-
-/obj/item/flashlight/flare/update_overlays()
-	. = ..()
-	if(!on)
-		return
-	. += bloom_appearance(BLOOM_SIZE_LARGE, BLOOM_WEAK_ALPHA, light_color)
 
 /obj/item/flashlight/flare/Initialize()
 	. = ..()
@@ -370,7 +358,7 @@
 	righthand_file = 'icons/mob/inhands/equipment/mining_righthand.dmi'
 	desc = "A mining lantern."
 	light_range = 6 // luminosity when on
-	light_system = MOVABLE_LIGHT
+	light_system = STATIC_LIGHT
 
 /obj/item/flashlight/lantern/heirloom_moth
 	name = "old lantern"
@@ -401,7 +389,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	custom_materials = null
 	light_range = 7 //luminosity when on
-	light_system = MOVABLE_LIGHT
+	light_system = STATIC_LIGHT
 
 /obj/item/flashlight/emp
 	var/emp_max_charges = 4
@@ -465,7 +453,7 @@
 	custom_price = PAYCHECK_PRISONER
 	w_class = WEIGHT_CLASS_SMALL
 	light_range = 4
-	light_system = MOVABLE_LIGHT
+	light_system = STATIC_LIGHT
 	color = LIGHT_COLOR_GREEN
 	icon_state = "glowstick"
 	base_icon_state = "glowstick"
@@ -584,7 +572,7 @@
 	name = "disco light"
 	desc = "Groovy..."
 	icon_state = null
-	light_system = MOVABLE_LIGHT
+	light_system = STATIC_LIGHT
 	light_range = 4
 	light_power = 10
 	alpha = 0
@@ -633,7 +621,7 @@
 /obj/item/flashlight/eyelight
 	name = "eyelight"
 	desc = "This shouldn't exist outside of someone's head, how are you seeing this?"
-	light_system = MOVABLE_LIGHT
+	light_system = STATIC_LIGHT
 	light_range = 15
 	light_power = 1
 	flags_1 = CONDUCT_1

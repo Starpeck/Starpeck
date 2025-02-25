@@ -457,17 +457,17 @@ To continue set your target temperature to 390K."}
 /obj/machinery/chem_heater/proc/get_purity_color(datum/equilibrium/equilibrium)
 	var/_reagent = equilibrium.reaction.results[1]
 	var/datum/reagent/reagent = equilibrium.holder.get_reagent(_reagent)
-	switch(reagent.purity)
-		if(1 to INFINITY)
-			return "blue"
-		if(0.8 to 1)
-			return "green"
-		if(reagent.inverse_chem_val to 0.8)
-			return "olive"
-		if(equilibrium.reaction.purity_min to reagent.inverse_chem_val)
-			return "orange"
-		if(-INFINITY to equilibrium.reaction.purity_min)
-			return "red"
+	var/pur = reagent.purity
+	if(pur >= 1)
+		return "blue"
+	else if (pur >= 0.8)
+		return "green"
+	else if (pur >= reagent.inverse_chem_val)
+		return "olive"
+	else if (pur >= equilibrium.reaction.purity_min)
+		return "orange"
+	else
+		return "red"
 
 //Has a lot of buffer and is upgraded
 /obj/machinery/chem_heater/debug
