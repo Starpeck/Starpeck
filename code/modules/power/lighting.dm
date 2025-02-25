@@ -16,9 +16,9 @@
 #define LIGHT_POWER_GAIN 35
 
 // How far we should adjust the sprites to fit on the walls.
-#define LIGHT_NORTH_PIXEL_Y_OFFSET 22
-#define LIGHT_EAST_PIXEL_X_OFFSET 12
-#define LIGHT_WEST_PIXEL_X_OFFSET -12
+#define LIGHT_NORTH_PIXEL_Y_OFFSET 0
+#define LIGHT_EAST_PIXEL_X_OFFSET 0
+#define LIGHT_WEST_PIXEL_X_OFFSET 0
 
 //How many reagents the lights can hold
 #define LIGHT_REAGENT_CAPACITY 5
@@ -247,9 +247,9 @@
 	var/on = FALSE // 1 if on, 0 if off
 	var/on_gs = FALSE
 	var/static_power_used = 0
-	var/brightness = 8 // luminosity when on, also used in power calculation
-	var/bulb_power = 0.8 // basically the alpha of the emitted light source
-	var/bulb_colour = "#f3fffa" // befault colour of the light.
+	var/brightness = 8			// luminosity when on, also used in power calculation
+	var/bulb_power = 0.75			// basically the alpha of the emitted light source
+	var/bulb_colour = "#FFEEDD"	// befault colour of the light.
 	var/status = LIGHT_OK // LIGHT_OK, _EMPTY, _BURNED or _BROKEN
 	var/flickering = FALSE
 	var/light_type = /obj/item/light/tube // the type of light item
@@ -271,9 +271,9 @@
 	var/emergency_mode = FALSE // if true, the light is in emergency mode
 	var/no_emergency = FALSE // if true, this light cannot ever have an emergency mode
 	var/bulb_emergency_brightness_mul = 0.25 // multiplier for this light's base brightness in emergency power mode
-	var/bulb_emergency_colour = "#FF3232" // determines the colour of the light while it's in emergency mode
-	var/bulb_emergency_pow_mul = 0.75 // the multiplier for determining the light's power in emergency mode
-	var/bulb_emergency_pow_min = 0.5 // the minimum value for the light's power in emergency mode
+	var/bulb_emergency_colour = "#FF3232"	// determines the colour of the light while it's in emergency mode
+	var/bulb_emergency_pow_mul = 0.75	// the multiplier for determining the light's power in emergency mode
+	var/bulb_emergency_pow_min = 0.5	// the minimum value for the light's power in emergency mode
 
 	/// Whether we are currently in the process of turning on
 	var/turning_on = FALSE
@@ -353,8 +353,7 @@
 	fitting = "bulb"
 	brightness = 4
 	nightshift_brightness = 4
-	bulb_colour = "#FFD6AA"
-	desc = "A small lighting fixture."
+	bulb_colour = "#FFDDBB"
 	light_type = /obj/item/light/bulb
 	delayed = FALSE
 
@@ -400,7 +399,7 @@
 
 	if(start_with_cell && !no_emergency)
 		cell = new/obj/item/stock_parts/cell/emergency_light(src)
-	
+
 	// Set dir to apply the pixel offset.
 	setDir(dir)
 
@@ -461,11 +460,7 @@
 	else
 		. += mutable_appearance(overlayicon, base_state, plane = MOUSE_TRANSPARENT_PLANE)
 
-	. += emissive_appearance(overlayicon, "[base_state]_emissive", alpha = (255 * lightbulb_power))
-
-	// Yes we pass negative pixel offsets to reverse this overlay offset so its centered on the tile instead.
-	var/bloom_alpha = clamp(brightness * lightbulb_power * 5.5, BLOOM_VERY_WEAK_ALPHA, BLOOM_WEAK_ALPHA)
-	. += bloom_appearance(BLOOM_SIZE_LARGE, bloom_alpha, light_color, -pixel_x, -pixel_y)
+	. += emissive_appearance(overlayicon, "[base_state]_emissive", alpha = (150 * lightbulb_power))
 
 #define LIGHT_ON_DELAY_UPPER 3 SECONDS
 #define LIGHT_ON_DELAY_LOWER 1 SECONDS
@@ -1080,6 +1075,7 @@
 	base_state = "floor" // base description and icon_state
 	icon_state = "floor"
 	brightness = 4
+	nightshift_brightness = 4
 	layer = 2.5
 	light_type = /obj/item/light/bulb
 	fitting = "bulb"

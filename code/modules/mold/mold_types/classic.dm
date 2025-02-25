@@ -226,7 +226,7 @@
 	attack_sound = 'sound/effects/attackblob.ogg'
 	melee_damage_type = BURN
 	del_on_death = TRUE
-	light_system = MOVABLE_LIGHT
+	light_system = STATIC_LIGHT
 	light_range = 2
 	light_power = 1
 	light_color = LIGHT_COLOR_FIRE

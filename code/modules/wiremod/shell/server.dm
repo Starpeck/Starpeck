@@ -10,7 +10,7 @@
 	icon_state = "setup_stationary"
 
 	density = TRUE
-	light_system = MOVABLE_LIGHT
+	light_system = STATIC_LIGHT
 	light_on = FALSE
 
 /obj/structure/server/Initialize()

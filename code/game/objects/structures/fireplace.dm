@@ -109,7 +109,6 @@
 			. += "fireplace_fire4"
 			bloom_alpha = BLOOM_WEAK_ALPHA
 	. += "fireplace_glow"
-	. += bloom_appearance(BLOOM_DEFAULT_SIZE, bloom_alpha, LIGHT_COLOR_FIRE, -pixel_x, -pixel_y)
 
 /obj/structure/fireplace/proc/adjust_light()
 	if(!lit)

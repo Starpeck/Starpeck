@@ -260,7 +260,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	windowflashing = sanitize_integer(windowflashing, FALSE, TRUE, initial(windowflashing))
 	default_slot = sanitize_integer(default_slot, 1, max_save_slots, initial(default_slot))
 	toggles = sanitize_integer(toggles, 0, (2**24)-1, initial(toggles))
-	clientfps = sanitize_integer(clientfps, -1, 1000, 40)
+	clientfps = sanitize_integer(clientfps, -1, 1000, 60)
 	parallax = sanitize_integer(parallax, PARALLAX_INSANE, PARALLAX_DISABLE, null)
 	ambientocclusion	= sanitize_integer(ambientocclusion, FALSE, TRUE, initial(ambientocclusion))
 	balloon_alerts_pref = sanitize_integer(balloon_alerts_pref, BALLOON_ALERTS_NONE, BALLOON_ALERTS_BOTH, initial(balloon_alerts_pref))

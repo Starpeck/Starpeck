@@ -727,14 +727,14 @@
 	/// Get a 0-100 non floating number percentage of how filled up the box is and change its state based on that.
 	var/percentage = round((length(contents) / matches_amount * 100))
 	switch(percentage)
-		if(100)
-			icon_state = base_icon_state
-		if(99 to 51)
-			icon_state = "[base_icon_state]_almostfull"
-		if(50 to 1)
-			icon_state = "[base_icon_state]_almostempty"
 		if(0)
 			icon_state = "[base_icon_state]_e"
+		if(1 to 50)
+			icon_state = "[base_icon_state]_almostempty"
+		if(51 to 99)
+			icon_state = "[base_icon_state]_almostfull"
+		if(100)
+			icon_state = base_icon_state
 
 /obj/item/storage/box/matches/matchbook
 	name = "matchbook"
