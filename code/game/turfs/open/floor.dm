@@ -273,8 +273,7 @@
 	switch(passed_mode)
 		if(RCD_FLOORWALL)
 			to_chat(user, SPAN_NOTICE("You build a wall."))
-			var/turf/closed/wall/placed_wall = PlaceOnTop(/turf/closed/wall)
-			placed_wall.set_wall_information(/datum/material/iron)
+			PlaceOnTop(/turf/closed/wall)
 			return TRUE
 		if(RCD_AIRLOCK)
 			for(var/obj/machinery/door/door in src)
