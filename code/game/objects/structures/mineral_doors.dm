@@ -3,11 +3,11 @@
 
 /obj/structure/mineral_door
 	name = "iron door"
+	icon_state = "metal"
 	density = TRUE
 	anchored = TRUE
 	opacity = TRUE
 	layer = CLOSED_DOOR_LAYER
-	color = "#BBBBBB"
 
 	icon = 'icons/obj/doors/mineral_doors.dmi'
 	icon_state = "metal"
@@ -311,31 +311,32 @@
 
 /obj/structure/mineral_door/iron
 	name = "iron door"
+	icon_state = "metal"
 	max_integrity = 300
 
 /obj/structure/mineral_door/silver
 	name = "silver door"
-	color = "#E4E4E4"
+	icon_state = "silver"
 	sheetType = /obj/item/stack/sheet/mineral/silver
 	max_integrity = 300
 	rad_insulation = RAD_HEAVY_INSULATION
 
 /obj/structure/mineral_door/gold
 	name = "gold door"
-	color = "#F3B831"
+	icon_state = "gold"
 	sheetType = /obj/item/stack/sheet/mineral/gold
 	rad_insulation = RAD_HEAVY_INSULATION
 
 /obj/structure/mineral_door/uranium
 	name = "uranium door"
-	color = "#84B54B"
+	icon_state = "uranium"
 	sheetType = /obj/item/stack/sheet/mineral/uranium
 	max_integrity = 300
 
 /obj/structure/mineral_door/sandstone
 	name = "sandstone door"
 	icon_state = "stone"
-	color = "#CDBB91"
+	icon_state = "sandstone"
 	sheetType = /obj/item/stack/sheet/mineral/sandstone
 	max_integrity = 100
 
@@ -349,7 +350,7 @@
 
 /obj/structure/mineral_door/transparent/plasma
 	name = "plasma door"
-	color = "#AF4492"
+	icon_state = "plasma"
 	sheetType = /obj/item/stack/sheet/mineral/plasma
 
 /obj/structure/mineral_door/transparent/plasma/Initialize(mapload)
@@ -381,14 +382,13 @@
 /obj/structure/mineral_door/transparent/diamond
 	name = "diamond door"
 	sheetType = /obj/item/stack/sheet/mineral/diamond
-	color = "#96D4D4"
+	icon_state = "diamond"
 	max_integrity = 1000
 	rad_insulation = RAD_EXTREME_INSULATION
 
 /obj/structure/mineral_door/wood
 	name = "wood door"
 	icon_state = "wood"
-	color = "#A36D39"
 	openSound = 'sound/effects/doorcreaky.ogg'
 	closeSound = 'sound/effects/doorcreaky.ogg'
 	sheetType = /obj/item/stack/sheet/mineral/wood
@@ -412,10 +412,19 @@
 
 	return ..()
 
+/obj/structure/mineral_door/woodrustic
+	name = "rustic wood door"
+	icon_state = "woodrustic"
+	openSound = 'sound/effects/doorcreaky.ogg'
+	closeSound = 'sound/effects/doorcreaky.ogg'
+	sheetType = /obj/item/stack/sheet/mineral/wood
+	sheetAmount = 10
+	max_integrity = 200
+	rad_insulation = RAD_VERY_LIGHT_INSULATION
+
 /obj/structure/mineral_door/paperframe
 	name = "paper frame door"
-	icon_state = "wood"
-	color = "#9E704B"
+	icon_state = "paperframe"
 	openSound = 'sound/effects/doorcreaky.ogg'
 	closeSound = 'sound/effects/doorcreaky.ogg'
 	sheetType = /obj/item/stack/sheet/paperframes
