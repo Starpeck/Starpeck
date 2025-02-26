@@ -153,10 +153,9 @@
 
 /turf/closed/indestructible/fakeglass
 	name = "window"
-	icon = 'icons/obj/smooth_structures/window.dmi'
-	icon_state = "window-0"
-	base_icon_state = "window"
-	color = "#c162ec"
+	icon = 'icons/obj/smooth_structures/reinforced_window.dmi'
+	icon_state = "fake_window"
+	base_icon_state = "reinforced_window"
 	opacity = FALSE
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_WINDOW_FULLTILE)
@@ -169,10 +168,9 @@
 
 /turf/closed/indestructible/opsglass
 	name = "window"
-	icon = 'icons/obj/smooth_structures/window.dmi'
-	icon_state = "window-0"
-	base_icon_state = "window"
-	color = "#5d3369"
+	icon = 'icons/obj/smooth_structures/plastitanium_window.dmi'
+	icon_state = "plastitanium_window-0"
+	base_icon_state = "plastitanium_window"
 	opacity = FALSE
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_SHUTTLE_PARTS, SMOOTH_GROUP_WINDOW_FULLTILE_PLASTITANIUM)

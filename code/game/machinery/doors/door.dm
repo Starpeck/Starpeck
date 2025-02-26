@@ -106,8 +106,7 @@
 			//Adjacent turf is not dense, check if we can maybe align with a window or a low wall
 			if(align_to_windows)
 				var/obj/structure/window/window = locate() in check_turf
-				var/obj/structure/low_wall/low_wall = locate() in check_turf
-				if(!low_wall && (!window || !window.fulltile))
+				if((!window || !window.fulltile))
 					continue
 			else
 				continue

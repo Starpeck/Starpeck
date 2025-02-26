@@ -20,7 +20,6 @@
 	CanAtmosPass = ATMOS_PASS_DENSITY
 	flags_1 = RAD_PROTECT_CONTENTS_1 | RAD_NO_CONTAMINATE_1
 	rad_insulation = RAD_MEDIUM_INSULATION
-	greyscale_config = /datum/greyscale_config/low_wall
 	/// Material type of the plating
 	var/plating_material = /datum/material/iron
 	/// Material type of the reinforcement

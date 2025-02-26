@@ -388,11 +388,6 @@
 	icon_file = 'icons/turf/walls/solid_wall_reinforced.dmi'
 	json_config = 'code/datums/greyscale/json_configs/turfs/solid_wall.json'
 
-/datum/greyscale_config/low_wall
-	name = "Low Wall"
-	icon_file = 'icons/obj/smooth_structures/low_wall.dmi'
-	json_config = 'code/datums/greyscale/json_configs/structures/low_wall.json'
-
 /datum/greyscale_config/wall_stripe
 	name = "Wall Stripe"
 	icon_file = 'icons/turf/walls/wall_stripe.dmi'

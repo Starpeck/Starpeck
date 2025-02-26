@@ -17,7 +17,7 @@
 
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_SHUTTERS_BLASTDOORS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_AIRLOCK, SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_LOW_WALL)
+	canSmoothWith = list(SMOOTH_GROUP_SHUTTERS_BLASTDOORS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_AIRLOCK, SMOOTH_GROUP_WINDOW_FULLTILE)
 
 	rcd_memory = RCD_MEMORY_WALL
 
@@ -115,16 +115,7 @@
 
 	var/neighbor_stripe = NONE
 	if(!neighbor_typecache)
-		neighbor_typecache = typecacheof(list(
-			/obj/machinery/door/airlock, 
-			/obj/structure/window/reinforced/fulltile, 
-			/obj/structure/window/fulltile, 
-			/obj/structure/window/shuttle, 
-			/obj/machinery/door/poddoor, 
-			/obj/structure/window/plasma/reinforced/fulltile, 
-			/obj/structure/window/plasma/fulltile,
-			/obj/structure/low_wall
-			))
+		neighbor_typecache = typecacheof(list(/obj/machinery/door/airlock, /obj/structure/window/reinforced/fulltile, /obj/structure/window/fulltile, /obj/structure/window/shuttle, /obj/machinery/door/poddoor))
 	for(var/cardinal in GLOB.cardinals)
 		var/turf/step_turf = get_step(src, cardinal)
 		for(var/atom/movable/movable_thing as anything in step_turf)

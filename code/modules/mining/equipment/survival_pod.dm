@@ -84,14 +84,12 @@
 //Window
 /obj/structure/window/shuttle/survival_pod
 	name = "pod window"
-	icon = 'icons/obj/smooth_structures/window.dmi'
-	icon_state = "window-0"
-	base_icon_state = "window"
-	color = "#363636"
-	alpha = 180
+	icon = 'icons/obj/smooth_structures/pod_window.dmi'
+	icon_state = "pod_window-0"
+	base_icon_state = "pod_window"
 	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_WINDOW_FULLTILE)
-	canSmoothWith = list(SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_AIRLOCK, SMOOTH_GROUP_SHUTTERS_BLASTDOORS)
+	smoothing_groups = list(SMOOTH_GROUP_SHUTTLE_PARTS, SMOOTH_GROUP_SURVIVAL_TIANIUM_POD)
+	canSmoothWith = list(SMOOTH_GROUP_SURVIVAL_TIANIUM_POD)
 
 /obj/structure/window/shuttle/survival_pod/spawner/north
 	dir = NORTH
