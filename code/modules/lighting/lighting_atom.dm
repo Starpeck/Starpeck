@@ -151,6 +151,9 @@
 	light_on = new_value
 	SEND_SIGNAL(src, COMSIG_ATOM_UPDATE_LIGHT_ON, .)
 
+	if(light_system == STATIC_LIGHT)
+		update_light()
+
 /// Setter for the light flags of this atom.
 /atom/proc/set_light_flags(new_value)
 	if(new_value == light_flags)

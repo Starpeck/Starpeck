@@ -16,6 +16,7 @@
 	light_system = STATIC_LIGHT
 	light_range = 4
 	light_power = 1
+	light_color = "#fcda96"
 	light_on = FALSE
 	var/on = FALSE
 
@@ -174,6 +175,7 @@
 	worn_icon_state = "pen"
 	flags_1 = CONDUCT_1
 	light_range = 2
+	light_color = "#FFDDCC"
 	var/holo_cooldown = 0
 
 /obj/item/flashlight/pen/afterattack(atom/target, mob/user, proximity_flag)
@@ -222,6 +224,7 @@
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
 	force = 9 // Not as good as a stun baton.
 	light_range = 5 // A little better than the standard flashlight.
+	light_color = "#dfe8fc"
 	hitsound = 'sound/weapons/genhit1.ogg'
 
 // the desk lamps are a bit special
@@ -234,6 +237,7 @@
 	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
 	force = 10
 	light_range = 5
+	light_color = "#FFDDBB"
 	light_system = STATIC_LIGHT
 	w_class = WEIGHT_CLASS_BULKY
 	flags_1 = CONDUCT_1

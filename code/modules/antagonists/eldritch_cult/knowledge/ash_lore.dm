@@ -5,9 +5,9 @@
 	banned_knowledge = list(
 		/datum/eldritch_knowledge/base_rust,
 		/datum/eldritch_knowledge/base_flesh,
-		/datum/eldritch_knowledge/final/rust_final,
-		/datum/eldritch_knowledge/final/flesh_final,
-		/datum/eldritch_knowledge/final/void_final,
+		/datum/eldritch_knowledge/ultimate/rust_final,
+		/datum/eldritch_knowledge/ultimate/flesh_final,
+		/datum/eldritch_knowledge/ultimate/void_final,
 		/datum/eldritch_knowledge/base_void
 	)
 	next_knowledge = list(/datum/eldritch_knowledge/ashen_grasp)
@@ -110,7 +110,7 @@
 	next_knowledge = list(
 		/datum/eldritch_knowledge/spell/cleave,
 		/datum/eldritch_knowledge/summon/ashy,
-		/datum/eldritch_knowledge/final/ash_final
+		/datum/eldritch_knowledge/ultimate/ash_final
 	)
 	route = PATH_ASH
 
@@ -183,7 +183,7 @@
 	spell_to_add = /obj/effect/proc_holder/spell/pointed/cleave
 	next_knowledge = list(/datum/eldritch_knowledge/spell/entropic_plume,/datum/eldritch_knowledge/spell/flame_birth)
 
-/datum/eldritch_knowledge/final/ash_final
+/datum/eldritch_knowledge/ultimate/ash_final
 	name = "Ashlord's Rite"
 	gain_text = "The Nightwatcher found the rite and shared it amongst mankind! For now I am one with the fire, WITNESS MY ASCENSION!"
 	desc = "Bring 3 corpses onto a transmutation rune, you will become immune to fire, the vacuum of space, cold and other enviromental hazards and become overall sturdier to all other damages. You will gain a spell that passively creates ring of fire around you as well ,as you will gain a powerful ability that lets you create a wave of flames all around you."
@@ -199,7 +199,7 @@
 		TRAIT_NOFIRE
 	)
 
-/datum/eldritch_knowledge/final/ash_final/on_finished_recipe(mob/living/user, list/atoms, loc)
+/datum/eldritch_knowledge/ultimate/ash_final/on_finished_recipe(mob/living/user, list/atoms, loc)
 	priority_announce("$^@&#*$^@(#&$(@&#^$&#^@# Fear the blaze, for the Ashlord, [user.real_name] has ascended! The flames shall consume all! $^@&#*$^@(#&$(@&#^$&#^@#","#$^@&#*$^@(#&$(@&#^$&#^@#", ANNOUNCER_SPANOMALIES)
 	user.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/fire_cascade/big)
 	user.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/fire_sworn)

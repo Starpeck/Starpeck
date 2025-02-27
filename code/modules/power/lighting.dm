@@ -403,7 +403,7 @@
 	// Set dir to apply the pixel offset.
 	setDir(dir)
 
-	RegisterSignal(src, COMSIG_LIGHT_EATER_ACT, .proc/on_light_eater)
+	RegisterSignal(src, COMSIG_LIGHT_EATER_ACT, PROC_REF(on_light_eater))
 	AddElement(/datum/element/atmos_sensitive, mapload)
 	return INITIALIZE_HINT_LATELOAD
 
@@ -418,7 +418,7 @@
 			brightness = 4
 			if(prob(5))
 				break_light_tube(1)
-	addtimer(CALLBACK(src, .proc/update, 0), 1)
+	addtimer(CALLBACK(src, PROC_REF(update), 0), 1)
 
 /obj/machinery/light/Destroy()
 	var/area/A = get_area(src)
@@ -490,7 +490,7 @@
 			if(delayed && trigger)
 				if(!turning_on)
 					turning_on = TRUE
-					addtimer(CALLBACK(src, .proc/turn_on, FALSE), rand(LIGHT_ON_DELAY_LOWER, LIGHT_ON_DELAY_UPPER))
+					addtimer(CALLBACK(src, PROC_REF(turn_on), FALSE), rand(LIGHT_ON_DELAY_LOWER, LIGHT_ON_DELAY_UPPER))
 			else
 				turn_on(TRUE, BR, PO, CO)
 	else if(has_emergency_power(LIGHT_EMERGENCY_POWER_USE) && !turned_off())
@@ -561,7 +561,7 @@
 		if(!start_only)
 			do_sparks(3, TRUE, src)
 		var/delay = rand(BROKEN_SPARKS_MIN, BROKEN_SPARKS_MAX)
-		addtimer(CALLBACK(src, .proc/broken_sparks), delay, TIMER_UNIQUE | TIMER_NO_HASH_WAIT)
+		addtimer(CALLBACK(src, PROC_REF(broken_sparks)), delay, TIMER_UNIQUE | TIMER_NO_HASH_WAIT)
 
 /obj/machinery/light/process()
 	if (!cell)
@@ -1007,7 +1007,7 @@
 	AddElement(/datum/element/caltrop, name, min_damage = force)
 	update()
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, src, loc_connections)
 
@@ -1023,8 +1023,8 @@
 
 /obj/item/light/create_reagents(max_vol, flags)
 	. = ..()
-	RegisterSignal(reagents, list(COMSIG_REAGENTS_NEW_REAGENT, COMSIG_REAGENTS_ADD_REAGENT, COMSIG_REAGENTS_DEL_REAGENT, COMSIG_REAGENTS_REM_REAGENT), .proc/on_reagent_change)
-	RegisterSignal(reagents, COMSIG_PARENT_QDELETING, .proc/on_reagents_del)
+	RegisterSignal(reagents, list(COMSIG_REAGENTS_NEW_REAGENT, COMSIG_REAGENTS_ADD_REAGENT, COMSIG_REAGENTS_DEL_REAGENT, COMSIG_REAGENTS_REM_REAGENT), PROC_REF(on_reagent_change))
+	RegisterSignal(reagents, COMSIG_PARENT_QDELETING, PROC_REF(on_reagents_del))
 
 /**
  * Handles rigging the cell if it contains enough plasma.
