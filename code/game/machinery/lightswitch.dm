@@ -180,16 +180,20 @@
 
 /// Toggle our areas lightswitch var and update the area and all its light switches, including us!
 /obj/machinery/light_switch/proc/set_lights(status)
-	if(area.lightswitch == status)
-		return
-	area.lightswitch = status
-	area.update_appearance()
+	area.set_lights(status)
 
-	for(var/obj/machinery/light_switch/light_switch in area)
+/area/proc/set_lights(status)
+	if(lightswitch == status)
+		return
+	lightswitch = status
+	update_appearance()
+
+	for(var/obj/machinery/light_switch/light_switch in contents)
 		light_switch.update_appearance()
 		SEND_SIGNAL(light_switch, COMSIG_LIGHT_SWITCH_SET, status)
 
-	area.power_change()
+	power_change()
+
 
 /obj/machinery/light_switch/power_change()
 	SHOULD_CALL_PARENT(FALSE)

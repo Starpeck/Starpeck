@@ -459,6 +459,7 @@ SUBSYSTEM_DEF(ticker)
 	for(var/I in livings)
 		var/mob/living/L = I
 		L.notransform = FALSE
+		set_lightswitch_in_atom_room(L, TRUE)
 
 /datum/controller/subsystem/ticker/proc/send_tip_of_the_round()
 	var/m

@@ -234,6 +234,7 @@
 #include "code\__HELPERS\verbs.dm"
 #include "code\__HELPERS\view.dm"
 #include "code\__HELPERS\weakref.dm"
+#include "code\__HELPERS\_starpeck\starpeck_helpers.dm"
 #include "code\__HELPERS\customization\global_lists.dm"
 #include "code\__HELPERS\customization\mobs.dm"
 #include "code\__HELPERS\customization\names.dm"
