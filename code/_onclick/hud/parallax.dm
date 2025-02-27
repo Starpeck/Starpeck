@@ -9,6 +9,7 @@
 		C.parallax_layers_cached = list()
 		C.parallax_layers_cached += new /atom/movable/screen/parallax_layer/layer_1(null, C.view)
 		C.parallax_layers_cached += new /atom/movable/screen/parallax_layer/layer_2(null, C.view)
+		C.parallax_layers_cached += new /atom/movable/screen/parallax_layer/planet(null, C.view)
 		if(SSparallax.random_layer)
 			C.parallax_layers_cached += new SSparallax.random_layer
 		C.parallax_layers_cached += new /atom/movable/screen/parallax_layer/layer_3(null, C.view)
@@ -287,6 +288,22 @@
 	icon_state = "layer3"
 	speed = 1.4
 	layer = 3
+
+/atom/movable/screen/parallax_layer/planet
+	icon_state = "planet"
+	blend_mode = BLEND_OVERLAY
+	speed = 1
+	layer = 30
+
+/atom/movable/screen/parallax_layer/planet/update_status(mob/M)
+	var/client/C = M.client
+	var/turf/posobj = get_turf(C.eye)
+	if(!posobj)
+		return
+	invisibility = is_station_level(posobj) ? 0 : INVISIBILITY_ABSTRACT
+
+/atom/movable/screen/parallax_layer/planet/update_o()
+	return //Shit won't move
 
 /atom/movable/screen/parallax_layer/random
 	blend_mode = BLEND_OVERLAY

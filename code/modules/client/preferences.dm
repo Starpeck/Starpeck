@@ -613,7 +613,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						dat += print_bodypart_change_line("penis")
 						if(penis_name != "None")
 							dat += "<br><b>Length: </b> <a href='?_src_=prefs;key=["penis"];preference=penis_size;task=change_genitals'>[features["penis_size"]]</a> inches."
-							dat += "<br><b>Girth: </b> <a href='?_src_=prefs;key=["penis"];preference=penis_girth;task=change_genitals'>[features["penis_girth"]]</a> inches circumference"
 							dat += "<br><b>Sheath: </b> <a href='?_src_=prefs;key=["penis"];preference=penis_sheath;task=change_genitals'>[features["penis_sheath"]]</a>"
 
 						dat += "<h3>Testicles</h3>"
@@ -1774,19 +1773,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/new_length = input(user, "Choose your penis length:\n([PENIS_MIN_LENGTH]-[PENIS_MAX_LENGTH] in inches)", "Character Preference") as num|null
 					if(new_length)
 						features["penis_size"] = clamp(round(new_length, 1), PENIS_MIN_LENGTH, PENIS_MAX_LENGTH)
-						if(features["penis_girth"] >= new_length)
-							features["penis_girth"] = new_length - 1
 				if("penis_sheath")
 					var/new_sheath = input(user, "Choose your penis sheath", "Character Preference") as null|anything in SHEATH_MODES
 					if(new_sheath)
 						features["penis_sheath"] = new_sheath
-				if("penis_girth")
-					var/max_girth = PENIS_MAX_GIRTH
-					if(features["penis_size"] >= max_girth)
-						max_girth = features["penis_size"]
-					var/new_girth = input(user, "Choose your penis girth:\n(1-[max_girth] (based on length) in inches)", "Character Preference") as num|null
-					if(new_girth)
-						features["penis_girth"] = clamp(round(new_girth, 1), 1, max_girth)
 				if("balls_size")
 					var/new_size = input(user, "Choose your character's balls size:", "Character Preference") as null|anything in GLOB.preference_balls_sizes
 					if(new_size)
