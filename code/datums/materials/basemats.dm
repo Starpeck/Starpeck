@@ -8,7 +8,6 @@
 	sheet_type = /obj/item/stack/sheet/iron
 	ore_type = /obj/item/stack/ore/iron
 	value_per_unit = 0.0025
-	wall_color = "#414145"
 
 /datum/material/iron/on_accidental_mat_consumption(mob/living/carbon/victim, obj/item/source_item)
 	victim.apply_damage(10, BRUTE, BODY_ZONE_HEAD, wound_bonus = 5)
@@ -28,7 +27,6 @@
 	shard_type = /obj/item/shard
 	value_per_unit = 0.0025
 	armor_modifiers = list(MELEE = 0.2, BULLET = 0.2, LASER = 0, ENERGY = 1, BOMB = 0, BIO = 0.2, RAD = 0.2, FIRE = 1, ACID = 0.2)
-	wall_type = null
 
 /datum/material/glass/on_accidental_mat_consumption(mob/living/carbon/victim, obj/item/source_item)
 	victim.apply_damage(10, BRUTE, BODY_ZONE_HEAD, wound_bonus = 5, sharpness = TRUE) //cronch
@@ -49,8 +47,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	sheet_type = /obj/item/stack/sheet/mineral/silver
 	ore_type = /obj/item/stack/ore/silver
 	value_per_unit = 0.025
-	wall_type = /turf/closed/wall/mineral/silver
-	false_wall_type = /obj/structure/falsewall/silver
 
 /datum/material/silver/on_accidental_mat_consumption(mob/living/carbon/victim, obj/item/source_item)
 	victim.apply_damage(10, BRUTE, BODY_ZONE_HEAD, wound_bonus = 5)
@@ -68,8 +64,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	ore_type = /obj/item/stack/ore/gold
 	value_per_unit = 0.0625
 	armor_modifiers = list(MELEE = 1.1, BULLET = 1.1, LASER = 1.15, ENERGY = 1.15, BOMB = 1, BIO = 1, RAD = 1, FIRE = 0.7, ACID = 1.1)
-	wall_type = /turf/closed/wall/mineral/gold
-	false_wall_type = /obj/structure/falsewall/gold
 
 /datum/material/gold/on_accidental_mat_consumption(mob/living/carbon/victim, obj/item/source_item)
 	victim.apply_damage(10, BRUTE, BODY_ZONE_HEAD, wound_bonus = 5)
@@ -87,8 +81,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	alpha = 132
 	value_per_unit = 0.25
 	armor_modifiers = list(MELEE = 1.3, BULLET = 1.3, LASER = 0.6, ENERGY = 1, BOMB = 1.2, BIO = 1, RAD = 1, FIRE = 1, ACID = 1)
-	wall_type = /turf/closed/wall/mineral/diamond
-	false_wall_type = /obj/structure/falsewall/diamond
 
 /datum/material/diamond/on_accidental_mat_consumption(mob/living/carbon/victim, obj/item/source_item)
 	victim.apply_damage(15, BRUTE, BODY_ZONE_HEAD, wound_bonus = 7)
@@ -105,8 +97,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	ore_type = /obj/item/stack/ore/uranium
 	value_per_unit = 0.05
 	armor_modifiers = list(MELEE = 1.5, BULLET = 1.4, LASER = 0.5, ENERGY = 0.5, BOMB = 0, BIO = 0, RAD = 0, FIRE = 1, ACID = 1)
-	wall_type = /turf/closed/wall/mineral/uranium
-	false_wall_type = /obj/structure/falsewall/uranium
 
 /datum/material/uranium/on_applied(atom/source, amount, material_flags)
 	. = ..()
@@ -133,8 +123,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	ore_type = /obj/item/stack/ore/plasma
 	value_per_unit = 0.1
 	armor_modifiers = list(MELEE = 1.4, BULLET = 0.7, LASER = 0, ENERGY = 1.2, BOMB = 0, BIO = 1.2, RAD = 1, FIRE = 0, ACID = 0.5)
-	wall_type = /turf/closed/wall/mineral/plasma
-	false_wall_type = /obj/structure/falsewall/plasma
 
 /datum/material/plasma/on_applied(atom/source, amount, material_flags)
 	. = ..()
@@ -163,7 +151,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	sheet_type = /obj/item/stack/sheet/bluespace_crystal
 	ore_type = /obj/item/stack/ore/bluespace_crystal
 	value_per_unit = 0.15
-	wall_type = null
 
 /datum/material/bluespace/on_accidental_mat_consumption(mob/living/carbon/victim, obj/item/source_item)
 	victim.reagents.add_reagent(/datum/reagent/bluespace, rand(5, 8))
@@ -181,8 +168,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	ore_type = /obj/item/stack/ore/bananium
 	value_per_unit = 0.5
 	armor_modifiers = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 100, BIO = 0, RAD = 0, FIRE = 10, ACID = 0) //Clowns cant be blown away.
-	wall_type = /turf/closed/wall/mineral/bananium
-	false_wall_type = /obj/structure/falsewall/bananium
 
 /datum/material/bananium/on_applied(atom/source, amount, material_flags)
 	. = ..()
@@ -211,9 +196,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	ore_type = /obj/item/stack/ore/titanium
 	value_per_unit = 0.0625
 	armor_modifiers = list(MELEE = 1.35, BULLET = 1.3, LASER = 1.3, ENERGY = 1.25, BOMB = 1.25, BIO = 1, RAD = 1, FIRE = 0.7, ACID = 1)
-	wall_greyscale_config = /datum/greyscale_config/metal_wall
-	wall_type = /turf/closed/wall/mineral/titanium
-	false_wall_type = /obj/structure/falsewall/titanium
 
 /datum/material/titanium/on_accidental_mat_consumption(mob/living/carbon/victim, obj/item/source_item)
 	victim.apply_damage(15, BRUTE, BODY_ZONE_HEAD, wound_bonus = 7)
@@ -271,11 +253,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	value_per_unit = 0.01
 	armor_modifiers = list(MELEE = 1.1, BULLET = 1.1, LASER = 0.4, ENERGY = 0.4, BOMB = 1, BIO = 0.2, RAD = 0, FIRE = 0, ACID = 0.3)
 	texture_layer_icon_state = "woodgrain"
-	wall_greyscale_config = /datum/greyscale_config/wood_wall
-	wall_stripe_greyscale_config = /datum/greyscale_config/wood_wall_stripe
-	wall_color = "#93662C"
-	wall_type = /turf/closed/wall/mineral/wood
-	false_wall_type = /obj/structure/falsewall/wood
 
 /datum/material/wood/on_applied_obj(obj/source, amount, material_flags)
 	. = ..()
@@ -409,7 +386,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	armor_modifiers = list(MELEE = 0.5, BULLET = 0.5, LASER = 1.25, ENERGY = 0.5, BOMB = 0.5, BIO = 0.25, RAD = 1.5, FIRE = 1.5, ACID = 1.5)
 	turf_sound_override = FOOTSTEP_WOOD
 	texture_layer_icon_state = "brick"
-	wall_greyscale_config = /datum/greyscale_config/stone_wall
 
 /datum/material/snow
 	name = "snow"
@@ -422,7 +398,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	armor_modifiers = list(MELEE = 0.25, BULLET = 0.25, LASER = 0.25, ENERGY = 0.25, BOMB = 0.25, BIO = 0.25, RAD = 1.5, FIRE = 0.25, ACID = 1.5)
 	turf_sound_override = FOOTSTEP_SAND
 	texture_layer_icon_state = "sand"
-	wall_greyscale_config = /datum/greyscale_config/stone_wall
 
 /datum/material/snow/on_accidental_mat_consumption(mob/living/carbon/victim, obj/item/source_item)
 	victim.reagents.add_reagent(/datum/reagent/water, rand(5, 10))
@@ -438,7 +413,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	value_per_unit = 0.75
 	armor_modifiers = list(MELEE = 1.2, BULLET = 1.2, LASER = 1, ENERGY = 1, BOMB = 1.2, BIO = 1.2, RAD = 1.5, FIRE = 1.5, ACID = 1.5)
 	texture_layer_icon_state = "runed"
-	wall_greyscale_config = /datum/greyscale_config/cult_wall
 
 /datum/material/runedmetal/on_accidental_mat_consumption(mob/living/carbon/victim, obj/item/source_item)
 	victim.reagents.add_reagent(/datum/reagent/fuel/unholywater, rand(8, 12))

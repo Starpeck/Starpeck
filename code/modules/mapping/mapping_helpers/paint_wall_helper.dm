@@ -24,12 +24,6 @@
 		target_wall.paint_stripe(stripe_paint)
 		did_anything = TRUE
 
-	var/obj/structure/low_wall/low_wall = locate() in loc
-	if(low_wall)
-		low_wall.set_wall_paint(wall_paint)
-		low_wall.set_stripe_paint(stripe_paint)
-		did_anything = TRUE
-
 	var/obj/structure/falsewall/falsewall = locate() in loc
 	if(falsewall)
 		falsewall.paint_wall(wall_paint)

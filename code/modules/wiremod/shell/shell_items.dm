@@ -48,7 +48,7 @@
 
 /obj/item/shell/airlock
 	name = "circuit airlock assembly"
-	icon = 'icons/obj/doors/airlocks/station2/airlock.dmi'
+	icon = 'icons/obj/doors/airlocks/station/public.dmi'
 	icon_state = "construction"
 	shell_to_spawn = /obj/machinery/door/airlock/shell
 	screw_delay = 10 SECONDS

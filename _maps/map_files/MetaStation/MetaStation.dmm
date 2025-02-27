@@ -704,7 +704,7 @@
 /area/maintenance/solars/port/fore)
 "afJ" = (
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/security/prison/safe)
 "afM" = (
@@ -1156,7 +1156,7 @@
 /area/maintenance/port/fore)
 "aiq" = (
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/security/brig)
 "air" = (
@@ -1333,7 +1333,7 @@
 /area/security/prison)
 "ajx" = (
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/security/warden)
 "ajE" = (
@@ -1529,7 +1529,7 @@
 /area/maintenance/port/aft)
 "akW" = (
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/security/range)
 "ala" = (
@@ -1858,7 +1858,7 @@
 /area/security/prison)
 "anl" = (
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ai_monitored/security/armory)
 "anu" = (
@@ -3308,7 +3308,7 @@
 /area/security/warden)
 "ayC" = (
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/iron,
 /area/security/brig)
 "ayE" = (
@@ -3343,7 +3343,7 @@
 	name = "detective's office shutters"
 	},
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/security/detectives_office)
 "ayJ" = (
@@ -3556,7 +3556,7 @@
 	id = "briglockdown";
 	name = "brig shutters"
 	},
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/security/warden)
 "aBd" = (
@@ -3747,7 +3747,7 @@
 	name = "brig shutters"
 	},
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/security/brig)
 "aCl" = (
@@ -3767,7 +3767,7 @@
 	id = "briglockdown";
 	name = "brig shutters"
 	},
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/iron,
 /area/security/brig)
 "aCr" = (
@@ -3961,7 +3961,7 @@
 /area/maintenance/department/science/central)
 "aEH" = (
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/construction/storage_wing)
 "aEJ" = (
@@ -4300,7 +4300,7 @@
 /area/hallway/primary/fore)
 "aHy" = (
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/hallway/primary/fore)
 "aHA" = (
@@ -4935,7 +4935,7 @@
 /area/construction/storage_wing)
 "aNZ" = (
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ai_monitored/turret_protected/ai_upload)
 "aOa" = (
@@ -5550,7 +5550,7 @@
 /area/hallway/primary/central)
 "aUw" = (
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/hallway/primary/central)
 "aUx" = (
@@ -6838,7 +6838,7 @@
 /area/hallway/primary/starboard)
 "bfX" = (
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/security/checkpoint/engineering)
 "bgn" = (
@@ -15046,7 +15046,7 @@
 /area/hallway/secondary/exit/departure_lounge)
 "cNP" = (
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/hallway/secondary/exit/departure_lounge)
 "cNQ" = (
@@ -16317,7 +16317,7 @@
 "dbn" = (
 /obj/structure/cable,
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/scrubbers/hidden/layer2,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/medical/virology)
 "dbq" = (
@@ -18050,7 +18050,7 @@
 /area/hallway/secondary/service)
 "dBN" = (
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/medical/virology)
 "dBZ" = (
@@ -18722,7 +18722,7 @@
 	name = "privacy shutters"
 	},
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/command/heads_quarters/hop)
 "dND" = (
@@ -23433,7 +23433,7 @@
 	name = "privacy shutter"
 	},
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/command/heads_quarters/ce)
 "foe" = (
@@ -29443,7 +29443,7 @@
 	id = "hosspace";
 	name = "Space Shutters"
 	},
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/command/heads_quarters/hos)
 "hza" = (
@@ -31174,7 +31174,7 @@
 	name = "test chamber blast door"
 	},
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/engine,
 /area/science/xenobiology)
 "idB" = (
@@ -33335,7 +33335,7 @@
 	id = "atmos";
 	name = "Atmospherics Blast Door"
 	},
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/engineering/atmos)
 "iRw" = (
@@ -33938,7 +33938,7 @@
 	name = "Council Blast Doors"
 	},
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/command/bridge)
 "jcG" = (
@@ -33992,7 +33992,7 @@
 /area/commons/dorms)
 "jeM" = (
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/science/research)
 "jeT" = (
@@ -34750,7 +34750,7 @@
 /area/engineering/main)
 "jrQ" = (
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/command/heads_quarters/ce)
 "jrW" = (
@@ -36650,7 +36650,7 @@
 /area/command/bridge)
 "kaM" = (
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/engineering/break_room)
 "kaN" = (
@@ -42724,7 +42724,7 @@
 	id = "hosprivacy";
 	name = "privacy shutters"
 	},
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/command/heads_quarters/hos)
 "meb" = (
@@ -44159,7 +44159,7 @@
 /area/security/office)
 "mAv" = (
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/security/prison)
 "mAH" = (
@@ -46211,7 +46211,7 @@
 	name = "Research Director's Shutters"
 	},
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/command/heads_quarters/rd)
 "nhN" = (
@@ -47374,7 +47374,7 @@
 /area/command/heads_quarters/ce)
 "nAK" = (
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/command/teleporter)
 "nAM" = (
@@ -49977,7 +49977,7 @@
 /area/science/robotics/lab)
 "osW" = (
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/hallway/secondary/command)
 "otl" = (
@@ -50065,7 +50065,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/engineering/break_room)
 "ovj" = (
@@ -50617,7 +50617,7 @@
 	name = "privacy shutter"
 	},
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/command/heads_quarters/cmo)
 "oEO" = (
@@ -52985,7 +52985,7 @@
 	name = "bridge blast door"
 	},
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/command/bridge)
 "prS" = (
@@ -53891,7 +53891,7 @@
 	id = "xenobio8";
 	name = "Xenobio Pen 8 Blast Door"
 	},
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/engine,
 /area/science/xenobiology)
 "pKJ" = (
@@ -54159,7 +54159,7 @@
 /area/service/chapel/office)
 "pOB" = (
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/security/checkpoint/customs)
 "pOT" = (
@@ -54726,7 +54726,7 @@
 /area/command/bridge)
 "pYm" = (
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/science/lab)
 "pYs" = (
@@ -54822,7 +54822,7 @@
 /area/hallway/primary/central)
 "qaN" = (
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/maintenance/port/fore)
 "qaR" = (
@@ -55828,7 +55828,7 @@
 	id = "xenobio1";
 	name = "Xenobio Pen 1 Blast Door"
 	},
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/engine,
 /area/science/xenobiology)
 "qtp" = (
@@ -56973,7 +56973,7 @@
 	id = "xenobio8";
 	name = "Xenobio Pen 8 Blast Door"
 	},
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/engine,
 /area/science/xenobiology)
 "qMO" = (
@@ -61886,7 +61886,7 @@
 	id = "medsecprivacy";
 	name = "privacy shutter"
 	},
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/security/checkpoint/medical)
 "sqI" = (
@@ -62341,7 +62341,7 @@
 	name = "showroom shutters"
 	},
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/command/corporate_showroom)
 "syo" = (
@@ -64241,7 +64241,7 @@
 	},
 /obj/structure/cable,
 /obj/structure/sign/warning/electricshock,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/engine,
 /area/science/xenobiology)
 "teC" = (
@@ -66353,7 +66353,7 @@
 	name = "Lockdown Shutters"
 	},
 /obj/effect/turf_decal/delivery,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/security/prison)
 "tOM" = (
@@ -66896,7 +66896,7 @@
 /area/science/genetics)
 "tZe" = (
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/command/gateway)
 "tZf" = (
@@ -67279,7 +67279,7 @@
 /area/engineering/atmos)
 "ufS" = (
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/security/checkpoint/science)
 "ufU" = (
@@ -67574,7 +67574,7 @@
 	id = "xenobio1";
 	name = "Xenobio Pen 1 Blast Door"
 	},
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/engine,
 /area/science/xenobiology)
 "ukM" = (
@@ -68432,7 +68432,7 @@
 	id = "Engineering";
 	name = "Engineering Security Doors"
 	},
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/engineering/storage_shared)
 "uwJ" = (
@@ -69968,7 +69968,7 @@
 /area/service/chapel/main)
 "uXu" = (
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/security/office)
 "uXC" = (
@@ -77901,7 +77901,7 @@
 /area/engineering/break_room)
 "xII" = (
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/engineering/main)
 "xIJ" = (
@@ -79219,7 +79219,7 @@
 	name = "brig shutters"
 	},
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/security/warden)
 "yes" = (
@@ -79663,7 +79663,7 @@
 	name = "Lockdown Shutters"
 	},
 /obj/effect/turf_decal/delivery,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/security/prison)
 "yki" = (

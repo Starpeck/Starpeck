@@ -13,6 +13,7 @@
 	initial_gas_mix = AIRLESS_ATMOS
 	opacity = TRUE
 	density = TRUE
+	layer = EDGED_TURF_LAYER
 	base_icon_state = "smoothrocks"
 	temperature = TCMB
 	var/smooth_icon = 'icons/turf/smoothrocks.dmi'
@@ -32,10 +33,9 @@
 
 /turf/closed/mineral/Initialize(mapload, inherited_virtual_z)
 	. = ..()
-	if(transform_shift)
-		var/matrix/M = new
-		M.Translate(-4, -4)
-		transform = M
+	var/matrix/M = new
+	M.Translate(-4, -4)
+	transform = M
 	icon = smooth_icon
 	if(!color && turn_to_level_color)
 		var/datum/map_zone/mapzone = get_map_zone()
@@ -271,7 +271,7 @@
 /turf/closed/mineral/random/snow
 	name = "snowy mountainside"
 	icon = 'icons/turf/mining.dmi'
-	smooth_icon = 'icons/turf/walls/legacy/mountain_wall.dmi'
+	smooth_icon = 'icons/turf/walls/mountain_wall.dmi'
 	icon_state = "mountainrock"
 	base_icon_state = "mountain_wall"
 	defer_change = TRUE
@@ -286,8 +286,8 @@
 /turf/closed/mineral/random/snow/Change_Ore(ore_type, random = 0)
 	. = ..()
 	if(mineralType)
-		smooth_icon = 'icons/turf/walls/legacy/icerock_wall.dmi'
-		icon = 'icons/turf/walls/legacy/icerock_wall.dmi'
+		smooth_icon = 'icons/turf/walls/icerock_wall.dmi'
+		icon = 'icons/turf/walls/icerock_wall.dmi'
 		icon_state = "icerock_wall-0"
 		base_icon_state = "icerock_wall"
 
@@ -333,7 +333,7 @@
 /turf/closed/mineral/random/labormineral/ice
 	name = "snowy mountainside"
 	icon = 'icons/turf/mining.dmi'
-	smooth_icon = 'icons/turf/walls/legacy/mountain_wall.dmi'
+	smooth_icon = 'icons/turf/walls/mountain_wall.dmi'
 	icon_state = "mountainrock"
 	base_icon_state = "mountain_wall"
 	defer_change = TRUE
@@ -351,8 +351,8 @@
 /turf/closed/mineral/random/labormineral/ice/Change_Ore(ore_type, random = 0)
 	. = ..()
 	if(mineralType)
-		smooth_icon = 'icons/turf/walls/legacy/icerock_wall.dmi'
-		icon = 'icons/turf/walls/legacy/icerock_wall.dmi'
+		smooth_icon = 'icons/turf/walls/icerock_wall.dmi'
+		icon = 'icons/turf/walls/icerock_wall.dmi'
 		icon_state = "icerock_wall-0"
 		base_icon_state = "icerock_wall"
 
@@ -363,7 +363,7 @@
 /turf/closed/mineral/iron/ice
 	environment_type = "snow_cavern"
 	icon_state = "icerock_iron"
-	smooth_icon = 'icons/turf/walls/legacy/icerock_wall.dmi'
+	smooth_icon = 'icons/turf/walls/icerock_wall.dmi'
 	base_icon_state = "icerock_wall"
 	turf_type = /turf/open/floor/plating/asteroid/snow/ice
 	baseturfs = /turf/open/floor/plating/asteroid/snow/ice
@@ -382,7 +382,7 @@
 /turf/closed/mineral/diamond/ice
 	environment_type = "snow_cavern"
 	icon_state = "icerock_iron"
-	smooth_icon = 'icons/turf/walls/legacy/icerock_wall.dmi'
+	smooth_icon = 'icons/turf/walls/icerock_wall.dmi'
 	base_icon_state = "icerock_wall"
 	turf_type = /turf/open/floor/plating/asteroid/snow/ice
 	baseturfs = /turf/open/floor/plating/asteroid/snow/ice
@@ -421,7 +421,7 @@
 /turf/closed/mineral/plasma/ice
 	environment_type = "snow_cavern"
 	icon_state = "icerock_plasma"
-	smooth_icon = 'icons/turf/walls/legacy/icerock_wall.dmi'
+	smooth_icon = 'icons/turf/walls/icerock_wall.dmi'
 	base_icon_state = "icerock_wall"
 	turf_type = /turf/open/floor/plating/asteroid/snow/ice
 	baseturfs = /turf/open/floor/plating/asteroid/snow/ice
@@ -461,7 +461,7 @@
 /turf/closed/mineral/ash_rock //wall piece
 	name = "rock"
 	icon = 'icons/turf/mining.dmi'
-	smooth_icon = 'icons/turf/walls/legacy/rock_wall.dmi'
+	smooth_icon = 'icons/turf/walls/rock_wall.dmi'
 	icon_state = "rock2"
 	base_icon_state = "rock_wall"
 	baseturfs = /turf/open/floor/plating/ashplanet/wateryrock
@@ -473,7 +473,7 @@
 /turf/closed/mineral/snowmountain
 	name = "snowy mountainside"
 	icon = 'icons/turf/mining.dmi'
-	smooth_icon = 'icons/turf/walls/legacy/mountain_wall.dmi'
+	smooth_icon = 'icons/turf/walls/mountain_wall.dmi'
 	icon_state = "mountainrock"
 	base_icon_state = "mountain_wall"
 	baseturfs = /turf/open/floor/plating/asteroid/snow
@@ -491,7 +491,7 @@
 /turf/closed/mineral/snowmountain/cavern
 	name = "ice cavern rock"
 	icon = 'icons/turf/mining.dmi'
-	smooth_icon = 'icons/turf/walls/legacy/icerock_wall.dmi'
+	smooth_icon = 'icons/turf/walls/icerock_wall.dmi'
 	icon_state = "icerock"
 	base_icon_state = "icerock_wall"
 	baseturfs = /turf/open/floor/plating/asteroid/snow/ice
@@ -510,14 +510,14 @@
 	name = "iron rock"
 	icon = 'icons/turf/mining.dmi'
 	icon_state = "redrock"
-	smooth_icon = 'icons/turf/walls/legacy/red_wall.dmi'
+	smooth_icon = 'icons/turf/walls/red_wall.dmi'
 	base_icon_state = "red_wall"
 	turn_to_level_color = FALSE
 
 /turf/closed/mineral/random/stationside/asteroid
 	name = "iron rock"
 	icon = 'icons/turf/mining.dmi'
-	smooth_icon = 'icons/turf/walls/legacy/red_wall.dmi'
+	smooth_icon = 'icons/turf/walls/red_wall.dmi'
 	base_icon_state = "red_wall"
 	turn_to_level_color = FALSE
 
@@ -622,7 +622,7 @@
 /turf/closed/mineral/gibtonite/ice
 	environment_type = "snow_cavern"
 	icon_state = "icerock_Gibtonite"
-	smooth_icon = 'icons/turf/walls/legacy/icerock_wall.dmi'
+	smooth_icon = 'icons/turf/walls/icerock_wall.dmi'
 	base_icon_state = "icerock_wall"
 	turf_type = /turf/open/floor/plating/asteroid/snow/ice
 	baseturfs = /turf/open/floor/plating/asteroid/snow/ice

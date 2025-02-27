@@ -1213,7 +1213,7 @@
 /turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/service/skyline/kitchen/coldroom/underbelly)
 "aLc" = (
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /obj/effect/mapping_helpers/paint_wall/skyline/outer_hull,
 /turf/open/floor/plating,
 /area/security/brig)
@@ -6861,7 +6861,7 @@
 /turf/open/floor/plating,
 /area/engineering/skylineship/thruster_maintenance)
 "dPM" = (
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /obj/effect/mapping_helpers/paint_wall/skyline/inner_hull/security,
 /turf/open/floor/plating,
 /area/security/execution/transfer)
@@ -11301,7 +11301,7 @@
 /turf/open/floor/iron/smooth,
 /area/hallway/skylineship/deck_5_hallway)
 "gne" = (
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
 	id = "brigwindows";
 	name = "Brig Front Blast door"
@@ -12749,7 +12749,7 @@
 /turf/open/floor/plating,
 /area/maintenance/skylineship/underbelly/port)
 "hio" = (
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -14131,7 +14131,7 @@
 /turf/open/floor/iron/smooth,
 /area/service/hydroponics)
 "hUL" = (
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
 	id = "brigprison";
 	name = "Prison Blast door"
@@ -25240,7 +25240,7 @@
 /turf/open/floor/iron/smooth,
 /area/hallway/skylineship/deck_2_hallway)
 "nJY" = (
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /obj/effect/mapping_helpers/paint_wall/skyline/inner_hull/security,
 /turf/open/floor/plating,
 /area/security/prison/garden)
@@ -27814,7 +27814,7 @@
 /turf/open/floor/plating,
 /area/cargo/storage)
 "pdd" = (
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
 	id = "brigprison";
 	name = "Prison Blast door"
@@ -29767,7 +29767,7 @@
 /turf/open/floor/iron/smooth,
 /area/hallway/skylineship/deck_5_hallway)
 "qjg" = (
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /obj/effect/mapping_helpers/paint_wall/skyline/inner_hull/security,
 /turf/open/floor/plating,
 /area/security/brig)
@@ -35094,7 +35094,7 @@
 /turf/closed/wall/r_wall,
 /area/cargo/qm)
 "teh" = (
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /obj/structure/curtain/bounty,
 /obj/effect/mapping_helpers/paint_wall/skyline/inner_hull/security,
 /turf/open/floor/plating,
@@ -37422,7 +37422,7 @@
 /turf/open/floor/carpet,
 /area/service/library)
 "ukw" = (
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
 	id = "brigprison";
 	name = "Prison Blast door"
@@ -42850,7 +42850,7 @@
 /turf/closed/wall/r_wall,
 /area/service/hydroponics)
 "xfd" = (
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /obj/structure/disposalpipe/segment{
 	dir = 6
 	},
@@ -43123,7 +43123,7 @@
 /turf/open/floor/iron/smooth,
 /area/security/brig)
 "xkC" = (
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
 	id = "brigprison";
 	name = "Prison Blast door"

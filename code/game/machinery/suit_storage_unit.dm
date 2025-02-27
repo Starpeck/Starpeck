@@ -180,12 +180,15 @@
 	if(!(machine_stat & BROKEN || machine_stat & NOPOWER))
 		if(state_open)
 			. += "[base_icon_state]_lights_open"
+			. += emissive_appearance(icon, "[base_icon_state]_open_em", alpha = 140)
 		else
+			. += emissive_appearance(icon, "[base_icon_state]_middle_em", alpha = 140)
 			if(uv)
 				. += "[base_icon_state]_lights_red"
 			else
 				. += "[base_icon_state]_lights_closed"
 		//top lights
+		. += emissive_appearance(icon, "[base_icon_state]_top_em", alpha = 140)
 		if(uv)
 			if(uv_super)
 				. += "[base_icon_state]_uvstrong"

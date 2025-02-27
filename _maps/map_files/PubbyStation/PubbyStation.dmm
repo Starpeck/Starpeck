@@ -4245,7 +4245,7 @@
 /area/security)
 "akT" = (
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/command/heads_quarters/hos)
 "akU" = (
@@ -4286,7 +4286,7 @@
 	name = "Space shutters"
 	},
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/command/heads_quarters/hos)
 "ala" = (
@@ -5300,7 +5300,7 @@
 /area/security/brig)
 "anB" = (
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/security/warden)
 "anC" = (
@@ -6374,7 +6374,7 @@
 	name = "bridge external shutters"
 	},
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/command/bridge)
 "aqJ" = (
@@ -7625,7 +7625,7 @@
 /area/security/brig)
 "atF" = (
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/security/brig)
 "atG" = (
@@ -9095,7 +9095,7 @@
 	name = "brig shutters"
 	},
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/security/brig)
 "awL" = (
@@ -12580,7 +12580,7 @@
 	name = "Privacy Shutters"
 	},
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/command/heads_quarters/hop)
 "aFB" = (
@@ -14309,7 +14309,7 @@
 /area/ai_monitored/command/storage/eva)
 "aLc" = (
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/command/teleporter)
 "aLd" = (
@@ -26567,7 +26567,7 @@
 	id = "cmoprivacy";
 	name = "CMO Office"
 	},
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/command/heads_quarters/cmo)
 "bug" = (
@@ -28728,7 +28728,7 @@
 	name = "Privacy shutters"
 	},
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/command/heads_quarters/rd)
 "bAp" = (
@@ -36892,7 +36892,7 @@
 	name = "Privacy shutters"
 	},
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/command/heads_quarters/ce)
 "bYa" = (
@@ -44274,7 +44274,7 @@
 "cUy" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/security/warden)
 "cWr" = (
@@ -45067,7 +45067,7 @@
 /area/science/xenobiology)
 "ecP" = (
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/security/prison)
 "edl" = (
@@ -51810,7 +51810,7 @@
 	id = "executionfireblast"
 	},
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/security/execution/transfer)
 "mtu" = (
@@ -55676,7 +55676,7 @@
 	},
 /obj/structure/cable,
 /obj/effect/mapping_helpers/smart_pipe/simple/general/visible,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/security/execution/transfer)
 "qOx" = (
@@ -58607,7 +58607,7 @@
 /area/space)
 "uqJ" = (
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/security/execution/transfer)
 "urk" = (
@@ -59266,7 +59266,7 @@
 /area/science/mixing)
 "vfm" = (
 /obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced/grille,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/hallway/primary/central)
 "vfw" = (
