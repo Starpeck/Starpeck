@@ -35,13 +35,15 @@
 	/// Flags to check whether planetary ruins can be spawned
 	var/planet_flags = PLANET_HABITABLE|PLANET_WATER|PLANET_WRECKAGES
 	/// Budget for ruins
-	var/ruin_budget = 40
+	var/ruin_budget = 60
 	/// Type of our ore node seeder
 	var/ore_node_seeder_type = /datum/ore_node_seeder
 	/// Whether the levels of this planetary level self loop
-	var/self_looping = TRUE
+	var/self_looping = FALSE
 	/// Amount of margin padding added to each side of the map. This is required to be atleast 2 for selflooping
-	var/map_margin = 5
+	var/map_margin = 3
+	var/size_x = 150
+	var/size_y = 150
 
 /datum/planet_template/proc/LoadTemplate(datum/overmap_sun_system/system, coordinate_x, coordinate_y)
 	var/datum/overmap_object/linked_overmap_object = new overmap_type(system, coordinate_x, coordinate_y)
@@ -56,13 +58,13 @@
 	if(map_path)
 		if(!map_file)
 			WARNING("No map file passed on planet generation")
-		SSmapping.LoadGroup(null, 
-							name, 
-							map_path, 
-							map_file, 
-							default_traits = default_traits_input,  
-							ov_obj = linked_overmap_object, 
-							weather_controller_type = weather_controller_type, 
+		SSmapping.LoadGroup(null,
+							name,
+							map_path,
+							map_file,
+							default_traits = default_traits_input,
+							ov_obj = linked_overmap_object,
+							weather_controller_type = weather_controller_type,
 							atmosphere_type = atmosphere_type,
 							day_night_controller_type = day_night_controller_type,
 							rock_color = picked_rock_color,
@@ -80,7 +82,7 @@
 			WARNING("No generator type passed on planet generation")
 
 		var/datum/map_zone/mapzone = SSmapping.create_map_zone(name, linked_overmap_object)
-		var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(name, default_traits_input, mapzone, world.maxx, world.maxy, ALLOCATION_FULL)
+		var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(name, default_traits_input, mapzone, size_x, size_y, ALLOCATION_FULL)
 		if(map_margin)
 			vlevel.reserve_margin(map_margin)
 		if(self_looping)
@@ -123,6 +125,7 @@
 	var/datum/map_zone/mapzone = SSmapping.map_zones[SSmapping.map_zones.len]
 	//Pass them to the ruin seeder
 	SeedRuins(mapzone)
+	return mapzone
 
 //Due to the particular way ruins are seeded right now this will be handled through a proc, rather than data-driven as of now
 /datum/planet_template/proc/SeedRuins(datum/map_zone/mapzone)
@@ -155,6 +158,9 @@
 
 	self_looping = FALSE
 	map_margin = 0
+
+	size_x = 255
+	size_y = 255
 
 /datum/planet_template/lavaland/SeedRuins(datum/map_zone/mapzone)
 	seedRuins(mapzone.virtual_levels, CONFIG_GET(number/lavaland_budget), list(/area/lavaland/surface/outdoors/unexplored), SSmapping.lava_ruins_templates)

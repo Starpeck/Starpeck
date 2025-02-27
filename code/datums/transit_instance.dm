@@ -92,34 +92,12 @@
 	for(var/movable in affected_movables)
 		strand_act(movable)
 
+/// Strand the mob in some space ruin level and throw them
 /datum/transit_instance/proc/strand_act(atom/movable/strander)
-	var/commit_strand = FALSE
-	var/name_to_apply
-	if(ishuman(strander))
-		commit_strand = TRUE
-		name_to_apply = "stranded human"
-	else if (istype(strander, /obj/structure/closet))
-		commit_strand = TRUE
-		name_to_apply = "stranded cargo"
-	else if(ismob(strander))
-		var/mob/strander_mob = strander
-		if(strander_mob.client)
-			commit_strand = TRUE
-			name_to_apply = "stranded creature"
-	if(!commit_strand)
-		qdel(strander)
-		return
-	var/turf/turfer = locate(1,1,1)
-	strander.forceMove(turfer) //Lots of things doesn't like being in nullspace, huff
-	var/overmap_y = 1
-	var/overmap_x = 1
-	var/overmap_system = SSovermap.main_system
-	if(overmap_shuttle)
-		overmap_x = overmap_shuttle.x
-		overmap_y = overmap_shuttle.y
-		overmap_system = overmap_shuttle.current_system
-	var/datum/overmap_object/transportable/stranded/stranded_ovo = new(overmap_system, overmap_x, overmap_y)
-	stranded_ovo.StoreStranded(strander, name_to_apply)
-	if(ismob(strander))
-		var/mob/strander_mob = strander
-		to_chat(strander_mob, SPAN_USERDANGER("You have been stranded in the empty void of space! Your body is able to be recovered by someone picking it up with a transporter."))
+	var/side = pick(GLOB.cardinals)
+	var/datum/virtual_level/startsub = pick(SSmapping.virtual_levels_by_trait(ZTRAIT_SPACE_RUINS))
+	var/turf/pickedstart = startsub.get_side_turf(side)
+	var/turf/pickedgoal = startsub.get_side_turf(REVERSE_DIR(side))
+
+	strander.forceMove(pickedstart)
+	strander.throw_at(pickedgoal, 4, 2)

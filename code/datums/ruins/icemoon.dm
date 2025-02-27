@@ -7,12 +7,6 @@
 
 // above ground only
 
-/datum/map_template/ruin/icemoon/lust
-	name = "Ruin of Lust"
-	id = "lust"
-	description = "Not exactly what you expected."
-	suffix = "icemoon_surface_lust.dmm"
-
 /datum/map_template/ruin/icemoon/asteroid
 	name = "Asteroid Site"
 	id = "asteroidsite"

@@ -3,6 +3,7 @@
 	desc = "Used to call and send the labor camp shuttle."
 	circuit = /obj/item/circuitboard/computer/labor_shuttle
 	shuttleId = "laborcamp"
+	restricted_destinations = "laborcamp_home;laborcamp_away"
 	possible_destinations = "laborcamp_home;laborcamp_away;mediumdock;largedock;hugedock"
 	req_access = list(ACCESS_BRIG)
 	uses_overmap = FALSE

@@ -175,13 +175,6 @@
 	description = "In space construction the teleporter is often the first system brought online. \
 	This lonely, half-built teleporter is a sign of a proposed structure that for one reason or another just never got built."
 
-/datum/map_template/ruin/space/crashedclownship
-	id = "crashedclownship"
-	suffix = "crashedclownship.dmm"
-	name = "Crashed Clown Ship"
-	description = "For centuries the promise of a new clown homeworld has been the siren call for countless clown vessels. \
-	Alas, the clown's lust for shenanigans means that successful voyages are almost unheard of, with most vessels falling to hilarious consequences almost immediately."
-
 /datum/map_template/ruin/space/crashedship
 	id = "crashedship"
 	suffix = "crashedship.dmm"
@@ -210,32 +203,12 @@
 	name = "Detached Teleporter"
 	description = "The structure of this surprisingly intact teleporter suggests that it was once part of a larger structure, but what remains of said structure, if anything, can only be guessed at."
 
-/datum/map_template/ruin/space/vaporwave
-	id = "vaporwave"
-	suffix = "vaporwave.dmm"
-	name = "Aesthetic Outpost"
-	description = "Pause and remember-- You are unique.You are special. Every mistake, trial, and hardship has helped to sculpt your real beauty. \
-	Stop hating yourself and start appreciating and loving yourself!"
-
-/datum/map_template/ruin/space/bus
-	id = "bus"
-	suffix = "bus.dmm"
-	name = "Waylaid Buses"
-	description = "There seems to be a pair of buses that pulled over for repairs. What were they doing...? Their shipment sure  seems to be filled with a strange mix. \
-	Anyway, it looks like some people tried to fix it up for a long time but didn't really get anywhere..."
-
 /datum/map_template/ruin/space/oldstation
 	id = "oldstation"
 	suffix = "oldstation.dmm"
 	name = "Ancient Space Station"
 	description = "The crew of a space station awaken one hundred years after a crisis. Awaking to a derelict space station on the verge of collapse, and a hostile force of invading \
 	hivebots. Can the surviving crew overcome the odds and survive and rebuild, or will the cold embrace of the stars become their new home?"
-
-/datum/map_template/ruin/space/gondoland
-	id = "gondolaasteroid"
-	suffix = "gondolaasteroid.dmm"
-	name = "Gondoland"
-	description = "Just an ordinary rock- wait, what's that thing?"
 
 /datum/map_template/ruin/space/whiteshipruin_box
 	id = "whiteshipruin_box"
@@ -263,11 +236,13 @@
 	name = "Cleric's Den"
 	description = "Once part of a larger monastery, this holy order of long dead clerics practiced far less non-violence than they preached. Appears to have been untouched by looters, however. Odd."
 
+/* Is this bad for the game?
 /datum/map_template/ruin/space/forgottenship
 	id = "forgottenship"
 	suffix = "forgottenship.dmm"
 	name = "Syndicate Forgotten Ship"
 	description = "Seemingly abandoned ship went of course right into NT controlled space. It seems that malfunction caused most systems to turn off, except for sleepers."
+*/
 
 /datum/map_template/ruin/space/hellfactory
 	id = "hellfactory"

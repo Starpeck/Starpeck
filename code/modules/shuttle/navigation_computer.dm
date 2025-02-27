@@ -355,7 +355,7 @@
 			continue
 		var/obj/docking_port/stationary/S = V
 		if(console.trait_lock)
-			var/datum/virtual_level/vlevel = S.get_virtual_level()
+			var/datum/virtual_level/vlevel = remote_eye.get_virtual_level()
 			if(!(console.trait_lock in vlevel.traits))
 				continue
 		if(console.jumpto_ports[S.id])
