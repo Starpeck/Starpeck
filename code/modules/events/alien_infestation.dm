@@ -7,7 +7,6 @@
 
 	track = EVENT_TRACK_MAJOR
 	tags = list(TAG_COMBAT)
-	min_sec_crew = 1
 
 /datum/round_event_control/alien_infestation/canSpawnEvent()
 	. = ..()

@@ -53,6 +53,9 @@
 	var/screen_pixel_y = 16
 	var/screen_start_x = 4 //These two are where the storage starts being rendered, screen_loc wise.
 	var/screen_start_y = 2
+
+	/// Determines whether we play a rustle animation when inserting/removing items.
+	var/animated = TRUE
 	//End
 
 /datum/component/storage/Initialize(datum/component/storage/concrete/master)
@@ -207,6 +210,8 @@
 	if(collection_mode == COLLECT_ONE)
 		if(can_be_inserted(I, null, M))
 			handle_item_insertion(I, null, M)
+			if(animated)
+				animate_parent_squish()
 		return
 	if(!isturf(I.loc))
 		return
@@ -283,6 +288,8 @@
 	var/datum/progressbar/progress = new(M, length(things), T)
 	while (do_after(M, 1 SECONDS, T, NONE, FALSE, CALLBACK(src, PROC_REF(mass_remove_from_storage), T, things, progress)))
 		stoplag(1)
+	if(animated)
+		animate_parent_squish()
 	progress.end_progress()
 
 /datum/component/storage/proc/mass_remove_from_storage(atom/target, list/things, datum/progressbar/progress, trigger_on_found = TRUE)
@@ -510,6 +517,8 @@
 			return FALSE
 		if(dump_destination.storage_contents_dump_act(src, M))
 			playsound(A, "rustle", 50, TRUE, -5)
+			if(animated)
+				animate_parent_squish()
 			return TRUE
 	return FALSE
 
@@ -530,6 +539,8 @@
 			return TRUE
 		return FALSE
 	handle_item_insertion(I, FALSE, M)
+	if(animated)
+		animate_parent_squish()
 
 /datum/component/storage/proc/return_inv(recursive)
 	var/list/ret = list()
@@ -585,7 +596,10 @@
 		return
 	if(A.loc != M)
 		return
-	playsound(A, "rustle", 50, TRUE, -5)
+	if(rustle_sound)
+		playsound(A, "rustle", 50, TRUE, -5)
+	if(animated)
+		animate_parent_jiggle()
 	if(istype(over_object, /atom/movable/screen/inventory/hand))
 		var/atom/movable/screen/inventory/hand/H = over_object
 		M.putItemFromInventoryInHandIfPossible(A, H.held_index)
@@ -613,6 +627,8 @@
 			if(!L.incapacitated() && I == L.get_active_held_item())
 				if(!SEND_SIGNAL(I, COMSIG_CONTAINS_STORAGE) && can_be_inserted(I, FALSE)) //If it has storage it should be trying to dump, not insert.
 					handle_item_insertion(I, FALSE, L)
+					if(animated)
+						animate_parent_squish()
 
 //This proc return 1 if the item can be picked up and 0 if it can't.
 //Set the stop_messages to stop it from printing messages
@@ -697,6 +713,8 @@
 		return
 	if(rustle_sound)
 		playsound(parent, "rustle", 50, TRUE, -5)
+	if(animated)
+		animate_parent_squish()
 	for(var/mob/viewing in viewers(user, null))
 		if(M == viewing)
 			to_chat(usr, SPAN_NOTICE("You put [I] [insert_preposition]to [parent]."))
@@ -793,6 +811,8 @@
 
 	if(rustle_sound)
 		playsound(A, "rustle", 50, TRUE, -5)
+	if(animated)
+		animate_parent_jiggle()
 
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
@@ -860,6 +880,8 @@
 		A.add_fingerprint(user)
 		user_show_to_mob(user)
 		playsound(A, "rustle", 50, TRUE, -5)
+		if(animated)
+			animate_parent_jiggle()
 		return
 
 	var/obj/item/to_remove = locate() in real_location()
@@ -894,3 +916,11 @@
 			to_chat(user, SPAN_NOTICE("[parent] now picks up all items in a tile at once."))
 		if(COLLECT_ONE)
 			to_chat(user, SPAN_NOTICE("[parent] now picks up one item at a time."))
+
+/datum/component/storage/proc/animate_parent_squish(squishx = 1.2, squishy = 0.6, timer = 20)
+	var/atom/atom_parent = parent
+	atom_parent.do_squish(squishx, squishy, timer)
+
+/datum/component/storage/proc/animate_parent_jiggle(targetangle = 25, timer = 20)
+	var/atom/atom_parent = parent
+	atom_parent.do_jiggle(targetangle, timer)

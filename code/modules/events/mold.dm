@@ -33,5 +33,5 @@
 	var/mold_core_type = pick(MOLD_CORES_TO_PICK)
 	var/obj/mold_core = new mold_core_type(spot)
 	announce_to_ghosts(mold_core)
-	
+
 #undef MOLD_CORES_TO_PICK

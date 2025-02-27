@@ -331,7 +331,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<a href='?_src_=prefs;preference=character_tab;tab=3' [character_settings_tab == 3 ? "class='linkOn'" : ""]>Background</a>"
 			dat += "<a href='?_src_=prefs;preference=character_tab;tab=4' [character_settings_tab == 4 ? "class='linkOn'" : ""]>Loadout</a>" //If you change the index of this tab, change all the logic regarding tab
 			dat += "<a href='?_src_=prefs;preference=character_tab;tab=5' [character_settings_tab == 5 ? "class='linkOn'" : ""]>Augmentation</a>"
-			dat += "<a href='?_src_=prefs;preference=character_tab;tab=6' [character_settings_tab == 6 ? "class='linkOn'" : ""]>Attributes</a>"
+			//dat += "<a href='?_src_=prefs;preference=character_tab;tab=6' [character_settings_tab == 6 ? "class='linkOn'" : ""]>Attributes</a>" // Attributes should be removed
 			dat += "</center>"
 
 			dat += "<HR>"
