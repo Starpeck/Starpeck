@@ -109,25 +109,25 @@ There are several things that need to be remembered:
 			if(hud_used.inventory_shown)
 				client.screen += w_uniform
 		update_observer_view(w_uniform,1)
-	
+
 		if(wear_suit && (wear_suit.flags_inv & HIDEJUMPSUIT))
 			return
-	
+
 		var/target_overlay = w_uniform.worn_icon_state || w_uniform.icon_state
-	
+
 		var/mutable_appearance/uniform_overlay
-	
+
 		var/female_alpha_mask = NO_FEMALE_UNIFORM
-	
+
 		if(istype(w_uniform, /obj/item/clothing/under))
 			var/obj/item/clothing/under/under = w_uniform
 			if(body_type == FEMALE)
 				female_alpha_mask = under.fitted
 			if(under.adjusted == ALT_STYLE)
 				target_overlay = "[target_overlay]_d"
-	
+
 		uniform_overlay = w_uniform.build_worn_icon(default_layer = UNIFORM_LAYER, override_state = target_overlay, isinhands = FALSE, femaleuniform = female_alpha_mask, wearer = src, slot = ITEM_SLOT_ICLOTHING)
-	
+
 		overlays_standing[UNIFORM_LAYER] = uniform_overlay
 
 	apply_overlay(UNIFORM_LAYER)
@@ -276,7 +276,8 @@ There are several things that need to be remembered:
 
 	if(client && hud_used)
 		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[TOBITSHIFT(ITEM_SLOT_SUITSTORE) + 1]
-		inv.update_appearance()
+		if(inv)
+			inv.update_appearance()
 
 	if(s_store)
 		s_store.screen_loc = ui_sstore1
@@ -326,7 +327,7 @@ There are several things that need to be remembered:
 			if(hud_used.inventory_shown)
 				client.screen += wear_suit
 		update_observer_view(wear_suit,1)
-	
+
 		overlays_standing[SUIT_LAYER] = wear_suit.build_worn_icon(default_layer = SUIT_LAYER, default_icon_file = 'icons/mob/clothing/suit.dmi', wearer = src, slot = ITEM_SLOT_OCLOTHING)
 		var/mutable_appearance/suit_overlay = overlays_standing[SUIT_LAYER]
 		overlays_standing[SUIT_LAYER] = suit_overlay
