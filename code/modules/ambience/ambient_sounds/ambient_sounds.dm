@@ -98,7 +98,7 @@
 	sound_length = 2.8 SECONDS
 	range = 3
 	falloff_distance = 1
-	volume = 18
+	volume = 13
 
 /datum/ambient_sound/generic
 	id = AMBIENCE_GENERIC
@@ -574,7 +574,7 @@
 
 /datum/ambient_sound/gravgen
 	id = AMBIENCE_GRAVGEN
-	volume = 35
+	volume = 25
 	sounds = list(
 		'sound/machines/gravgen/gravgen_mid1.ogg',
 		'sound/machines/gravgen/gravgen_mid2.ogg',
@@ -587,7 +587,7 @@
 /datum/ambient_sound/beep_console
 	id = AMBIENCE_BEEP_CONSOLE
 	sounds = list('sound/ambience/emitters/periodic_beep.ogg')
-	volume = 10
+	volume = 7
 	maximum_emitters = 2
 	cooldown_between_emitters = 4 SECONDS
 	frequency_time = 8 SECONDS

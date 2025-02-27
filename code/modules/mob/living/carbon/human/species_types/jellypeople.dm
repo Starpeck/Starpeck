@@ -962,7 +962,7 @@
 			H.icon_render_key = "" //Just in case
 			H.update_body()
 		if("DNA Specifics")
-			var/dna_alteration = input(H, "Select what part of your DNA you'd like to alter", "DNA Alteration", "cancel") in list("Penis Size","Penis Girth", "Penis Sheath", "Penis Taur Mode", "Balls Size", "Breasts Size", "Breasts Lactation", "Body Size", "Cancel")
+			var/dna_alteration = input(H, "Select what part of your DNA you'd like to alter", "DNA Alteration", "cancel") in list("Penis Size", "Penis Sheath", "Penis Taur Mode", "Balls Size", "Breasts Size", "Breasts Lactation", "Body Size", "Cancel")
 			if(!dna_alteration || dna_alteration == "Cancel")
 				return
 			switch(dna_alteration)
@@ -987,10 +987,6 @@
 					if(new_length)
 						DNA.features["penis_size"] = clamp(round(new_length, 1), PENIS_MIN_LENGTH, PENIS_MAX_LENGTH)
 						var/obj/item/organ/genital/penis/PP = H.getorganslot(ORGAN_SLOT_PENIS)
-						if(DNA.features["penis_girth"] >= new_length)
-							DNA.features["penis_girth"] = new_length - 1
-							if(PP)
-								PP.girth = DNA.features["penis_girth"]
 						if(PP)
 							PP.set_size(DNA.features["penis_size"])
 				if("Penis Sheath")
@@ -1000,16 +996,6 @@
 						var/obj/item/organ/genital/penis/PP = H.getorganslot(ORGAN_SLOT_PENIS)
 						if(PP)
 							PP.sheath = new_sheath
-				if("Penis Girth")
-					var/max_girth = PENIS_MAX_GIRTH
-					if(DNA.features["penis_size"] >= max_girth)
-						max_girth = DNA.features["penis_size"]
-					var/new_girth = input(H, "Choose your penis girth:\n(1-[max_girth] (based on length) in inches)", "Character Preference") as num|null
-					if(new_girth)
-						DNA.features["penis_girth"] = clamp(round(new_girth, 1), 1, max_girth)
-						var/obj/item/organ/genital/penis/PP = H.getorganslot(ORGAN_SLOT_PENIS)
-						if(PP)
-							PP.girth = DNA.features["penis_girth"]
 				if("Balls Size")
 					var/new_size = input(H, "Choose your character's balls size:", "Character Preference") as null|anything in GLOB.preference_balls_sizes
 					if(new_size)

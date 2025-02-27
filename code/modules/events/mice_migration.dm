@@ -9,7 +9,7 @@
 /datum/round_event_control/mice_migration/roundstart
 	name = "Mice Shelter"
 	roundstart = TRUE
-	min_players = 15 //Mice are REALLY annoying for lowpop, especially if it's a roundstart tedium to do
+	min_players = 10 //Mice are REALLY annoying for lowpop, especially if it's a roundstart tedium to do
 
 /datum/round_event/mice_migration
 	var/minimum_mice = 5

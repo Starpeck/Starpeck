@@ -8,7 +8,6 @@
 
 	track = EVENT_TRACK_ROLESET
 	tags = list(TAG_COMBAT, TAG_DESTRUCTIVE)
-	min_sec_crew = 1
 
 #define PIRATES_ROGUES "Rogues"
 #define PIRATES_SILVERSCALES "Silverscales"

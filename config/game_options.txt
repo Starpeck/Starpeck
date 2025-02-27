@@ -33,7 +33,7 @@ COMMENDATION_PERCENT_POLL 0.05
 ## To speed things up make the number negative, to slow things down, make the number positive.
 
 ## These modify the run/walk speed of all mobs before the mob-specific modifiers are applied.
-RUN_DELAY 1.5
+RUN_DELAY 2
 WALK_DELAY 4
 
 ## The variables below affect the movement of specific mob types. THIS AFFECTS ALL SUBTYPES OF THE TYPE YOU CHOOSE!
@@ -529,21 +529,21 @@ ROLESET_MIN_POP 25
 OBJECTIVES_MIN_POP 20
 
 ## Point thresholds for tracks to run events. The lesser the more frequent events will be.
-MUNDANE_POINT_THRESHOLD 40
-MODERATE_POINT_THRESHOLD 70
-MAJOR_POINT_THRESHOLD 130
-ROLESET_POINT_THRESHOLD 150
-OBJECTIVES_POINT_THRESHOLD 170
+MUNDANE_MIN_POP 0
+MODERATE_MIN_POP 0
+MAJOR_MIN_POP 5
+ROLESET_MIN_POP 0
+OBJECTIVES_MIN_POP 0
 
 ## Allows the storyteller to scale event frequencies based on population
 ALLOW_STORYTELLER_POP_SCALING
 
 ## Thresholds that population frequency scalling penalize up to.
-MUNDANE_POP_SCALE_THRESHOLD 25
-MODERATE_POP_SCALE_THRESHOLD 32
-MAJOR_POP_SCALE_THRESHOLD 45
-ROLESET_POP_SCALE_THRESHOLD 45
-OBJECTIVES_POP_SCALE_THRESHOLD 45
+MUNDANE_POP_SCALE_THRESHOLD 5
+MODERATE_POP_SCALE_THRESHOLD 10
+MAJOR_POP_SCALE_THRESHOLD 25
+ROLESET_POP_SCALE_THRESHOLD 25
+OBJECTIVES_POP_SCALE_THRESHOLD 25
 
 ## The maximum penalties population scalling will apply to the tracks for having less pop than POP_SCALE_THRESHOLD. This is treated as percentages
 MUNDANE_POP_SCALE_PENALTY 35

@@ -48,18 +48,18 @@
 #define ROLESET_POINT_THRESHOLD 150
 #define OBJECTIVES_POINT_THRESHOLD 170
 
-#define MUNDANE_MIN_POP 4
-#define MODERATE_MIN_POP 6
-#define MAJOR_MIN_POP 20
-#define ROLESET_MIN_POP 25
-#define OBJECTIVES_MIN_POP 20
+#define MUNDANE_MIN_POP 0
+#define MODERATE_MIN_POP 0
+#define MAJOR_MIN_POP 5
+#define ROLESET_MIN_POP 0
+#define OBJECTIVES_MIN_POP 0
 
 /// Defines for how much pop do we need to stop applying a pop scalling penalty to event frequency.
-#define MUNDANE_POP_SCALE_THRESHOLD 25
-#define MODERATE_POP_SCALE_THRESHOLD 32
-#define MAJOR_POP_SCALE_THRESHOLD 45
-#define ROLESET_POP_SCALE_THRESHOLD 45
-#define OBJECTIVES_POP_SCALE_THRESHOLD 45
+#define MUNDANE_POP_SCALE_THRESHOLD 5
+#define MODERATE_POP_SCALE_THRESHOLD 10
+#define MAJOR_POP_SCALE_THRESHOLD 25
+#define ROLESET_POP_SCALE_THRESHOLD 25
+#define OBJECTIVES_POP_SCALE_THRESHOLD 25
 
 /// The maximum penalty coming from pop scalling, when we're at the most minimum point, easing into 0 as we reach the SCALE_THRESHOLD. This is treated as a percentage.
 #define MUNDANE_POP_SCALE_PENALTY 35
@@ -75,7 +75,7 @@
 
 /// Defines for the antag cap to prevent midround injections.
 #define ANTAG_CAP_FLAT 2
-#define ANTAG_CAP_DENOMINATOR 9
+#define ANTAG_CAP_DENOMINATOR 6
 
 ///Below are defines for roundstart point pool. The GAIN ones are multiplied by ready population
 #define ROUNDSTART_MUNDANE_BASE 20
@@ -87,8 +87,8 @@
 #define ROUNDSTART_MAJOR_BASE 40
 #define ROUNDSTART_MAJOR_GAIN 2
 
-#define ROUNDSTART_ROLESET_BASE 60
-#define ROUNDSTART_ROLESET_GAIN 4
+#define ROUNDSTART_ROLESET_BASE 150
+#define ROUNDSTART_ROLESET_GAIN 10
 
 #define ROUNDSTART_OBJECTIVES_BASE 40
 #define ROUNDSTART_OBJECTIVES_GAIN 2

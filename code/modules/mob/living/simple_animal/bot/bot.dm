@@ -26,6 +26,7 @@
 	light_system = STATIC_LIGHT
 	light_range = 3
 	light_power = 0.9
+	light_color = "#FFDDCC"
 
 	var/obj/machinery/bot_core/bot_core = null
 	var/bot_core_type = /obj/machinery/bot_core

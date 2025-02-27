@@ -60,7 +60,6 @@
 	slot = ORGAN_SLOT_PENIS
 	mutantpart_key = "penis"
 	mutantpart_info = list(MUTANT_INDEX_NAME = "Human", MUTANT_INDEX_COLOR_LIST = list("FEB"))
-	var/girth = 9
 	var/sheath = SHEATH_NONE
 
 /obj/item/organ/genital/penis/get_description_string(datum/sprite_accessory/genital/gas)
@@ -75,7 +74,7 @@
 		if(aroused == AROUSAL_PARTIAL)
 			returned_string += " There's a [pname] penis poking out of it."
 	else
-		returned_string = "You see a [pname] penis. You estimate it's [genital_size] inches long, and [girth] inches in circumference."
+		returned_string = "You see a [pname] penis. You estimate it's [genital_size] inches long."
 		switch(aroused)
 			if(AROUSAL_NONE)
 				returned_string += " It seems flaccid."
@@ -134,7 +133,6 @@
 
 /obj/item/organ/genital/penis/build_from_dna(datum/dna/DNA, associated_key)
 	..()
-	girth = DNA.features["penis_girth"]
 	var/datum/sprite_accessory/genital/penis/PS = GLOB.sprite_accessories[associated_key][DNA.mutant_bodyparts[associated_key][MUTANT_INDEX_NAME]]
 	if(PS.can_have_sheath)
 		sheath = DNA.features["penis_sheath"]
