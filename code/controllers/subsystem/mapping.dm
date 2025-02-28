@@ -12,6 +12,7 @@ SUBSYSTEM_DEF(mapping)
 	var/map_voted = FALSE
 
 	var/list/map_templates = list()
+	var/list/landing_pad_templates = list()
 
 	var/list/planet_templates = list()
 
@@ -286,6 +287,8 @@ Used by the AI doomsday and the self-destruct nuke.
 	//Load overmap
 	SSovermap.MappingInit()
 
+	var/list/space_n_ruins_mapzones = list()
+
 	// load the station
 	INIT_ANNOUNCE("Loading [config.map_name]...")
 	var/station_overmap_object = new config.overmap_object_type(SSovermap.main_system, rand(3,10), rand(3,10))
@@ -312,6 +315,10 @@ Used by the AI doomsday and the self-destruct nuke.
 			self_looping = config.self_looping)
 	station_map_zone = map_zones[map_zones.len]
 
+	GenerateLandingPads(station_map_zone)
+
+	space_n_ruins_mapzones += station_map_zone
+
 	if(SSdbcore.Connect())
 		var/datum/db_query/query_round_map_name = SSdbcore.NewQuery({"
 			UPDATE [format_table_name("round")] SET map_name = :map_name WHERE id = :round_id
@@ -327,6 +334,8 @@ Used by the AI doomsday and the self-destruct nuke.
 			var/overmap_obj = new /datum/overmap_object/ruins(SSovermap.main_system, rand(5,25), rand(5,25))
 			var/datum/map_zone/mapzone = create_map_zone(ruins_name, overmap_obj)
 			create_virtual_level(ruins_name, ZTRAITS_SPACE, mapzone, world.maxx, world.maxy, ALLOCATION_FULL, reservation_margin = MAP_EDGE_PAD)
+			GenerateLandingPads(mapzone)
+			space_n_ruins_mapzones += mapzone
 	//Load planets
 	if(config.minetype == "lavaland")
 		var/datum/planet_template/lavaland_template = planet_templates[/datum/planet_template/lavaland]
@@ -348,8 +357,11 @@ Used by the AI doomsday and the self-destruct nuke.
 				picked_planet_type = pickweight(planet_list)
 			planet_list -= picked_planet_type
 			var/datum/planet_template/picked_template = planet_templates[picked_planet_type]
-			picked_template.LoadTemplate(SSovermap.main_system, rand(5,25), rand(5,25))
+			var/datum/map_zone/mapzone = picked_template.LoadTemplate(SSovermap.main_system, rand(5,25), rand(5,25))
+			GenerateLandingPads(mapzone)
 #endif
+
+	loop_map_zones(space_n_ruins_mapzones)
 
 	if(LAZYLEN(FailedZs)) //but seriously, unless the server's filesystem is messed up this will never happen
 		var/msg = "RED ALERT! The following map files failed to load: [FailedZs[1]]"
@@ -464,11 +476,18 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 		var/datum/map_template/T = new(path = "[path][map]", rename = "[map]")
 		map_templates[T.name] = T
 
+	preloadLandingPadTemplates()
 	preloadPlanetTemplates()
 	preloadRuinTemplates()
 	preloadShuttleTemplates()
 	preloadShelterTemplates()
 	preloadHolodeckTemplates()
+
+/datum/controller/subsystem/mapping/proc/preloadLandingPadTemplates()
+	for(var/path in subtypesof(/datum/map_template/ruin/landing_pad))
+		var/datum/map_template/T = new path()
+		landing_pad_templates[path] = T
+		map_templates[T.name] = T
 
 /datum/controller/subsystem/mapping/proc/preloadPlanetTemplates()
 	for(var/path in subtypesof(/datum/planet_template))

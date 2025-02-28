@@ -38,6 +38,8 @@
 		cached_map = null
 
 /datum/map_template/shuttle/proc/discover_port_offset()
+	return
+/* This doesnt work properly
 	var/key
 	var/list/models = cached_map.grid_models
 	for(key in models)
@@ -56,6 +58,7 @@
 					return
 				++xcrd
 			--ycrd
+*/
 
 /datum/map_template/shuttle/load(turf/T, centered, clear_existing_turfs = FALSE, register = TRUE)
 	. = ..()

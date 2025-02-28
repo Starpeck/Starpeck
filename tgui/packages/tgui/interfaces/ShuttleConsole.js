@@ -14,7 +14,7 @@ export const ShuttleConsole = (props, context) => {
   return (
     <Window
       width={350}
-      height={230}>
+      height={500}>
       {!!authorization_required && (
         <Modal
           ml={1}
@@ -88,31 +88,40 @@ export const ShuttleConsoleContent = (props, context) => {
     locations = [],
   } = data;
   return (
-    <Section>
-      <Box
-        bold
-        fontSize="26px"
-        textAlign="center"
-        fontFamily="monospace">
-        {timer_str || "00:00"}
-      </Box>
-      <Box
-        textAlign="center"
-        fontSize="14px"
-        mb={1}>
-        <Box
-          inline
-          bold>
-          STATUS:
-        </Box>
-        <Box
-          inline
-          color={STATUS_COLOR_KEYS[status] || "bad"}
-          ml={1}>
-          {status || "Not Available"}
-        </Box>
-      </Box>
+    <Section
+      height="100%"
+    >
       <Section
+        height="70%"
+      >
+        <Box
+          bold
+          fontSize="26px"
+          textAlign="center"
+          fontFamily="monospace">
+          {timer_str || "00:00"}
+        </Box>
+        <Box
+          textAlign="center"
+          fontSize="14px"
+          mb={1}>
+          <Box
+            inline
+            bold>
+            STATUS:
+          </Box>
+          <Box
+            inline
+            color={STATUS_COLOR_KEYS[status] || "bad"}
+            ml={1}>
+            {status || "Not Available"}
+          </Box>
+          <Box
+            height="200px" />
+        </Box>
+      </Section>
+      <Section
+        height="30%"
         title={type === "shuttle" ? "Shuttle Controls" : "Base Launch Controls"}
         level={2}>
         <LabeledList>

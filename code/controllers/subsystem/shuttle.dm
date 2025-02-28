@@ -577,6 +577,7 @@ SUBSYSTEM_DEF(shuttle)
 	new_transit_dock.name = "Transit for [M.id]/[M.name]"
 	new_transit_dock.owner = M
 	new_transit_dock.assigned_area = transit_area
+	new_transit_dock.transit_direction = travel_dir
 
 	// Add 180, because ports point inwards, rather than outwards
 	new_transit_dock.setDir(angle2dir(dock_angle))

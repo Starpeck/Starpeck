@@ -8,18 +8,19 @@
 	if(!ismovable(parent))
 		return COMPONENT_INCOMPATIBLE
 	transit_instance = transit_instance_
-	time_until_strand = world.time + 1 SECONDS
+	time_until_strand = world.time + 4 SECONDS
 	transit_instance.affected_movables[parent] = TRUE
-	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, PROC_REF(on_parent_moved))
+	START_PROCESSING(SSobj, src)
 
-/datum/component/transit_handler/proc/on_parent_moved(atom/movable/source, atom/old_loc, Dir, Forced)
-	if(QDELETED(source))
+/datum/component/transit_handler/process(delta_time)
+	if(!parent)
+		qdel(src)
 		return
-	var/turf/new_location = get_turf(source)
+	var/turf/new_location = get_turf(parent)
 	if(!istype(new_location, /turf/open/space/transit))
 		qdel(src)
-	transit_instance.movable_moved(source, time_until_strand)
+	transit_instance.process_transiter(parent)
 
 /datum/component/transit_handler/UnregisterFromParent()
-	UnregisterSignal(parent, COMSIG_MOVABLE_MOVED)
+	STOP_PROCESSING(SSobj, src)
 	transit_instance.affected_movables -= parent

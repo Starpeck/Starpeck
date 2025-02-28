@@ -612,6 +612,6 @@
 	)
 	volume = 20
 	sound_length = 5 SECONDS
-	frequency_time = 20 SECONDS
-	frequency_time_high = 2 MINUTES
+	frequency_time = 90 SECONDS
+	frequency_time_high = 3 MINUTES
 	loops = FALSE

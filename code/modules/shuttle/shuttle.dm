@@ -283,6 +283,7 @@
 	var/area/shuttle/transit/assigned_area
 	var/obj/docking_port/mobile/owner
 	var/datum/transit_instance/transit_instance
+	var/transit_direction = SOUTH
 
 /obj/docking_port/stationary/transit/Initialize()
 	. = ..()
@@ -324,7 +325,7 @@
 	dwidth = 11
 	height = 22
 	width = 35
-	shuttlekeys = list("whiteship_meta", "whiteship_pubby", "whiteship_box", "whiteship_cere", "whiteship_kilo", "whiteship_donut", "whiteship_delta")
+	shuttlekeys = list("whiteship_meta", "whiteship_box", "whiteship_delta")
 
 /obj/docking_port/mobile
 	name = "shuttle"
@@ -466,6 +467,8 @@
 	var/list/all_turfs = return_ordered_turfs(x, y, z, dir)
 	for(var/i in 1 to all_turfs.len)
 		var/turf/curT = all_turfs[i]
+		if(!curT)
+			continue
 		var/area/cur_area = curT.loc
 		if(istype(cur_area, area_type))
 			shuttle_areas[cur_area] = TRUE

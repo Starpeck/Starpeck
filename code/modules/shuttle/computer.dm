@@ -7,6 +7,8 @@
 	req_access = list( )
 	/// ID of the attached shuttle
 	var/shuttleId
+	/// Restricted destinations that are lifted when emagged
+	var/restricted_destinations = ""
 	/// Possible destinations of the attached shuttle
 	var/possible_destinations = ""
 	/// Variable dictating if the attached shuttle requires authorization from the admin staff to move
@@ -19,7 +21,7 @@
 	var/locked = FALSE
 	/// Authorization request cooldown to prevent request spam to admin staff
 	COOLDOWN_DECLARE(request_cooldown)
-	var/uses_overmap = TRUE
+	var/uses_overmap = FALSE
 
 /obj/machinery/computer/shuttle/Initialize(mapload)
 	. = ..()
@@ -120,6 +122,7 @@
 
 /obj/machinery/computer/shuttle/ui_data(mob/user)
 	var/list/data = list()
+	var/list/restricted_options = params2list(restricted_destinations)
 	var/list/options = params2list(possible_destinations)
 	var/obj/docking_port/mobile/M = SSshuttle.getShuttle(shuttleId)
 	data["docked_location"] = M ? M.get_status_text_tgui() : "Unknown"
@@ -148,11 +151,19 @@
 	for(var/obj/docking_port/stationary/S in SSshuttle.stationary)
 		if(!options.Find(S.port_destinations))
 			continue
+		if(length(restricted_options) && !restricted_options.Find(S.port_destinations))
+			continue
 		if(!M.check_dock(S, silent = TRUE))
 			continue
+		var/datum/virtual_level/vlevel = S.get_virtual_level()
+		var/final_name
+		if(vlevel)
+			final_name = "[vlevel.parent_map_zone.name] - [S.name]"
+		else
+			final_name = "[S.name]"
 		var/list/location_data = list(
 			id = S.id,
-			name = S.name
+			name = final_name
 		)
 		data["locations"] += list(location_data)
 	if(length(data["locations"]) == 1)
@@ -231,6 +242,7 @@
 	if(obj_flags & EMAGGED)
 		return
 	req_access = list()
+	restricted_destinations = ""
 	obj_flags |= EMAGGED
 	to_chat(user, SPAN_NOTICE("You fried the consoles ID checking system."))
 

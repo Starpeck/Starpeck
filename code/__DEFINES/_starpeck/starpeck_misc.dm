@@ -1,0 +1,4 @@
+#define LANDING_PAD_NE 0
+#define LANDING_PAD_NW 1
+#define LANDING_PAD_SE 2
+#define LANDING_PAD_SW 3

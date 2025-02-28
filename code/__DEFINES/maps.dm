@@ -22,8 +22,6 @@ require only minor tweaks.
 
 // helpers for modifying jobs, used in various job_changes.dm files
 
-#define SPACERUIN_MAP_EDGE_PAD 15
-
 // traits
 // boolean - marks a level as having that property if present
 #define ZTRAIT_CENTCOM "CentCom"

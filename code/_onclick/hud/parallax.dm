@@ -172,12 +172,14 @@
 	var/datum/map_zone/mapzone
 	if(SSmapping && SSmapping.z_list && screenmob.z)
 		mapzone = screenmob.get_map_zone()
-	if(mapzone && mapzone.related_overmap_object)
+	if(mapzone && mapzone.parallax_movedir)
 		destined_parallax_movedir = mapzone.parallax_movedir
+	/*
 	else if(SSshuttle.is_in_shuttle_bounds(screenmob))
 		var/obj/docking_port/mobile/mobile_shuttle = SSshuttle.get_containing_shuttle(screenmob)
 		if(mobile_shuttle && !isnull(mobile_shuttle.overmap_parallax_dir))
 			destined_parallax_movedir = mobile_shuttle.overmap_parallax_dir
+	*/
 
 	// Update the movement direction of the parallax if necessary (for shuttles)
 	set_parallax_movedir(destined_parallax_movedir, FALSE, screenmob)

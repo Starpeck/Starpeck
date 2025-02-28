@@ -15,25 +15,16 @@ endmap
 
 map metastation
 	#default
-	minplayers 25
+	#minplayers 25
 	#voteweight 0.5
 	votable
 endmap
 
-map deltastation
-	minplayers 50
+map pubbystation
 	votable
 endmap
 
 map kilostation
-	votable
-endmap
-
-map tradership
-	votable
-endmap
-
-map skylineship
 	votable
 endmap
 
@@ -43,8 +34,19 @@ map icebox
 endmap
 
 map tramstation
-	minplayers 35
+	minplayers 25
 	votable
+endmap
+
+map deltastation
+	minplayers 50
+	votable
+endmap
+
+map tradership
+endmap
+
+map skylineship
 endmap
 
 map runtimestation

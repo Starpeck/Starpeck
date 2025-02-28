@@ -11,6 +11,7 @@
 	vlevel.transit_instance = src
 	dock = arg_dock
 	dock.transit_instance = src
+	START_PROCESSING(SSobj, src)
 
 /datum/transit_instance/Destroy()
 	strand_all()
@@ -19,30 +20,14 @@
 	dock.transit_instance = null
 	dock = null
 	overmap_shuttle = null
+	STOP_PROCESSING(SSobj, src)
 	return ..()
 
-//Movable moved in transit
-/datum/transit_instance/proc/movable_moved(atom/movable/moved, time_until_strand)
-	if(!moved)
-		stack_trace("null movable on Movable Moved in Transit Instance")
+// No overmap bandaid
+/datum/transit_instance/process(delta_time)
+	if(!dock)
 		return
-	if(!moved.loc || !isturf(moved.loc))
-		return
-	if(time_until_strand > world.time)
-		return
-	var/turf/my_turf = moved.loc
-	if(!vlevel.on_edge(my_turf))
-		return
-	//We've moved to be adjacent to edge or out of bounds
-	//Check for things that should just disappear as they bump into the edges of the map
-	//Maybe listening for this event could be done in a better way?
-	if(ishuman(moved)) //Humans could disconnect and not have a client, we dont want to get them stranded
-		return
-	if(ismob(moved))
-		var/mob/moved_mob = moved
-		if(moved_mob.client) //Client things never voluntairly get stranded
-			return
-	strand_act(moved)
+	ApplyVelocity(REVERSE_DIR(dock.transit_direction), 1.25)
 
 //Apply velocity to the movables we're handling
 /datum/transit_instance/proc/ApplyVelocity(dir, velocity)
@@ -87,39 +72,43 @@
 		if(!isclosedturf(step_turf) && !step_turf.is_blocked_turf(TRUE))
 			movable.throw_at(get_edge_target_turf(my_turf, dir), 4, 2)
 
+/datum/transit_instance/proc/movable_hanging_onto(atom/movable/movable)
+	var/turf/my_turf = get_turf(movable)
+	if(!my_turf)
+		return FALSE
+	if(isliving(movable))
+		if(movable.Process_Spacemove())
+			return TRUE
+		for(var/cardinal in GLOB.cardinals)
+			var/turf/cardinal_turf = get_step(my_turf, cardinal)
+			if(!istype(cardinal_turf, /turf/open/space/transit))
+				return TRUE
+	return FALSE
+
 ///Strand all movables that we're managing
 /datum/transit_instance/proc/strand_all()
 	for(var/movable in affected_movables)
 		strand_act(movable)
 
 /datum/transit_instance/proc/strand_act(atom/movable/strander)
-	var/commit_strand = FALSE
-	var/name_to_apply
-	if(ishuman(strander))
-		commit_strand = TRUE
-		name_to_apply = "stranded human"
-	else if (istype(strander, /obj/structure/closet))
-		commit_strand = TRUE
-		name_to_apply = "stranded cargo"
-	else if(ismob(strander))
-		var/mob/strander_mob = strander
-		if(strander_mob.client)
-			commit_strand = TRUE
-			name_to_apply = "stranded creature"
-	if(!commit_strand)
-		qdel(strander)
-		return
-	var/turf/turfer = locate(1,1,1)
-	strander.forceMove(turfer) //Lots of things doesn't like being in nullspace, huff
-	var/overmap_y = 1
-	var/overmap_x = 1
-	var/overmap_system = SSovermap.main_system
-	if(overmap_shuttle)
-		overmap_x = overmap_shuttle.x
-		overmap_y = overmap_shuttle.y
-		overmap_system = overmap_shuttle.current_system
-	var/datum/overmap_object/transportable/stranded/stranded_ovo = new(overmap_system, overmap_x, overmap_y)
-	stranded_ovo.StoreStranded(strander, name_to_apply)
+	var/side = pick(GLOB.cardinals)
+	var/datum/virtual_level/startsub = pick(SSmapping.virtual_levels_by_trait(ZTRAIT_SPACE_RUINS))
+	var/turf/pickedstart = startsub.get_side_turf(side)
+	var/turf/pickedgoal = startsub.get_side_turf(REVERSE_DIR(side))
+
+	strander.forceMove(pickedstart)
+	strander.throw_at(pickedgoal, 4, 2)
+
 	if(ismob(strander))
-		var/mob/strander_mob = strander
-		to_chat(strander_mob, SPAN_USERDANGER("You have been stranded in the empty void of space! Your body is able to be recovered by someone picking it up with a transporter."))
+		to_chat(strander, SPAN_USERDANGER("I was stranded!"))
+
+/datum/transit_instance/proc/process_transiter(atom/movable/thing, datum/component/transit_handler/handler)
+	if(!thing)
+		return
+	if(!thing.loc)
+		return
+	if(movable_hanging_onto(thing))
+		handler.time_until_strand = world.time + 4 SECONDS
+	else
+		if(vlevel.on_edge(get_turf(thing)) && handler.time_until_strand >= world.time)
+			strand_act(thing)

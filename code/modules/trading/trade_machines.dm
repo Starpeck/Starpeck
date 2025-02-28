@@ -166,8 +166,8 @@
 			dat += "<BR>"
 		if(connected_trader.bounties)
 			dat += "<a href='?src=[REF(src)];task=trader_task;pref=button_show_bounties'>Bounties</a>"
-		if(connected_trader.deliveries)
-			dat += "<a href='?src=[REF(src)];task=trader_task;pref=button_show_deliveries'>Delivery Runs</a>"
+		//if(connected_trader.deliveries) // Non functional rn due to lack of overmap
+		//	dat += "<a href='?src=[REF(src)];task=trader_task;pref=button_show_deliveries'>Delivery Runs</a>"
 		dat += "<BR><a href='?src=[REF(src)];task=trader_task;pref=button_compliment'>Compliment</a>"
 		dat += " <a href='?src=[REF(src)];task=trader_task;pref=button_insult'>Insult</a></center>"
 		//Item menus, if applicable
