@@ -11,6 +11,7 @@
 	vlevel.transit_instance = src
 	dock = arg_dock
 	dock.transit_instance = src
+	START_PROCESSING(SSobj, src)
 
 /datum/transit_instance/Destroy()
 	strand_all()
@@ -19,30 +20,14 @@
 	dock.transit_instance = null
 	dock = null
 	overmap_shuttle = null
+	STOP_PROCESSING(SSobj, src)
 	return ..()
 
-//Movable moved in transit
-/datum/transit_instance/proc/movable_moved(atom/movable/moved, time_until_strand)
-	if(!moved)
-		stack_trace("null movable on Movable Moved in Transit Instance")
+// No overmap bandaid
+/datum/transit_instance/process(delta_time)
+	if(!dock)
 		return
-	if(!moved.loc || !isturf(moved.loc))
-		return
-	if(time_until_strand > world.time)
-		return
-	var/turf/my_turf = moved.loc
-	if(!vlevel.on_edge(my_turf))
-		return
-	//We've moved to be adjacent to edge or out of bounds
-	//Check for things that should just disappear as they bump into the edges of the map
-	//Maybe listening for this event could be done in a better way?
-	if(ishuman(moved)) //Humans could disconnect and not have a client, we dont want to get them stranded
-		return
-	if(ismob(moved))
-		var/mob/moved_mob = moved
-		if(moved_mob.client) //Client things never voluntairly get stranded
-			return
-	strand_act(moved)
+	ApplyVelocity(REVERSE_DIR(dock.transit_direction), 1.25)
 
 //Apply velocity to the movables we're handling
 /datum/transit_instance/proc/ApplyVelocity(dir, velocity)
@@ -87,12 +72,24 @@
 		if(!isclosedturf(step_turf) && !step_turf.is_blocked_turf(TRUE))
 			movable.throw_at(get_edge_target_turf(my_turf, dir), 4, 2)
 
+/datum/transit_instance/proc/movable_hanging_onto(atom/movable/movable)
+	var/turf/my_turf = get_turf(movable)
+	if(!my_turf)
+		return FALSE
+	if(isliving(movable))
+		if(movable.Process_Spacemove())
+			return TRUE
+		for(var/cardinal in GLOB.cardinals)
+			var/turf/cardinal_turf = get_step(my_turf, cardinal)
+			if(!istype(cardinal_turf, /turf/open/space/transit))
+				return TRUE
+	return FALSE
+
 ///Strand all movables that we're managing
 /datum/transit_instance/proc/strand_all()
 	for(var/movable in affected_movables)
 		strand_act(movable)
 
-/// Strand the mob in some space ruin level and throw them
 /datum/transit_instance/proc/strand_act(atom/movable/strander)
 	var/side = pick(GLOB.cardinals)
 	var/datum/virtual_level/startsub = pick(SSmapping.virtual_levels_by_trait(ZTRAIT_SPACE_RUINS))
@@ -101,3 +98,17 @@
 
 	strander.forceMove(pickedstart)
 	strander.throw_at(pickedgoal, 4, 2)
+
+	if(ismob(strander))
+		to_chat(strander, SPAN_USERDANGER("I was stranded!"))
+
+/datum/transit_instance/proc/process_transiter(atom/movable/thing, datum/component/transit_handler/handler)
+	if(!thing)
+		return
+	if(!thing.loc)
+		return
+	if(movable_hanging_onto(thing))
+		handler.time_until_strand = world.time + 4 SECONDS
+	else
+		if(vlevel.on_edge(get_turf(thing)) && handler.time_until_strand >= world.time)
+			strand_act(thing)

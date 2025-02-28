@@ -41,9 +41,9 @@
 	/// Whether the levels of this planetary level self loop
 	var/self_looping = FALSE
 	/// Amount of margin padding added to each side of the map. This is required to be atleast 2 for selflooping
-	var/map_margin = 3
-	var/size_x = 150
-	var/size_y = 150
+	var/map_margin = 5
+	var/size_x = 135
+	var/size_y = 135
 
 /datum/planet_template/proc/LoadTemplate(datum/overmap_sun_system/system, coordinate_x, coordinate_y)
 	var/datum/overmap_object/linked_overmap_object = new overmap_type(system, coordinate_x, coordinate_y)
