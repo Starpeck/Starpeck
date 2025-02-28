@@ -3050,6 +3050,14 @@
 	crate_name = "games supply crate"
 	crate_type = /obj/structure/closet/crate
 
+/datum/supply_pack/vending/kinkmate
+	name = "Kinkmate Supply Crate"
+	desc = "A fun way to spend the shift. Contains unmentionable desires."
+	cost = CARGO_CRATE_VALUE * 2
+	contraband = TRUE
+	contains = list(/obj/item/vending_refill/kink)
+	crate_name = "kinkmate supply crate"
+
 /datum/supply_pack/vending/hydro_refills
 	name = "Hydroponics Vending Machines Refills"
 	desc = "When the clown takes all the banana seeds. Contains a NutriMax refill and a MegaSeed Servitor refill."

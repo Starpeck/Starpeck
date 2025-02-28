@@ -142,6 +142,12 @@
 	desc = "Fake handcuffs meant for gag purposes."
 	breakouttime = 1 SECONDS
 
+/obj/item/restraints/handcuffs/fake/kinky
+	name = "kinky handcuffs"
+	desc = "Fake handcuffs meant for erotic roleplay."
+	icon_state = "kinkycuff"
+	worn_icon_state = "kinkycuff"
+
 /**
  * # Cable restraints
  *

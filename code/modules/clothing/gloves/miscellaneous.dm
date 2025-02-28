@@ -206,6 +206,10 @@
 	equip_delay_other = 20
 	cold_protection = HANDS
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
+	color = "#cc0000"
+
+/obj/item/clothing/gloves/evening/black
+	color = "#2e2e2e"
 
 /obj/item/clothing/gloves/ring
 	icon = 'icons/horizon/obj/ring.dmi'

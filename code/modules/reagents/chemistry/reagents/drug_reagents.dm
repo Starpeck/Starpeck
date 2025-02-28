@@ -464,3 +464,115 @@
 
 	M.adjustToxLoss(5 * REM * delta_time)
 	M.adjustOrganLoss(ORGAN_SLOT_LIVER, 3 * REM * delta_time)
+
+//aphrodisiac & anaphrodisiac
+
+/datum/reagent/drug/aphrodisiac
+	name = "Crocin"
+	description = "Naturally found in the crocus and gardenia flowers, this drug acts as a natural and safe aphrodisiac."
+	taste_description = "strawberries"
+	color = "#FFADFF"//PINK, rgb(255, 173, 255)
+
+/datum/reagent/drug/aphrodisiac/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+	// TODO
+	..()
+
+/datum/reagent/drug/aphrodisiacplus
+	name = "Hexacrocin"
+	description = "Chemically condensed form of basic crocin. This aphrodisiac is extremely powerful and addictive in most animals.\
+					Addiction withdrawals can cause brain damage and shortness of breath. Overdosage can lead to brain damage and a \
+					permanent increase in libido (commonly referred to as 'bimbofication')."
+	taste_description = "liquid desire"
+	color = "#FF2BFF"//dark pink
+	overdose_threshold = 20
+	// TODO ADDICTION
+
+/datum/reagent/drug/aphrodisiacplus/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+	// TODO
+	..()
+
+
+/datum/reagent/drug/aphrodisiacplus/overdose_process(mob/living/carbon/M, delta_time, times_fired)
+	// TODO
+	..()
+
+/datum/reagent/drug/anaphrodisiac
+	name = "Camphor"
+	description = "Naturally found in some species of evergreen trees, camphor is a waxy substance. When injested by most animals, it acts as an anaphrodisiac\
+					, reducing libido and calming them. Non-habit forming and not addictive."
+	taste_description = "dull bitterness"
+	taste_mult = 2
+	color = "#D9D9D9"//rgb(217, 217, 217)
+	reagent_state = SOLID
+
+/datum/reagent/drug/anaphrodisiac/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+	// TODO
+	..()
+
+/datum/reagent/drug/anaphrodisiacplus
+	name = "Hexacamphor"
+	description = "Chemically condensed camphor. Causes an extreme reduction in libido and a permanent one if overdosed. Non-addictive."
+	taste_description = "tranquil celibacy"
+	color = "#D9D9D9"//rgb(217, 217, 217)
+	reagent_state = SOLID
+	overdose_threshold = 20
+
+/datum/reagent/drug/anaphrodisiacplus/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+	// TODO
+	..()
+
+/datum/reagent/drug/anaphrodisiacplus/overdose_process(mob/living/carbon/M, delta_time, times_fired)
+	// TODO
+	..()
+
+/// Enlarger stuff
+/datum/reagent/drug/penis_enlarger
+	name = "Incubus Draft"
+	description = "A volatile collodial mixture derived from various masculine solutions that encourages a larger gentleman's package via a potent testosterone mix, formula derived from a collaboration from Fermichem  and Doctor Ronald Hyatt, who is well known for his phallus palace." //The toxic masculinity thing is a joke because I
+	taste_description = "chinese dragon powder"
+	taste_mult = 2
+	color = "#888888" // This is greyish..?
+	reagent_state = SOLID
+	overdose_threshold = 20
+
+/datum/reagent/drug/penis_enlarger/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+	// TODO
+	..()
+
+/datum/reagent/drug/penis_enlarger/overdose_process(mob/living/carbon/M, delta_time, times_fired)
+	// TODO
+	..()
+
+/datum/reagent/drug/breast_enlarger
+	name = "Succubus Milk"
+	description = "A volatile collodial mixture derived from milk that encourages mammary production via a potent estrogen mix."
+	color = "#E60584" // rgb: 96, 0, 255
+	taste_description = "a milky ice cream like flavour"
+	taste_mult = 2
+	reagent_state = SOLID
+	overdose_threshold = 20
+
+/datum/reagent/drug/breast_enlarger/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+	// TODO
+	..()
+
+/datum/reagent/drug/breast_enlarger/overdose_process(mob/living/carbon/M, delta_time, times_fired)
+	// TODO
+	..()
+
+/datum/reagent/drug/butt_enlarger
+	name = "Denbu Tincture"
+	description = "A mixture of natural vitamins and valentines plant extract, causing butt enlargement in humanoids."
+	color = "#e8ff1b"
+	taste_description = "butter with a sweet aftertaste" //pass me the butter, OM NOM
+	taste_mult = 2
+	reagent_state = SOLID
+	overdose_threshold = 20
+
+/datum/reagent/drug/butt_enlarger/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+	// TODO
+	..()
+
+/datum/reagent/drug/butt_enlarger/overdose_process(mob/living/carbon/M, delta_time, times_fired)
+	// TODO
+	..()

@@ -537,6 +537,32 @@
 	for(var/i in 1 to 5)
 		new /obj/item/reagent_containers/pill/paxpsych(src)
 
+
+/// Enlargement stuff
+/obj/item/storage/pill_bottle/penis_enlargement
+	name = "penis enlargement pills"
+	desc = "You want penis enlargement pills?"
+
+/obj/item/storage/pill_bottle/penis_enlargement/PopulateContents()
+	for(var/i in 1 to 10)
+		new /obj/item/reagent_containers/pill/penis_enlargement(src)
+
+/obj/item/storage/pill_bottle/breast_enlargement
+	name = "breast enlargement pills"
+	desc = "Made by Fermichem - The bottle shows a woman with breasts larger than she is on them. The warning states to not take more than 10 units at a time."
+
+/obj/item/storage/pill_bottle/breast_enlargement/PopulateContents()
+	for(var/i in 1 to 10)
+		new /obj/item/reagent_containers/pill/breast_enlargement(src)
+
+/obj/item/storage/pill_bottle/butt_enlargement
+	name = "butt enlargement pills"
+	desc = "May alert security when sneaking around if enough pills are consumed due to assclapping. Be dummy thick responsibly."
+
+/obj/item/storage/pill_bottle/butt_enlargement/PopulateContents()
+	for(var/i in 1 to 10)
+		new /obj/item/reagent_containers/pill/butt_enlargement(src)
+
 /obj/item/storage/organbox
 	name = "organ transport box"
 	desc = "An advanced box with an cooling mechanism that uses cryostylane or other cold reagents to keep the organs or bodyparts inside preserved."
