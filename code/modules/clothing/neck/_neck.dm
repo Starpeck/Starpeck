@@ -363,6 +363,12 @@
 	is_polychromic = FALSE
 	color = "#222222"
 
+/obj/item/clothing/neck/necklace/cowbell
+	name = "cowbell collar"
+	desc = "Who would wear this? Take this off, you aren't a cow, you're just an awful degenerate."
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "cowbell"
+
 /obj/item/clothing/neck/cloak/rscloak
 	name = "black cape"
 	desc = "A black cape with a purple finish at the end."

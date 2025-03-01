@@ -84,3 +84,47 @@
 			vlevel.link_with(NORTH, next)
 			vlevel.link_with(SOUTH, prev)
 
+
+/proc/do_thrust_animate(atom/movable/user, atom/movable/target, pixels = 4, time = 2.7)
+	var/oldx = user.pixel_x
+	var/oldy = user.pixel_y
+	var/target_x = oldx
+	var/target_y = oldy
+	var/dir = get_dir(user, target)
+	if(user.loc == target.loc)
+		dir = user.dir
+	switch(dir)
+		if(NORTH)
+			target_y += pixels
+		if(SOUTH)
+			target_y -= pixels
+		if(WEST)
+			target_x -= pixels
+		if(EAST)
+			target_x += pixels
+
+	animate(user, pixel_x = target_x, pixel_y = target_y, time = time)
+	animate(pixel_x = oldx, pixel_y = oldy, time = time)
+
+
+/proc/do_simple_thrust_animate(atom/movable/user, dir, pixels = 4, time = 2.7)
+	var/oldx = user.pixel_x
+	var/oldy = user.pixel_y
+	var/target_x = oldx
+	var/target_y = oldy
+	switch(dir)
+		if(NORTH)
+			target_y += pixels
+		if(SOUTH)
+			target_y -= pixels
+		if(WEST)
+			target_x -= pixels
+		if(EAST)
+			target_x += pixels
+
+	animate(user, pixel_x = target_x, pixel_y = target_y, time = time)
+	animate(pixel_x = oldx, pixel_y = oldy, time = time)
+
+/mob/proc/flash_fullscreen(state, screenpath = /atom/movable/screen/fullscreen, severity = 1, duration = 5)
+	overlay_fullscreen(state, screenpath, severity)
+	clear_fullscreen(state, duration)

@@ -167,4 +167,19 @@ h1.alert, h2.alert		{color: #000000;}
 
 .monkeyhive				{color: #774704;}
 .monkeylead				{color: #774704;	font-size: 2;}
+
+.love {
+  color: #eac8de;
+}
+
+.boldlove {
+  color: #eac8de;
+  font-weight: bold;
+}
+
+.love_low					{color: #eac8de;	font-size: 85%;}
+.love_mid					{color: #e9a8d1;	font-size: 85%;}
+.love_high					{color: #f05ee1;	font-size: 85%;}
+.love_extreme					{color: #d146f5;	font-size: 85%;}
+
 </style>"}

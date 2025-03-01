@@ -117,3 +117,5 @@
 #define SPAN_WARNING(str) ("<span class='warning'>" + str + "</span>")
 #define SPAN_YELL(str) ("<span class='yell'>" + str + "</span>")
 #define SPAN_YELLOWTEAMRADIO(str) ("<span class='yellowteamradio'>" + str + "</span>")
+#define SPAN_LOVE(str) ("<span class='love'>" + str + "</span>")
+#define SPAN_LOVEBOLD(str) ("<span class='lovebold'>" + str + "</span>")

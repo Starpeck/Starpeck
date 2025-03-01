@@ -824,6 +824,14 @@
 	build_path = /obj/item/flamethrower/full
 	category = list("hacked", "Security")
 
+/datum/design/shockcollar
+	name = "Shockcollar"
+	id = "shockcollar"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 5000, /datum/material/glass =2000)
+	build_path = /obj/item/electropack/shockcollar
+	category = list("hacked", "Tools")
+
 /datum/design/electropack
 	name = "Electropack"
 	id = "electropack"

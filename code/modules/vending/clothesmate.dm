@@ -122,7 +122,10 @@
 					/obj/item/clothing/suit/hawaiian_purple = 1,
 					/obj/item/clothing/under/dress/black = 2,
 					/obj/item/clothing/under/dress/black/onepiece = 2,
-					/obj/item/clothing/under/dress/black/traditional = 2)
+					/obj/item/clothing/under/dress/black/traditional = 2,
+					/obj/item/clothing/gloves/evening = 2,
+					/obj/item/clothing/gloves/evening/black = 2,
+					)
 	contraband = list(/obj/item/clothing/under/syndicate/tacticool = 1,
 					  /obj/item/clothing/under/syndicate/tacticool/skirt = 1,
 		              /obj/item/clothing/mask/balaclava = 1,

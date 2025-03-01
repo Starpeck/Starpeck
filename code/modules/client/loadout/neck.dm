@@ -19,6 +19,9 @@
 /datum/loadout_item/neck/leathercollar
 	path = /obj/item/clothing/neck/human_petcollar/leather
 
+/datum/loadout_item/neck/cowbell
+	path = /obj/item/clothing/neck/necklace/cowbell
+
 /datum/loadout_item/neck/tailored_cloak
 	path = /obj/item/clothing/neck/cloak/tailored
 

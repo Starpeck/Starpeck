@@ -290,3 +290,16 @@
 	icon_state = "pill8"
 	list_reagents = list(/datum/reagent/iron = 30)
 	rename_with_volume = TRUE
+
+// Enlargement pills
+/obj/item/reagent_containers/pill/penis_enlargement
+	name = "penis enlargement pill"
+	list_reagents = list(/datum/reagent/drug/penis_enlarger = 10)
+
+/obj/item/reagent_containers/pill/breast_enlargement
+	name = "breast enlargement pill"
+	list_reagents = list(/datum/reagent/drug/breast_enlarger = 10)
+
+/obj/item/reagent_containers/pill/butt_enlargement
+	name = "butt enlargement pill"
+	list_reagents = list(/datum/reagent/drug/butt_enlarger = 10)

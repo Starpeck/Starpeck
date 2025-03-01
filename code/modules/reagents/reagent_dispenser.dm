@@ -9,6 +9,8 @@
 	max_integrity = 300
 	///In units, how much the dispenser can hold
 	var/tank_volume = 1000
+	/// If defined, this will be the starting volume, otherwise it'll be full tank volume
+	var/starting_volume = null
 	///The ID of the reagent that the dispenser uses
 	var/reagent_id = /datum/reagent/water
 	///Can you turn this into a plumbing tank?
@@ -47,7 +49,10 @@
 /obj/structure/reagent_dispensers/Initialize()
 	create_reagents(tank_volume, DRAINABLE | AMOUNT_VISIBLE)
 	if(reagent_id)
-		reagents.add_reagent(reagent_id, tank_volume)
+		var/start_vol = tank_volume
+		if(!isnull(starting_volume))
+			start_vol = starting_volume
+		reagents.add_reagent(reagent_id, start_vol)
 	. = ..()
 
 /obj/structure/reagent_dispensers/proc/boom()
@@ -211,6 +216,52 @@
 	explosion(src, heavy_impact_range = 3, light_impact_range = 5, flame_range = 10, flash_range = 7)
 	if(!QDELETED(src))
 		qdel(src)
+
+/obj/structure/reagent_dispensers/keg
+	name = "keg"
+	desc = "A keg."
+	icon_state = "keg"
+
+/obj/structure/reagent_dispensers/keg/mead
+	name = "keg of mead"
+	desc = "A keg of mead."
+	icon_state = "orangekeg"
+	reagent_id = /datum/reagent/consumable/ethanol/mead
+	starting_volume = 150
+
+/obj/structure/reagent_dispensers/keg/milk
+	name = "keg of milk"
+	desc = "A keg of pasteurised, homogenised, filtered and semi-skimmed space milk."
+	icon_state = "whitekeg"
+	reagent_id = /datum/reagent/consumable/milk
+	starting_volume = 150
+
+/obj/structure/reagent_dispensers/keg/gargle
+	name = "keg of pan galactic gargleblaster"
+	desc = "A keg of... wow that's a long name."
+	icon_state = "bluekeg"
+	reagent_id = /datum/reagent/consumable/ethanol/gargle_blaster
+	starting_volume = 150
+
+/obj/structure/reagent_dispensers/keg/aphro
+	name = "keg of aphrodisiac"
+	desc = "A keg of aphrodisiac."
+	icon_state = "pinkkeg"
+	reagent_id = /datum/reagent/drug/aphrodisiac
+	starting_volume = 150
+
+/obj/structure/reagent_dispensers/keg/aphro/strong
+	name = "keg of strong aphrodisiac"
+	desc = "A keg of strong and addictive aphrodisiac."
+	reagent_id = /datum/reagent/drug/aphrodisiacplus
+	starting_volume = 120
+
+/obj/structure/reagent_dispensers/keg/semen
+	name = "keg of semen"
+	desc = "Dear lord, where did this even come from?"
+	icon_state = "whitekeg"
+	reagent_id = /datum/reagent/semen
+	starting_volume = 150
 
 
 /obj/structure/reagent_dispensers/virusfood

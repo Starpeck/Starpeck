@@ -119,13 +119,20 @@
 		var/mob/living/carbon/human/L = M
 		if(L && L.dna && L.dna.species)
 			L.dna.species.stop_wagging_tail(M)
-	user.do_attack_animation(M)
+
 	playsound(M, 'sound/weapons/slap.ogg', 50, TRUE, -1)
 	if(user.zone_selected == BODY_ZONE_HEAD || user.zone_selected == BODY_ZONE_PRECISE_MOUTH)
+		user.do_slap_animation(M, 8)
 		user.visible_message(SPAN_DANGER("[user] slaps [M] in the face!"),
 		SPAN_NOTICE("You slap [M] in the face!"),\
 		SPAN_HEAR("You hear a slap."))
+	else if(user.zone_selected == BODY_ZONE_PRECISE_GROIN && ((get_dir(user, M) == user.dir) || (user == M)))
+		user.do_slap_animation(M, -8)
+		user.visible_message(SPAN_DANGER("[user] slaps [M] in the ass!"),
+		SPAN_NOTICE("You slap [M] in the ass!"),\
+		SPAN_HEAR("You hear a slap."))
 	else
+		user.do_slap_animation(M, 0)
 		user.visible_message(SPAN_DANGER("[user] slaps [M]!"),
 		SPAN_NOTICE("You slap [M]!"),\
 		SPAN_HEAR("You hear a slap."))

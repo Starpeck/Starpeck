@@ -133,3 +133,59 @@
 			else if(params["reset"] == "code")
 				code = initial(code)
 				. = TRUE
+
+/obj/item/electropack/shockcollar
+	name = "shock collar"
+	desc = "A reinforced metal collar. It seems to have some form of wiring near the front. Strange.."
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "shockcollar"
+	inhand_icon_state = "shockcollar"
+	body_parts_covered = NECK
+	slot_flags = ITEM_SLOT_NECK //no more pocket shockers. Now done without lazyness
+	w_class = WEIGHT_CLASS_SMALL
+	strip_delay = 60
+	equip_delay_other = 60
+	custom_materials = list(/datum/material/iron = 5000, /datum/material/glass = 2000)
+	var/tagname = null
+
+/obj/item/electropack/shockcollar/attack_hand(mob/user, list/modifiers)
+	if(loc == user && user.get_item_by_slot(ITEM_SLOT_NECK))
+		to_chat(user, "<span class='warning'>The collar is fastened tight! You'll need help taking this off!</span>")
+		return
+	return ..()
+
+/obj/item/electropack/shockcollar/receive_signal(datum/signal/signal) //we have to override this because of text
+	if(!signal || signal.data["code"] != code)
+		return
+
+	if(isliving(loc) && on) //the "on" arg is currently useless
+		var/mob/living/L = loc
+		if(!L.get_item_by_slot(ITEM_SLOT_NECK)) //**properly** stops pocket shockers
+			return
+		if(shock_cooldown == TRUE)
+			return
+		shock_cooldown = TRUE
+		addtimer(VARSET_CALLBACK(src, shock_cooldown, FALSE), 100)
+		step(L, pick(GLOB.cardinals))
+
+		to_chat(L, SPAN_DANGER("You feel a sharp shock from the collar!"))
+
+		do_sparks(3, FALSE, L)
+
+		L.Knockdown(20)
+
+	if(master)
+		master.receive_signal()
+	return
+
+/obj/item/electropack/shockcollar/attackby(obj/item/W, mob/user, params) //moves it here because on_click is being bad
+	if(istype(W, /obj/item/pen))
+		var/t = stripped_input(user, "Would you like to change the name on the tag?", "Name your new pet", tagname ? tagname : "Spot", MAX_NAME_LEN)
+		if(t)
+			tagname = t
+			name = "[initial(name)] - [t]"
+		return
+	if(istype(W, /obj/item/clothing/head/helmet)) //lazy method of denying this
+		return
+	else
+		return ..()

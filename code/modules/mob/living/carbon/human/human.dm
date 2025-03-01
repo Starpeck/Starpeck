@@ -1,4 +1,6 @@
 /mob/living/carbon/human/Initialize()
+	sexcon = new(src)
+
 	add_verb(src, /mob/living/proc/mob_sleep)
 	add_verb(src, /mob/living/proc/toggle_resting)
 
@@ -40,8 +42,10 @@
 	. = ..()
 	if(!CONFIG_GET(flag/disable_human_mood))
 		AddComponent(/datum/component/mood)
+	AddComponent(/datum/component/scon_hud)
 
 /mob/living/carbon/human/Destroy()
+	QDEL_NULL(sexcon)
 	QDEL_NULL(physiology)
 	QDEL_LIST(bioware)
 	GLOB.human_list -= src
