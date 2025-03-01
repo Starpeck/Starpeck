@@ -26,6 +26,9 @@
 	if(QDELETED(src))
 		return FALSE
 
+	if(sexcon)
+		sexcon.process_sexcon(delta_time)
+
 	//Body temperature stability and damage
 	dna.species.handle_body_temperature(src, delta_time, times_fired)
 

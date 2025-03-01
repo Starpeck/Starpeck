@@ -249,3 +249,13 @@
 	description = "<span class='nicegreen'>This taste seems oddly nostalgic...</span>\n"
 	mood_change = 3
 	timeout = 5 MINUTES
+
+/datum/mood_event/climax
+	description = "<span class='nicegreen'>I came!</span>\n"
+	mood_change = 2
+	timeout = 10 MINUTES
+
+/datum/mood_event/sex
+	description = "<span class='nicegreen'>I had sex...</span>\n"
+	mood_change = 2
+	timeout = 20 MINUTES

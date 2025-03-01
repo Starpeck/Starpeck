@@ -398,6 +398,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_INSANITY "insanity"
 #define TRAIT_HARD_SOLES "hard_soles"
 #define TRAIT_EXCITABLE "excitable"
+#define TRAIT_LIMPDICK "limp-dick"
 
 ///Trait for dryable items
 #define TRAIT_DRYABLE "trait_dryable"

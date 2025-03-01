@@ -62,6 +62,9 @@
 	mutantpart_info = list(MUTANT_INDEX_NAME = "Human", MUTANT_INDEX_COLOR_LIST = list("FEB"))
 	var/sheath = SHEATH_NONE
 
+/obj/item/organ/genital/penis/proc/update_erect_state()
+	return
+
 /obj/item/organ/genital/penis/get_description_string(datum/sprite_accessory/genital/gas)
 	var/returned_string = ""
 	var/pname = lowertext(genital_name)
@@ -181,6 +184,17 @@
 	mutantpart_info = list(MUTANT_INDEX_NAME = "Human", MUTANT_INDEX_COLOR_LIST = list("FEB"))
 	zone = BODY_ZONE_PRECISE_GROIN
 	slot = ORGAN_SLOT_VAGINA
+	var/pregnant = FALSE
+
+/obj/item/organ/genital/vagina/proc/be_impregnated(mob/living/carbon/human/father)
+	if(pregnant)
+		return
+	if(!owner)
+		return
+	if(owner.stat == DEAD)
+		return
+	to_chat(owner, SPAN_LOVEBOLD("I feel a surge of warmth in my belly, I’m definitely pregnant!"))
+	pregnant = TRUE
 
 /obj/item/organ/genital/vagina/get_description_string(datum/sprite_accessory/genital/gas)
 	var/returned_string = "You see a [lowertext(genital_name)] vagina."

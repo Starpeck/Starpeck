@@ -474,7 +474,8 @@
 	color = "#FFADFF"//PINK, rgb(255, 173, 255)
 
 /datum/reagent/drug/aphrodisiac/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
-	// TODO
+	if(M.sexcon)
+		M.sexcon.adjust_arousal(2, 50)
 	..()
 
 /datum/reagent/drug/aphrodisiacplus
@@ -488,7 +489,8 @@
 	// TODO ADDICTION
 
 /datum/reagent/drug/aphrodisiacplus/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
-	// TODO
+	if(M.sexcon)
+		M.sexcon.adjust_arousal(6, 80)
 	..()
 
 
@@ -506,7 +508,8 @@
 	reagent_state = SOLID
 
 /datum/reagent/drug/anaphrodisiac/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
-	// TODO
+	if(M.sexcon)
+		M.sexcon.adjust_arousal(-2)
 	..()
 
 /datum/reagent/drug/anaphrodisiacplus
@@ -518,7 +521,8 @@
 	overdose_threshold = 20
 
 /datum/reagent/drug/anaphrodisiacplus/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
-	// TODO
+	if(M.sexcon)
+		M.sexcon.adjust_arousal(-6)
 	..()
 
 /datum/reagent/drug/anaphrodisiacplus/overdose_process(mob/living/carbon/M, delta_time, times_fired)
