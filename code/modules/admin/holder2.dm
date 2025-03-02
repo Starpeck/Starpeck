@@ -286,7 +286,7 @@ GLOBAL_PROTECT(href_token)
 #undef ERROR_2FA_REQUEST_PERMISSIONS
 
 /datum/admins/proc/verify_backup_data(client/client)
-	var/backup_file = file2text("data/admins_backup.json")
+	var/backup_file = FILE2TEXT_PATH("data/admins_backup.json")
 	if (isnull(backup_file))
 		log_world("Unable to locate admins backup file.")
 		return FALSE

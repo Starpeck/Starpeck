@@ -67,7 +67,7 @@
 			return
 
 		// Keep a static version of the template to avoid reading file
-		var/static/issue_template = file2text(".github/ISSUE_TEMPLATE/bug_report.md")
+		var/static/issue_template = FILE2TEXT_PATH(".github/ISSUE_TEMPLATE/bug_report.md")
 
 		// Get a local copy of the template for modification
 		var/local_template = issue_template

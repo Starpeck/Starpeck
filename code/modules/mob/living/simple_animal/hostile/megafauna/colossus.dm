@@ -313,7 +313,7 @@ GLOBAL_DATUM(blackbox, /obj/machinery/smartfridge/black_box)
 		memory_saved = TRUE
 
 /obj/machinery/smartfridge/black_box/proc/WriteMemory()
-	var/json_file = file("data/npc_saves/Blackbox.json")
+	var/json_file = FILE_LOAD_PATH("data/npc_saves/Blackbox.json")
 	stored_items = list()
 
 	for(var/obj/O in (contents-component_parts))
@@ -329,10 +329,10 @@ GLOBAL_DATUM(blackbox, /obj/machinery/smartfridge/black_box)
 		S["stored_items"] >> stored_items
 		fdel("data/npc_saves/Blackbox.sav")
 	else
-		var/json_file = file("data/npc_saves/Blackbox.json")
+		var/json_file = FILE_LOAD_PATH("data/npc_saves/Blackbox.json")
 		if(!fexists(json_file))
 			return
-		var/list/json = json_decode(file2text(json_file))
+		var/list/json = JSON_LOAD_FILE(json_file)
 		stored_items = json["data"]
 	if(isnull(stored_items))
 		stored_items = list()

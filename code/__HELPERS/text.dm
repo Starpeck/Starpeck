@@ -41,7 +41,7 @@
 	return t
 
 /proc/sanitize_filename(t)
-	return sanitize_simple(t, list("\n"="", "\t"="", "/"="", "\\"="", "?"="", "%"="", "*"="", ":"="", "|"="", "\""="", "<"="", ">"=""))
+	return SANITIZE_FILENAME(t)
 
 ///returns nothing with an alert instead of the message if it contains something in the ic filter, and sanitizes normally if the name is fine. It returns nothing so it backs out of the input the same way as if you had entered nothing.
 /proc/sanitize_name(t,allow_numbers=FALSE)
@@ -712,11 +712,11 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 
 		accepted += buffer
 
-	var/log = file("data/npc_saves/[filename].json") //If this line ever shows up as changed in a PR be very careful you aren't being memed on
+	var/log = FILE_LOAD_PATH("data/npc_saves/[filename].json") //If this line ever shows up as changed in a PR be very careful you aren't being memed on
 	var/list/oldjson = list()
 	var/list/oldentries = list()
 	if(fexists(log))
-		oldjson = json_decode(file2text(log))
+		oldjson = JSON_LOAD_FILE(log)
 		oldentries = oldjson["data"]
 	if(length(oldentries))
 		for(var/string in accepted)

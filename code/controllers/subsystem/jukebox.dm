@@ -54,7 +54,7 @@ SUBSYSTEM_DEF(jukebox)
 
 	for(var/some_file in to_load_tracks)
 		var/datum/jukebox_track/track = new()
-		track.song_path = file("[global.config.directory]/jukebox_music/sounds/[some_file]")
+		track.song_path = FILE_LOAD_PATH("[global.config.directory]/jukebox_music/sounds/[some_file]")
 		var/list/param_list = splittext(some_file,"+")
 		if(param_list.len != 4)
 			continue

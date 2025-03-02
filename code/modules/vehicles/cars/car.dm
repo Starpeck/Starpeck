@@ -3,7 +3,7 @@
 	move_resist = MOVE_FORCE_VERY_STRONG
 	///Bitflags for special behavior such as kidnapping
 	var/car_traits = NONE
-	///Sound file(s) to play when we drive around
+	///Sound file (or multiple) to play when we drive around
 	var/engine_sound = 'sound/vehicles/carrev.ogg'
 	///Set this to the length of the engine sound.
 	var/engine_sound_length = 2 SECONDS

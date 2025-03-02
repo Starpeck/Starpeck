@@ -93,7 +93,7 @@
 		// If the file isn't removed text2file will just append.
 		if(fexists("data/next_map.json"))
 			fdel("data/next_map.json")
-		text2file(json_encode(json_value), "data/next_map.json")
+		TEXT2FILE_PATH(json_encode(json_value), "data/next_map.json")
 
 		if(SSmapping.changemap(VM))
 			message_admins("[key_name_admin(usr)] has changed the map to [VM.map_name]")

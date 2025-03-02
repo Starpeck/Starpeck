@@ -661,7 +661,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	if(!http)
 		log_world("Failed to connect to byond member page to age check [ckey]")
 		return
-	var/F = file2text(http["CONTENT"])
+	var/F = FILE2TEXT_PATH(http["CONTENT"])
 	if(F)
 		var/regex/R = regex("joined = \"(\\d{4}-\\d{2}-\\d{2})\"")
 		if(R.Find(F))
@@ -686,7 +686,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		if(!http)
 			log_world("Failed to connect to byond member page to get changed key for [ckey]")
 			return
-		var/F = file2text(http["CONTENT"])
+		var/F = FILE2TEXT_PATH(http["CONTENT"])
 		if(F)
 			var/regex/R = regex("\\tkey = \"(.+)\"")
 			if(R.Find(F))

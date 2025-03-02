@@ -93,15 +93,15 @@
 	var/pathstring = log_path_from_picture_ID(id)
 	if(!pathstring)
 		return
-	var/path = file(pathstring)
+	var/path = FILE_LOAD_PATH(pathstring)
 	if(!fexists(path))
 		return
 	var/dir_index = findlasttext(pathstring, "/")
 	var/dir = copytext(pathstring, 1, dir_index)
-	var/json_path = file("[dir]/metadata.json")
+	var/json_path = FILE_LOAD_PATH("[dir]/metadata.json")
 	if(!fexists(json_path))
 		return
-	var/list/json = json_decode(file2text(json_path))
+	var/list/json = JSON_LOAD_FILE(json_path)
 	if(!json[id])
 		return
 	var/datum/picture/P = new
@@ -148,10 +148,10 @@
 	logpath = finalpath
 	id = "[GLOB.picture_logging_prefix][number]"
 	var/jsonpath = "[GLOB.picture_log_directory]/metadata.json"
-	jsonpath = file(jsonpath)
+	jsonpath = FILE_LOAD_PATH(jsonpath)
 	var/list/json
 	if(fexists(jsonpath))
-		json = json_decode(file2text(jsonpath))
+		json = JSON_LOAD_FILE(jsonpath)
 		fdel(jsonpath)
 	else
 		json = list()

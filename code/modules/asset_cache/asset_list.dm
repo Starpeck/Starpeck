@@ -105,7 +105,7 @@ GLOBAL_LIST_EMPTY(asset_datums)
 	var/res_name = "spritesheet_[name].css"
 	var/fname = "data/spritesheets/[res_name]"
 	fdel(fname)
-	text2file(generate_css(), fname)
+	TEXT2FILE_PATH(generate_css(), fname)
 	SSassets.transport.register_asset(res_name, fcopy_rsc(fname))
 	fdel(fname)
 
@@ -254,7 +254,7 @@ GLOBAL_LIST_EMPTY(asset_datums)
 
 /datum/asset/changelog_item/New(date)
 	item_filename = sanitize_filename("[date].yml")
-	SSassets.transport.register_asset(item_filename, file("html/changelogs/archive/" + item_filename))
+	SSassets.transport.register_asset(item_filename, FILE_LOAD_PATH("html/changelogs/archive/" + item_filename))
 
 /datum/asset/changelog_item/send(client)
 	if (!item_filename)

@@ -513,7 +513,7 @@
 		if("list_variable_change_bool")
 			toggle_list_var(params["list"], params["name"])
 		if("save")
-			var/f = file("data/TempSpellUpload")
+			var/f = FILE_LOAD_PATH("data/TempSpellUpload")
 			fdel(f)
 			WRITE_FILE(f, json_encode(list("type" = spell_type, "vars" = saved_vars, "list_vars" = list_vars)))
 			user << ftp(f,"[replacetext_char(saved_vars["name"], " ", "_")].json")
@@ -521,7 +521,7 @@
 			var/spell_file = input("Pick spell json file:", "File") as null|file
 			if(!spell_file)
 				return
-			var/filedata = file2text(spell_file)
+			var/filedata = FILE2TEXT_RSCPATH(spell_file)
 			var/json = json_decode(filedata)
 			if(!json)
 				alert = "JSON decode error!"

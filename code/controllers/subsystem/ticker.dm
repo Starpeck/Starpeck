@@ -101,7 +101,7 @@ SUBSYSTEM_DEF(ticker)
 					continue
 				music += S
 
-	var/old_login_music = trim(file2text("data/last_round_lobby_music.txt"))
+	var/old_login_music = trim(FILE2TEXT_PATH("data/last_round_lobby_music.txt"))
 	if(music.len > 1)
 		music -= old_login_music
 
@@ -683,7 +683,7 @@ SUBSYSTEM_DEF(ticker)
 	save_admin_data()
 	update_everything_flag_in_db()
 	play_round_end_sound()
-	text2file(login_music, "data/last_round_lobby_music.txt")
+	TEXT2FILE_PATH(login_music, "data/last_round_lobby_music.txt")
 
 /datum/controller/subsystem/ticker/proc/play_round_end_sound()
 	var/list/round_end_sounds = flist("sound/roundend/")

@@ -934,10 +934,10 @@ GLOBAL_LIST_INIT(strippable_parrot_items, create_strippable_list(list(
 		S["longestdeathstreak"] >> longest_deathstreak
 		fdel("data/npc_saves/Poly.sav")
 	else
-		var/json_file = file("data/npc_saves/Poly.json")
+		var/json_file = FILE_LOAD_PATH("data/npc_saves/Poly.json")
 		if(!fexists(json_file))
 			return
-		var/list/json = json_decode(file2text(json_file))
+		var/list/json = JSON_LOAD_FILE(json_file)
 		speech_buffer = json["phrases"]
 		rounds_survived = json["roundssurvived"]
 		longest_survival = json["longestsurvival"]
@@ -946,7 +946,7 @@ GLOBAL_LIST_INIT(strippable_parrot_items, create_strippable_list(list(
 		speech_buffer = list()
 
 /mob/living/simple_animal/parrot/poly/proc/Write_Memory(dead)
-	var/json_file = file("data/npc_saves/Poly.json")
+	var/json_file = FILE_LOAD_PATH("data/npc_saves/Poly.json")
 	var/list/file_data = list()
 	if(islist(speech_buffer))
 		file_data["phrases"] = speech_buffer

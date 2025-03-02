@@ -13,9 +13,12 @@
 //Splits the text of a file at seperator and returns them in a list.
 //returns an empty list if the file doesn't exist
 /world/proc/file2list(filename, seperator="\n", trim = TRUE)
+	if(IsAdminAdvancedProcCall())
+		CRASH("Attempted to read file via admin call")
+		return
 	if (trim)
-		return splittext(trim(file2text(filename)),seperator)
-	return splittext(file2text(filename),seperator)
+		return splittext(trim(FILE2TEXT_PATH(filename)),seperator)
+	return splittext(FILE2TEXT_PATH(filename),seperator)
 
 //Turns a direction into text
 /proc/dir2text(direction)

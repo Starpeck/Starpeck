@@ -58,7 +58,7 @@
 	if(!json_path)
 		TGS_ERROR_LOG("Missing [TGS4_PARAM_INFO_JSON] world parameter!")
 		return
-	var/json_file = file2text(json_path)
+	var/json_file = JSON_LOAD_PATH(json_path)
 	if(!json_file)
 		TGS_ERROR_LOG("Missing specified json file: [json_path]")
 		return
@@ -214,7 +214,7 @@
 
 	last_interop_response = null
 	fdel(server_commands_json_path)
-	text2file(json, server_commands_json_path)
+	TEXT2FILE_PATH(json, server_commands_json_path)
 
 	for(var/I = 0; I < EXPORT_TIMEOUT_DS && !last_interop_response; ++I)
 		sleep(1)
@@ -291,7 +291,7 @@
 /datum/tgs_api/v4/ChatChannelInfo()
 	. = list()
 	//no caching cause tgs may change this
-	var/list/json = json_decode(file2text(chat_channels_json_path))
+	var/list/json = JSON_LOAD_PATH(chat_channels_json_path)
 	for(var/I in json)
 		. += DecodeChannel(I)
 
