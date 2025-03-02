@@ -18893,20 +18893,19 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 4
 	},
-/obj/structure/displaycase/forsale/kitchen{
-	pixel_y = 7
-	},
+/obj/machinery/jukebox,
 /turf/open/floor/iron/dark,
 /area/service/bar)
 "aYf" = (
 /obj/structure/table/reinforced,
-/obj/item/book/manual/wiki/barman_recipes,
-/obj/item/reagent_containers/rag,
 /obj/effect/turf_decal/tile/red{
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/red{
 	dir = 4
+	},
+/obj/structure/displaycase/forsale/kitchen{
+	pixel_y = 7
 	},
 /turf/open/floor/iron/dark,
 /area/service/bar)
@@ -49053,7 +49052,7 @@
 /turf/open/floor/iron/white,
 /area/medical/virology)
 "iKb" = (
-/obj/machinery/computer/shuttle_purchase{
+/obj/machinery/computer/shuttle/mining/common{
 	dir = 4
 	},
 /turf/open/floor/iron,
@@ -52237,7 +52236,8 @@
 /area/science/genetics)
 "mSo" = (
 /obj/docking_port/stationary/huge{
-	dir = 8
+	dir = 8;
+	name = "SS13: Auxiliary Dock"
 	},
 /turf/open/space/basic,
 /area/space)
@@ -52734,8 +52734,14 @@
 /turf/open/floor/engine,
 /area/engineering/main)
 "nxG" = (
-/obj/docking_port/stationary/medium{
-	dir = 8
+/obj/docking_port/stationary{
+	dir = 8;
+	dwidth = 3;
+	height = 5;
+	id = "commonmining_home";
+	name = "SS13: Common Mining Dock";
+	roundstart_template = /datum/map_template/shuttle/mining_common/meta;
+	width = 7
 	},
 /turf/open/space/basic,
 /area/space)
@@ -57181,6 +57187,18 @@
 "sJr" = (
 /turf/open/floor/wood,
 /area/service/lawoffice)
+"sJY" = (
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
+/obj/item/book/manual/wiki/barman_recipes,
+/obj/item/reagent_containers/rag,
+/turf/open/floor/iron/dark,
+/area/service/bar)
 "sKa" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
@@ -94085,7 +94103,7 @@ aPE
 aVh
 bah
 bah
-aYg
+sJY
 cpi
 bag
 bbp

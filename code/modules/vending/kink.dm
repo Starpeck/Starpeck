@@ -4,6 +4,7 @@
 	icon_state = "kink"
 	product_slogans = "Kinky!;Sexy!;Check me out, big boy!"
 	vend_reply = "Have fun, you shameless pervert!"
+	light_mask = "kink-light-mask"
 	products = list(
 				/obj/item/clothing/head/maid = 5,
 				/obj/item/clothing/under/costume/maid = 5,
