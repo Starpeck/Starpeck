@@ -296,3 +296,17 @@
 	medical_record_text = "Patient seems to get excited easily."
 	value = 0
 	mob_trait = TRAIT_EXCITABLE
+
+/datum/quirk/crocin_immunity
+	name = "Crocin Immunity"
+	desc = "You are not affected by effects of Crocin or Hexacrocin."
+	medical_record_text = "Patient seems to be immune to crocin."
+	value = 0
+	mob_trait = TRAIT_CROCIN_IMMUNITY
+
+/datum/quirk/size_mod_immunity
+	name = "Size Modification Immunity"
+	desc = "You are immune to some transformative effects of some chemicals."
+	medical_record_text = "Patient seems to be immune to some transformations."
+	value = 0
+	mob_trait = TRAIT_SIZE_MOD_IMMUNITY

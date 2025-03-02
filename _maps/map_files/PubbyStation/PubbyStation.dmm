@@ -9034,27 +9034,23 @@
 	},
 /area/commons/fitness/recreation)
 "awz" = (
-/obj/structure/closet/lasertag/red,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
 /obj/machinery/status_display/evac{
 	pixel_y = 32
 	},
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
+/obj/structure/disposalpipe/trunk{
+	dir = 8
+	},
+/obj/machinery/disposal/bin,
 /turf/open/floor/iron/white/corner{
 	dir = 1
 	},
 /area/commons/fitness/recreation)
 "awA" = (
-/obj/machinery/disposal/bin,
 /obj/machinery/light{
 	dir = 1
-	},
-/obj/structure/disposalpipe/trunk{
-	dir = 8
 	},
 /obj/machinery/camera{
 	c_tag = "Fitness Room"
@@ -9065,6 +9061,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
+/obj/machinery/vending/kink,
 /turf/open/floor/iron/white/corner{
 	dir = 1
 	},
@@ -33596,6 +33593,7 @@
 /obj/structure/sign/poster/contraband/random{
 	pixel_y = -32
 	},
+/obj/effect/spawner/lootdrop/keg,
 /turf/open/floor/iron/dark,
 /area/maintenance/department/engine)
 "bPq" = (
@@ -48974,7 +48972,7 @@
 /turf/open/floor/plating,
 /area/maintenance/department/engine)
 "iEU" = (
-/obj/item/clothing/suit/apron/chef,
+/obj/effect/spawner/lootdrop/keg,
 /turf/open/floor/plating,
 /area/maintenance/department/crew_quarters/dorms)
 "iFI" = (
@@ -54352,6 +54350,10 @@
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/plating,
 /area/maintenance/department/engine)
+"paB" = (
+/obj/item/clothing/suit/apron/chef,
+/turf/open/floor/plating,
+/area/maintenance/department/crew_quarters/dorms)
 "paI" = (
 /obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/visible{
 	dir = 9
@@ -57779,6 +57781,7 @@
 	anchored = 1;
 	name = "pole"
 	},
+/obj/effect/spawner/lootdrop/keg,
 /turf/open/floor/iron/dark,
 /area/maintenance/department/crew_quarters/dorms)
 "tvP" = (
@@ -60414,7 +60417,7 @@
 /turf/open/floor/iron/dark,
 /area/service/library/artgallery)
 "wCj" = (
-/obj/item/paint_remover{
+/obj/item/paint/paint_remover{
 	pixel_y = 8
 	},
 /obj/structure/table/wood,
@@ -100206,7 +100209,7 @@ wMF
 cBn
 cBq
 ajv
-ajv
+paB
 iEU
 aiS
 akj

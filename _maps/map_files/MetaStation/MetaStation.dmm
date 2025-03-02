@@ -2647,6 +2647,10 @@
 /obj/machinery/light/directional/west,
 /turf/open/floor/iron,
 /area/engineering/break_room)
+"atD" = (
+/obj/effect/spawner/lootdrop/keg,
+/turf/open/floor/carpet/green,
+/area/maintenance/port/aft)
 "atE" = (
 /obj/effect/turf_decal/tile/red,
 /obj/effect/turf_decal/tile/red{
@@ -21225,6 +21229,7 @@
 /area/science/mixing)
 "eEU" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/keg,
 /turf/open/floor/plating,
 /area/maintenance/port)
 "eFu" = (
@@ -67597,7 +67602,6 @@
 /turf/open/floor/wood,
 /area/service/bar)
 "ukX" = (
-/obj/structure/closet/wardrobe/green,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -67608,7 +67612,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
-/obj/effect/landmark/start/hangover/closet,
+/obj/machinery/vending/kink,
 /turf/open/floor/iron/dark,
 /area/commons/locker)
 "ukY" = (
@@ -93582,7 +93586,7 @@ eew
 wfq
 wOn
 wOn
-wOn
+atD
 jYJ
 xGa
 dbq

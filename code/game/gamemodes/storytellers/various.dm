@@ -12,13 +12,20 @@
 		EVENT_TRACK_ROLESET = 0.7,
 		EVENT_TRACK_OBJECTIVES = 0.7
 		)
+	starting_point_multipliers = list(
+		EVENT_TRACK_MUNDANE = 1,
+		EVENT_TRACK_MODERATE = 1,
+		EVENT_TRACK_MAJOR = 1,
+		EVENT_TRACK_ROLESET = 0.6,
+		EVENT_TRACK_OBJECTIVES = 1
+		)
 	guarantees_roundstart_roleset = FALSE
 	tag_multipliers = list(TAG_COMBAT = 0.6, TAG_DESTRUCTIVE = 0.7)
 
 /datum/storyteller/jester
 	name = "The Jester"
 	desc = "The Jester will create much more events, with higher possibilities of them repeating."
-	event_repetition_multiplier = 0.8
+	event_repetition_multiplier = 0.9
 	point_gains_multipliers = list(
 		EVENT_TRACK_MUNDANE = 1.2,
 		EVENT_TRACK_MODERATE = 1.4,
@@ -41,8 +48,28 @@
 	tag_multipliers = list(TAG_COMBAT = 1.5)
 	population_min = 10
 
+/datum/storyteller/agent
+	name = "The Agent"
+	desc = "The Agent will create more antagonists."
+	point_gains_multipliers = list(
+		EVENT_TRACK_MUNDANE = 1,
+		EVENT_TRACK_MODERATE = 1,
+		EVENT_TRACK_MAJOR = 1,
+		EVENT_TRACK_ROLESET = 1.3,
+		EVENT_TRACK_OBJECTIVES = 1
+		)
+	starting_point_multipliers = list(
+		EVENT_TRACK_MUNDANE = 1,
+		EVENT_TRACK_MODERATE = 1,
+		EVENT_TRACK_MAJOR = 1,
+		EVENT_TRACK_ROLESET = 1.5,
+		EVENT_TRACK_OBJECTIVES = 1
+		)
+	population_min = 10
+
 /datum/storyteller/ghost
 	name = "The Ghost"
 	desc = "The Ghost will not run a single event or create an antagonist."
 	disable_distribution = TRUE
 	population_max = 3
+	votable = FALSE

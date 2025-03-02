@@ -33,20 +33,12 @@ map icebox
 	votable
 endmap
 
-map tramstation
-	minplayers 25
-	votable
-endmap
-
 map deltastation
 	minplayers 50
 	votable
 endmap
 
-map tradership
-endmap
-
-map skylineship
+map tramstation
 endmap
 
 map runtimestation

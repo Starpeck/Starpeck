@@ -399,6 +399,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_HARD_SOLES "hard_soles"
 #define TRAIT_EXCITABLE "excitable"
 #define TRAIT_LIMPDICK "limp-dick"
+#define TRAIT_CROCIN_IMMUNITY "crocin-immunity"
+#define TRAIT_SIZE_MOD_IMMUNITY "size-mod-immunity"
 
 ///Trait for dryable items
 #define TRAIT_DRYABLE "trait_dryable"
