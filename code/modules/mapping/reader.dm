@@ -54,7 +54,7 @@
 /datum/parsed_map/New(tfile, x_lower = -INFINITY, x_upper = INFINITY, y_lower = -INFINITY, y_upper=INFINITY, measureOnly=FALSE)
 	if(isfile(tfile))
 		original_path = "[tfile]"
-		tfile = file2text(tfile)
+		tfile = FILE2TEXT_RSCPATH(tfile)
 	else if(isnull(tfile))
 		// create a new datum without loading a map
 		return
@@ -476,7 +476,7 @@
 
 	// file
 	if(text[1] == "'")
-		return file(copytext_char(text, 2, -1))
+		return FILE_LOAD_PATH(copytext_char(text, 2, -1))
 
 	// null
 	if(text == "null")

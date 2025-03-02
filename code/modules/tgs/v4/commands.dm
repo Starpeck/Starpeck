@@ -18,7 +18,7 @@
 	var/commands_file = chat_commands_json_path
 	if(!commands_file)
 		return
-	text2file(json_encode(results), commands_file)
+	TEXT2FILE_PATH(json_encode(results), commands_file)
 
 /datum/tgs_api/v4/proc/HandleCustomCommand(command_json)
 	var/list/data = json_decode(command_json)

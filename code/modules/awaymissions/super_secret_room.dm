@@ -12,10 +12,10 @@
 
 /obj/structure/speaking_tile/Initialize()
 	. = ..()
-	var/json_file = file("data/npc_saves/Poly.json")
+	var/json_file = FILE_LOAD_PATH("data/npc_saves/Poly.json")
 	if(!fexists(json_file))
 		return
-	var/list/json = json_decode(file2text(json_file))
+	var/list/json = JSON_LOAD_FILE(json_file)
 	shenanigans = json["phrases"]
 
 /obj/structure/speaking_tile/interact(mob/user)

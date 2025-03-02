@@ -155,16 +155,16 @@
 		S["family"] >> family
 		fdel("data/npc_saves/Runtime.sav")
 	else
-		var/json_file = file("data/npc_saves/Runtime.json")
+		var/json_file = FILE_LOAD_PATH("data/npc_saves/Runtime.json")
 		if(!fexists(json_file))
 			return
-		var/list/json = json_decode(file2text(json_file))
+		var/list/json = JSON_LOAD_FILE(json_file)
 		family = json["family"]
 	if(isnull(family))
 		family = list()
 
 /mob/living/simple_animal/pet/cat/runtime/proc/Write_Memory(dead)
-	var/json_file = file("data/npc_saves/Runtime.json")
+	var/json_file = FILE_LOAD_PATH("data/npc_saves/Runtime.json")
 	var/list/file_data = list()
 	family = list()
 	if(!dead)

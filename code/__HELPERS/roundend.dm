@@ -7,7 +7,7 @@
 /datum/controller/subsystem/ticker/proc/gather_roundend_feedback()
 	gather_antag_data()
 	record_nuke_disk_location()
-	var/json_file = file("[GLOB.log_directory]/round_end_data.json")
+	var/json_file = FILE_LOAD_PATH("[GLOB.log_directory]/round_end_data.json")
 	// All but npcs sublists and ghost category contain only mobs with minds
 	var/list/file_data = list("escapees" = list("humans" = list(), "silicons" = list(), "others" = list(), "npcs" = list()), "abandoned" = list("humans" = list(), "silicons" = list(), "others" = list(), "npcs" = list()), "ghosts" = list(), "additional data" = list())
 	var/num_survivors = 0 //Count of non-brain non-camera mobs with mind that are alive
@@ -152,7 +152,7 @@
 		SSblackbox.record_feedback("associative", "roundend_nukedisk", 1 , data)
 
 /datum/controller/subsystem/ticker/proc/gather_newscaster()
-	var/json_file = file("[GLOB.log_directory]/newscaster.json")
+	var/json_file = FILE_LOAD_PATH("[GLOB.log_directory]/newscaster.json")
 	var/list/file_data = list()
 	var/pos = 1
 	for(var/V in GLOB.news_network.network_channels)
@@ -332,7 +332,7 @@
 	qdel(query_admin_rank_update)
 
 	//json format backup file generation stored per server
-	var/json_file = file("data/admins_backup.json")
+	var/json_file = FILE_LOAD_PATH("data/admins_backup.json")
 	var/list/file_data = list(
 		"ranks" = list(),
 		"admins" = list(),

@@ -468,10 +468,10 @@ GLOBAL_LIST_INIT(strippable_corgi_items, create_strippable_list(list(
 		S["saved_head"] >> saved_head
 		fdel("data/npc_saves/Ian.sav")
 	else
-		var/json_file = file("data/npc_saves/Ian.json")
+		var/json_file = FILE_LOAD_PATH("data/npc_saves/Ian.json")
 		if(!fexists(json_file))
 			return
-		var/list/json = json_decode(file2text(json_file))
+		var/list/json = JSON_LOAD_FILE(json_file)
 		age = json["age"]
 		record_age = json["record_age"]
 		saved_head = json["saved_head"]
@@ -483,7 +483,7 @@ GLOBAL_LIST_INIT(strippable_corgi_items, create_strippable_list(list(
 		place_on_head(new saved_head)
 
 /mob/living/simple_animal/pet/dog/corgi/ian/proc/Write_Memory(dead)
-	var/json_file = file("data/npc_saves/Ian.json")
+	var/json_file = FILE_LOAD_PATH("data/npc_saves/Ian.json")
 	var/list/file_data = list()
 	if(!dead)
 		file_data["age"] = age + 1

@@ -27,7 +27,7 @@
 		text+="\n"
 		qdel(O)
 	if(text)
-		var/F = file("broken_icons.txt")
+		var/F = FILE_LOAD_PATH("broken_icons.txt")
 		fdel(F)
 		WRITE_FILE(F, text)
 		to_chat(world, "Completely successfully and written to [F]", confidential = TRUE)

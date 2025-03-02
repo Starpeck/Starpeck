@@ -247,7 +247,7 @@
 		TGS_ERROR_LOG("Failed export request: [json]")
 		return
 
-	var/response_json = file2text(export_response["CONTENT"])
+	var/response_json = FILE2TEXT_PATH(export_response["CONTENT"])
 	if(!response_json)
 		TGS_ERROR_LOG("Failed export request, missing content!")
 		return

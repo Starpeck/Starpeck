@@ -673,10 +673,10 @@ SUBSYSTEM_DEF(gamemode)
 
 /// Loads json event config values from events.txt
 /datum/controller/subsystem/gamemode/proc/load_event_config_vars()
-	var/json_file = file("[global.config.directory]/events.json")
+	var/json_file = FILE_LOAD_PATH("[global.config.directory]/events.json")
 	if(!fexists(json_file))
 		return
-	var/list/decoded = json_decode(file2text(json_file))
+	var/list/decoded = JSON_LOAD_FILE(json_file)
 	for(var/event_text_path in decoded)
 		var/event_path = text2path(event_text_path)
 		var/datum/round_event_control/event

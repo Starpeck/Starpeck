@@ -648,7 +648,7 @@ GLOBAL_LIST_EMPTY_TYPED(integrated_circuits, /obj/item/integrated_circuit)
 /obj/item/integrated_circuit/proc/attempt_save_to(client/saver)
 	if(!check_rights_for(saver, R_VAREDIT))
 		return FALSE
-	var/temp_file = file("data/CircuitDownloadTempFile")
+	var/temp_file = FILE_LOAD_PATH("data/CircuitDownloadTempFile")
 	fdel(temp_file)
 	WRITE_FILE(temp_file, convert_to_json())
 	DIRECT_OUTPUT(saver, ftp(temp_file, "[display_name || "circuit"].json"))

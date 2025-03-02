@@ -92,7 +92,7 @@
 	config = LoadConfig(filename, error_if_missing)
 	if (!config)
 		config = new /datum/map_config/metastation()  // Fall back to Box
-	if (delete_after)
+	else if (delete_after)
 		fdel(filename)
 	return config
 
@@ -103,12 +103,12 @@
 			log_world("map_config not found: [filename]")
 		return
 
-	var/json = file(filename)
+	var/json = FILE_LOAD_PATH(filename)
 	if(!json)
 		log_world("Could not open map_config: [filename]")
 		return
 
-	json = file2text(json)
+	json = FILE2TEXT_RSCPATH(json)
 	if(!json)
 		log_world("map_config is not text: [filename]")
 		return

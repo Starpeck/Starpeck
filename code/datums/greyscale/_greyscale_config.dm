@@ -53,10 +53,14 @@
 
 /datum/greyscale_config/proc/Refresh(loadFromDisk=FALSE)
 	if(loadFromDisk)
-		json_config = file(string_json_config)
-		icon_file = file(string_icon_file)
+		json_config = FILE_LOAD_PATH(string_json_config)
+		icon_file = FILE_LOAD_PATH(string_icon_file)
 
-	var/list/raw = json_decode(file2text(json_config))
+	var/list/raw = JSON_LOAD_RSCPATH(json_config)
+	//if(istext(json_config))
+	//	raw = JSON_LOAD_PATH(json_config)
+	//else
+	//	raw = JSON_LOAD_FILE(json_config)
 	ReadIconStateConfiguration(raw)
 
 	if(!length(icon_states))

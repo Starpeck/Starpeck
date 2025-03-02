@@ -5,7 +5,7 @@
 
 
 /mob/verb/ChooseDMI(dmi as file)
-	var/dmifile = file(dmi)
+	var/dmifile = FILE_LOAD_RSCPATH(dmi)
 	if(isfile(dmifile) && (copytext("[dmifile]",-4) == ".dmi"))
 		SliceNDice(dmifile)
 	else

@@ -83,7 +83,7 @@
 			var/datum/adventure_db_entry/target = locate(params["ref"]) in GLOB.explorer_drone_adventure_db_entries
 			if(!target)
 				return
-			var/temp_file = file("data/AdventureDownloadTempFile")
+			var/temp_file = FILE_LOAD_PATH("data/AdventureDownloadTempFile")
 			fdel(temp_file)
 			WRITE_FILE(temp_file, target.raw_json)
 			user << ftp(temp_file,"[target.name].json")
@@ -95,7 +95,7 @@
 			var/source_json = input(user,"Select adventure JSON file.","Adventure Upload") as file|null
 			if(!source_json)
 				return
-			var/raw_json = file2text(source_json)
+			var/raw_json = FILE2TEXT_RSCPATH(source_json)
 			var/json = json_decode(raw_json)
 			if(!json)
 				feedback_message = "Decoding JSON failed."

@@ -87,17 +87,17 @@
 		S["relic_mask"] >> relic_mask
 		fdel("data/npc_saves/Punpun.sav")
 	else
-		var/json_file = file("data/npc_saves/Punpun.json")
+		var/json_file = FILE_LOAD_PATH("data/npc_saves/Punpun.json")
 		if(!fexists(json_file))
 			return
-		var/list/json = json_decode(file2text(json_file))
+		var/list/json = JSON_LOAD_FILE(json_file)
 		ancestor_name = json["ancestor_name"]
 		ancestor_chain = json["ancestor_chain"]
 		relic_hat = json["relic_hat"]
 		relic_mask = json["relic_hat"]
 
 /mob/living/carbon/human/species/monkey/punpun/proc/Write_Memory(dead, gibbed)
-	var/json_file = file("data/npc_saves/Punpun.json")
+	var/json_file = FILE_LOAD_PATH("data/npc_saves/Punpun.json")
 	var/list/file_data = list()
 	if(gibbed)
 		file_data["ancestor_name"] = null

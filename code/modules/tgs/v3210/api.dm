@@ -28,7 +28,7 @@
 
 #define SERVICE_RETURN_SUCCESS "SUCCESS"
 
-#define TGS_FILE2LIST(filename) (splittext(trim_left(trim_right(file2text(filename))), "\n"))
+#define TGS_FILE2LIST(filename) (splittext(trim_left(trim_right(FILE2TEXT_PATH(filename))), "\n"))
 
 /datum/tgs_api/v3210
 	var/reboot_mode = REBOOT_MODE_NORMAL
@@ -164,7 +164,7 @@
 	. = list()
 	if(!fexists(SERVICE_PR_TEST_JSON))
 		return
-	var/list/json = json_decode(file2text(SERVICE_PR_TEST_JSON))
+	var/list/json = JSON_LOAD_PATH(SERVICE_PR_TEST_JSON)
 	if(!json)
 		return
 	for(var/I in json)

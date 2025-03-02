@@ -13,7 +13,7 @@ SUBSYSTEM_DEF(title)
 		return
 
 	if(fexists("data/previous_title.dat"))
-		var/previous_path = file2text("data/previous_title.dat")
+		var/previous_path = FILE2TEXT_PATH("data/previous_title.dat")
 		if(istext(previous_path))
 			previous_icon = new(previous_icon)
 	fdel("data/previous_title.dat")
@@ -52,7 +52,7 @@ SUBSYSTEM_DEF(title)
 
 /datum/controller/subsystem/title/Shutdown()
 	if(file_path)
-		var/F = file("data/previous_title.dat")
+		var/F = FILE_LOAD_PATH("data/previous_title.dat")
 		WRITE_FILE(F, file_path)
 
 	for(var/thing in GLOB.clients)

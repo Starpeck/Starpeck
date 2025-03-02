@@ -389,7 +389,7 @@ H_ion_release = [edit_recipe.H_ion_release]
 rate_up_lim = [edit_recipe.rate_up_lim]
 purity_min = [edit_recipe.purity_min]"}
 			say(export)
-			text2file(export, "[GLOB.log_directory]/chem_parse.txt")
+			TEXT2FILE_PATH(export, "[GLOB.log_directory]/chem_parse.txt")
 
 
 /obj/machinery/chem_recipe_debug/ui_interact(mob/user, datum/tgui/ui)

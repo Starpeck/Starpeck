@@ -221,7 +221,7 @@
 	return E.ValidateAndSet("[new_val]")
 
 /datum/controller/configuration/proc/LoadMOTD()
-	motd = file2text("[directory]/motd.txt")
+	motd = FILE2TEXT_PATH("[directory]/motd.txt")
 	var/tm_info = GLOB.revdata.GetTestMergeInfo()
 	if(motd || tm_info)
 		motd = motd ? "[motd]<br>[tm_info]" : tm_info
@@ -246,7 +246,7 @@ Example config:
 */
 /datum/controller/configuration/proc/LoadPolicy()
 	policy = list()
-	var/rawpolicy = file2text("[directory]/policy.json")
+	var/rawpolicy = FILE2TEXT_PATH("[directory]/policy.json")
 	if(rawpolicy)
 		var/parsed = safe_json_decode(rawpolicy)
 		if(!parsed)

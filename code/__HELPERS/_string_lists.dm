@@ -1,7 +1,9 @@
 #define pick_list(FILE, KEY) (pick(strings(FILE, KEY)))
 #define pick_list_weighted(FILE, KEY) (pickweight(strings(FILE, KEY)))
 #define pick_list_replacements(FILE, KEY) (strings_replacement(FILE, KEY))
-#define json_load(FILE) (json_decode(file2text(FILE)))
+#define JSON_LOAD_PATH(path) json_decode(FILE2TEXT_PATH(path))
+#define JSON_LOAD_RSCPATH(rscpath) json_decode(FILE2TEXT_RSCPATH(rscpath))
+#define JSON_LOAD_FILE(file) json_decode(FILE2TEXT_RSCPATH(file))
 
 GLOBAL_LIST(string_cache)
 GLOBAL_VAR(string_filename_current_key)
@@ -36,7 +38,8 @@ GLOBAL_VAR(string_filename_current_key)
 	if(!GLOB.string_cache)
 		GLOB.string_cache = new
 
-	if(fexists("[directory]/[filename]"))
-		GLOB.string_cache[filename] = json_load("[directory]/[filename]")
+	var/fin_path = "[directory]/[filename]"
+	if(fexists(fin_path))
+		GLOB.string_cache[filename] = JSON_LOAD_PATH(fin_path)
 	else
-		CRASH("file not found: [directory]/[filename]")
+		CRASH("file not found: [fin_path]")

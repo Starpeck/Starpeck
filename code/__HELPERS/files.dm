@@ -31,7 +31,7 @@
 		extensions += "[i]"
 	var/regex/valid_ext = new("\\.([extensions])$", "i")
 	if( !fexists(path) || !(valid_ext.Find(path)) )
-		to_chat(src, "<font color='red'>Error: browse_files(): File not found/Invalid file([path]).</font>")
+		to_chat(src, "<font color='red'>Error: browse_files(): File not found/Invalid file ([path]).</font>")
 		return
 
 	return path
@@ -88,3 +88,23 @@
 	fcopy(file, filename)
 	. = md5filepath(filename)
 	fdel(filename)
+
+/**
+ * Sanitizes the name of each node in the path.
+ *
+ * Im case you are wondering when to use this proc and when to use SANITIZE_FILENAME,
+ *
+ * You use SANITIZE_FILENAME to sanitize the name of a file [e.g. example.txt]
+ *
+ * You use sanitize_filepath sanitize the path of a file [e.g. root/node/example.txt]
+ *
+ * If you use SANITIZE_FILENAME to sanitize a file path things will break.
+ */
+/proc/sanitize_filepath(path)
+	. = ""
+	var/delimiter = "/" //Very much intentionally hardcoded
+	var/list/all_nodes = splittext(path, delimiter)
+	for(var/node in all_nodes)
+		if(.)
+			. += delimiter // Add the delimiter before each successive node.
+		. += SANITIZE_FILENAME(node)

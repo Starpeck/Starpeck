@@ -17,7 +17,7 @@
 	if(!input_text)
 		to_chat(usr, "Input was blank!")
 		return
-	text2file(prefix_reaction, "[GLOB.log_directory]/chem_parse.txt")
+	TEXT2FILE_PATH(prefix_reaction, "[GLOB.log_directory]/chem_parse.txt")
 	var/list/names = splittext("[input_text]", ",")
 
 	for(var/name in names)
@@ -31,13 +31,13 @@
 		if(!length(reactions))
 			to_chat(usr, "Could not find [name] reaction! Continuing anyways.")
 			var/single_parse = generate_chemwiki_line(reagent, null)
-			text2file(single_parse, "[GLOB.log_directory]/chem_parse.txt")
+			TEXT2FILE_PATH(single_parse, "[GLOB.log_directory]/chem_parse.txt")
 			continue
 
 		for(var/datum/chemical_reaction/reaction as anything in reactions)
 			var/single_parse = generate_chemwiki_line(reagent, reaction)
-			text2file(single_parse, "[GLOB.log_directory]/chem_parse.txt")
-	text2file("|}", "[GLOB.log_directory]/chem_parse.txt") //Cap off the table
+			TEXT2FILE_PATH(single_parse, "[GLOB.log_directory]/chem_parse.txt")
+	TEXT2FILE_PATH("|}", "[GLOB.log_directory]/chem_parse.txt") //Cap off the table
 	to_chat(usr, "Done! Saved file to (wherever your root folder is, i.e. where the DME is)/[GLOB.log_directory]/chem_parse.txt OR use the Get Current Logs verb under the Admin tab. (if you click Open, and it does nothing, that's because you've not set a .txt default program! Try downloading it instead, and use that file to set a default program! Have a nice day!")
 
 
