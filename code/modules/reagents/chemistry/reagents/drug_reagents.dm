@@ -474,7 +474,7 @@
 	color = "#FFADFF"//PINK, rgb(255, 173, 255)
 
 /datum/reagent/drug/aphrodisiac/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
-	if(M.sexcon)
+	if(!HAS_TRAIT(M, TRAIT_CROCIN_IMMUNITY) && M.sexcon)
 		M.sexcon.adjust_arousal(2, 50)
 	..()
 
@@ -489,7 +489,7 @@
 	// TODO ADDICTION
 
 /datum/reagent/drug/aphrodisiacplus/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
-	if(M.sexcon)
+	if(!HAS_TRAIT(M, TRAIT_CROCIN_IMMUNITY) && M.sexcon)
 		M.sexcon.adjust_arousal(6, 80)
 	..()
 

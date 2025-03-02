@@ -4312,6 +4312,7 @@
 	dir = 8
 	},
 /obj/machinery/airalarm/directional/south,
+/obj/machinery/vending/kink,
 /turf/open/floor/iron/dark,
 /area/commons/locker)
 "aEH" = (
@@ -34048,6 +34049,10 @@
 	},
 /turf/open/floor/iron/white,
 /area/medical/virology)
+"dVC" = (
+/obj/structure/reagent_dispensers/keg/aphro,
+/turf/open/floor/plating,
+/area/service/abandoned_gambling_den)
 "dVD" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/tile/green{
@@ -37734,6 +37739,11 @@
 /obj/effect/mapping_helpers/smart_pipe/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron,
 /area/engineering/storage/tech)
+"eyz" = (
+/obj/effect/decal/cleanable/semen,
+/obj/structure/bed,
+/turf/open/floor/plating,
+/area/service/abandoned_gambling_den)
 "eyB" = (
 /obj/structure/chair/stool/bar/directional/east,
 /obj/structure/cable,
@@ -48354,7 +48364,8 @@
 /turf/open/floor/iron,
 /area/engineering/atmos)
 "hCJ" = (
-/turf/open/space/basic,
+/obj/item/clothing/under/costume/maid,
+/turf/open/floor/plating,
 /area/service/abandoned_gambling_den)
 "hCK" = (
 /obj/item/kirbyplants/random,
@@ -49014,8 +49025,8 @@
 /turf/open/floor/iron/white,
 /area/command/heads_quarters/rd)
 "hKR" = (
-/obj/structure/lattice,
-/turf/open/space,
+/obj/machinery/vending/kink,
+/turf/open/floor/plating,
 /area/service/abandoned_gambling_den)
 "hLq" = (
 /obj/item/kirbyplants{
@@ -57107,6 +57118,10 @@
 	},
 /turf/open/floor/iron/white,
 /area/medical/storage)
+"jUw" = (
+/obj/effect/spawner/lootdrop/keg,
+/turf/open/floor/plating,
+/area/maintenance/starboard/aft)
 "jUV" = (
 /obj/machinery/meter{
 	name = "Mixed Air Tank In"
@@ -77527,6 +77542,11 @@
 /obj/structure/reagent_dispensers/peppertank/directional/east,
 /turf/open/floor/iron,
 /area/security/brig)
+"pfB" = (
+/obj/item/electropack/shockcollar,
+/obj/item/assembly/signaler,
+/turf/open/floor/plating,
+/area/service/abandoned_gambling_den)
 "pfD" = (
 /obj/structure/noticeboard/directional/south{
 	name = "memorial board"
@@ -89153,6 +89173,10 @@
 /obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/iron,
 /area/service/hydroponics)
+"sjB" = (
+/obj/item/reagent_containers/glass/beaker,
+/turf/open/floor/plating,
+/area/service/abandoned_gambling_den)
 "sjC" = (
 /turf/open/floor/iron/grimy,
 /area/command/heads_quarters/hop)
@@ -92306,6 +92330,10 @@
 	},
 /turf/open/floor/iron/dark,
 /area/ai_monitored/aisat/exterior)
+"sXH" = (
+/obj/effect/spawner/lootdrop/keg,
+/turf/open/floor/plating,
+/area/service/abandoned_gambling_den)
 "sXI" = (
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/south,
@@ -106095,6 +106123,10 @@
 	},
 /turf/open/floor/engine/vacuum,
 /area/engineering/atmos)
+"wNE" = (
+/obj/structure/falsewall,
+/turf/open/floor/plating,
+/area/service/abandoned_gambling_den)
 "wNK" = (
 /obj/structure/cable,
 /turf/open/floor/plating,
@@ -109664,6 +109696,10 @@
 /obj/effect/mapping_helpers/smart_pipe/manifold/cyan/visible,
 /turf/open/floor/plating,
 /area/engineering/atmos)
+"xOS" = (
+/obj/item/restraints/handcuffs/fake/kinky,
+/turf/open/floor/plating,
+/area/service/abandoned_gambling_den)
 "xOV" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/disposalpipe/segment{
@@ -133240,7 +133276,7 @@ iah
 lsT
 lsT
 ahe
-fET
+sXH
 ish
 aaa
 aad
@@ -134524,11 +134560,11 @@ sUG
 vZQ
 rVz
 lEd
-ish
-ish
-ish
-aaa
-aad
+nPM
+nPM
+nPM
+nPM
+nPM
 aad
 aad
 aad
@@ -134784,8 +134820,8 @@ pAO
 nPM
 hKR
 hCJ
-aaa
-aad
+fET
+nPM
 aaa
 aaa
 aaa
@@ -135038,14 +135074,14 @@ wFi
 wFi
 lgR
 nTO
-ish
-aad
-aad
-aad
-aad
-ajr
+wNE
+sjB
+fET
+eyz
+nPM
 aaa
 aaa
+mbS
 aad
 aaa
 aad
@@ -135296,13 +135332,13 @@ xBo
 fET
 pRv
 nPM
-aad
-aaa
-aaa
-aad
+dVC
+xOS
+pfB
+nPM
+gCX
+nOg
 ajr
-aad
-aad
 aad
 aaa
 aad
@@ -135552,14 +135588,14 @@ dhQ
 dhQ
 dhQ
 dhQ
-dhQ
-dhQ
-dhQ
-dhQ
-aad
-ajr
+nPM
+nPM
+nPM
+nPM
+nPM
 aaa
 aaa
+mbS
 aad
 aaa
 aad
@@ -135814,9 +135850,9 @@ dBT
 dDg
 dhQ
 aad
-ajr
 aaa
 aaa
+mbS
 aad
 aaa
 aad
@@ -163296,7 +163332,7 @@ vOp
 cHW
 hwT
 cHW
-cIW
+jUw
 jPq
 dmh
 dmh

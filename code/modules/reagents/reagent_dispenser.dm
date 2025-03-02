@@ -217,6 +217,19 @@
 	if(!QDELETED(src))
 		qdel(src)
 
+/obj/effect/spawner/lootdrop/keg
+	name = "keg spawner"
+	lootdoubles = FALSE
+
+	loot = list(
+			/obj/structure/reagent_dispensers/keg/mead = 1,
+			/obj/structure/reagent_dispensers/keg/milk = 1,
+			/obj/structure/reagent_dispensers/keg/gargle = 1,
+			/obj/structure/reagent_dispensers/keg/aphro = 1,
+			/obj/structure/reagent_dispensers/keg/aphro/strong = 1,
+			/obj/structure/reagent_dispensers/keg/semen = 1,
+		)
+
 /obj/structure/reagent_dispensers/keg
 	name = "keg"
 	desc = "A keg."
