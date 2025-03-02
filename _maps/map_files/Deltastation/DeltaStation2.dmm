@@ -44606,8 +44606,8 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
-/obj/structure/displaycase/forsale/kitchen,
 /obj/machinery/status_display/evac/directional/west,
+/obj/machinery/jukebox,
 /turf/open/floor/iron/dark,
 /area/service/bar/atrium)
 "guW" = (
@@ -55205,11 +55205,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
-/obj/item/lighter{
-	pixel_x = 3;
-	pixel_y = 3
-	},
-/obj/item/lighter,
+/obj/structure/displaycase/forsale/kitchen,
 /turf/open/floor/iron/dark,
 /area/service/bar/atrium)
 "jvy" = (
@@ -60306,6 +60302,25 @@
 /obj/effect/landmark/start/hangover,
 /turf/open/floor/iron,
 /area/cargo/storage)
+"kOi" = (
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/item/lighter,
+/obj/item/lighter{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/turf/open/floor/iron/dark,
+/area/service/bar/atrium)
 "kOv" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
@@ -148347,7 +148362,7 @@ ncV
 wrg
 euO
 vsR
-wEH
+kOi
 jOV
 bDy
 gJj

@@ -18893,20 +18893,19 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 4
 	},
-/obj/structure/displaycase/forsale/kitchen{
-	pixel_y = 7
-	},
+/obj/machinery/jukebox,
 /turf/open/floor/iron/dark,
 /area/service/bar)
 "aYf" = (
 /obj/structure/table/reinforced,
-/obj/item/book/manual/wiki/barman_recipes,
-/obj/item/reagent_containers/rag,
 /obj/effect/turf_decal/tile/red{
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/red{
 	dir = 4
+	},
+/obj/structure/displaycase/forsale/kitchen{
+	pixel_y = 7
 	},
 /turf/open/floor/iron/dark,
 /area/service/bar)
@@ -57188,6 +57187,18 @@
 "sJr" = (
 /turf/open/floor/wood,
 /area/service/lawoffice)
+"sJY" = (
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
+/obj/item/book/manual/wiki/barman_recipes,
+/obj/item/reagent_containers/rag,
+/turf/open/floor/iron/dark,
+/area/service/bar)
 "sKa" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
@@ -94092,7 +94103,7 @@ aPE
 aVh
 bah
 bah
-aYg
+sJY
 cpi
 bag
 bbp

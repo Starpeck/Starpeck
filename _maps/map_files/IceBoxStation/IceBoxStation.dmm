@@ -52708,11 +52708,11 @@
 /area/maintenance/disposal/incinerator)
 "uEn" = (
 /obj/structure/table/reinforced,
-/obj/item/lighter,
 /obj/effect/turf_decal/tile/bar,
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
 	},
+/obj/machinery/jukebox,
 /turf/open/floor/iron,
 /area/service/bar)
 "uEt" = (
@@ -55406,6 +55406,15 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/starboard/fore)
+"whv" = (
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/tile/bar,
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/obj/item/lighter,
+/turf/open/floor/iron,
+/area/service/bar)
 "whM" = (
 /obj/effect/turf_decal/tile/yellow{
 	dir = 4
@@ -95582,7 +95591,7 @@ wXj
 wXj
 wXj
 uEn
-sWC
+whv
 lbT
 sWC
 tMa

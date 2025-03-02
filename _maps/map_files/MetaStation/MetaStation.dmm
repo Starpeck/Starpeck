@@ -67169,6 +67169,15 @@
 	},
 /turf/open/floor/iron,
 /area/maintenance/port/aft)
+"ueo" = (
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/tile/bar,
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/obj/machinery/jukebox,
+/turf/open/floor/iron,
+/area/service/bar)
 "uet" = (
 /obj/item/bot_assembly/floorbot{
 	created_name = "FloorDiffBot";
@@ -113354,7 +113363,7 @@ iEa
 rmx
 iEa
 uPD
-lde
+ueo
 dNO
 cEL
 cSs
