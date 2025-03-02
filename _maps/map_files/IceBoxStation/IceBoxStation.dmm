@@ -9961,7 +9961,7 @@
 "bgs" = (
 /obj/docking_port/stationary/huge{
 	dir = 2;
-	name = "SS13: Auxiliary Dock, Station-Port"
+	name = "SS13: Auxiliary Dock"
 	},
 /turf/open/floor/plating/snowed/icemoon,
 /area/icemoon/surface/outdoors)

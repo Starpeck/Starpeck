@@ -2609,6 +2609,7 @@
 #include "code\modules\lighting\lighting_setup.dm"
 #include "code\modules\lighting\lighting_source.dm"
 #include "code\modules\lighting\lighting_turf.dm"
+#include "code\modules\map_content\boxstation_define.dm"
 #include "code\modules\map_content\deltastation_define.dm"
 #include "code\modules\map_content\icebox_define.dm"
 #include "code\modules\map_content\kilostation_define.dm"

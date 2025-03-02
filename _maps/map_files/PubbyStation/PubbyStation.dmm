@@ -49053,7 +49053,7 @@
 /turf/open/floor/iron/white,
 /area/medical/virology)
 "iKb" = (
-/obj/machinery/computer/shuttle_purchase{
+/obj/machinery/computer/shuttle/mining/common{
 	dir = 4
 	},
 /turf/open/floor/iron,
@@ -52237,7 +52237,8 @@
 /area/science/genetics)
 "mSo" = (
 /obj/docking_port/stationary/huge{
-	dir = 8
+	dir = 8;
+	name = "SS13: Auxiliary Dock"
 	},
 /turf/open/space/basic,
 /area/space)
@@ -52734,8 +52735,14 @@
 /turf/open/floor/engine,
 /area/engineering/main)
 "nxG" = (
-/obj/docking_port/stationary/medium{
-	dir = 8
+/obj/docking_port/stationary{
+	dir = 8;
+	dwidth = 3;
+	height = 5;
+	id = "commonmining_home";
+	name = "SS13: Common Mining Dock";
+	roundstart_template = /datum/map_template/shuttle/mining_common/meta;
+	width = 7
 	},
 /turf/open/space/basic,
 /area/space)

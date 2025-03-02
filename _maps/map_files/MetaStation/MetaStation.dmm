@@ -61965,7 +61965,7 @@
 "srH" = (
 /obj/docking_port/stationary/huge{
 	dir = 2;
-	name = "SS13: Auxiliary Dock, Station-Port"
+	name = "SS13: Auxiliary Dock"
 	},
 /turf/open/space/basic,
 /area/space)

@@ -29,6 +29,13 @@
 	dwidth = 11
 	height = 22
 
+/obj/docking_port/stationary/huge/aux
+	name = "SS13: Auxiliary Dock"
+	id = "hugedock"
+	width = 35
+	dwidth = 11
+	height = 22
+
 /obj/machinery/computer/shuttle/common_docks
 	circuit = /obj/item/circuitboard/computer/shuttle_common_docks
 	possible_destinations = "mediumdock;largedock;hugedock;smalldock"

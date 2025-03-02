@@ -1427,7 +1427,7 @@
 "agS" = (
 /obj/docking_port/stationary/huge{
 	dir = 8;
-	name = "SS13: Auxiliary Dock, Station-Fore"
+	name = "SS13: Auxiliary Dock"
 	},
 /turf/open/space/basic,
 /area/space)
