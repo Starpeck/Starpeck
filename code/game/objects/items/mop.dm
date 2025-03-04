@@ -15,7 +15,7 @@
 	resistance_flags = FLAMMABLE
 	var/mopcount = 0
 	var/mopcap = 15
-	var/mopspeed = 15
+	var/mopspeed = 8
 	force_string = "robust... against germs"
 	var/insertable = TRUE
 
@@ -47,11 +47,12 @@
 	if(istype(A, /obj/item/reagent_containers/glass/bucket) || istype(A, /obj/structure/janitorialcart))
 		return
 
+	user.changeNext_move(mopspeed)
+	user.do_attack_animation(A)
+	playsound(A, 'sound/effects/slosh.ogg', 25, TRUE)
 	if(T)
-		user.visible_message(SPAN_NOTICE("[user] begins to clean \the [T] with [src]."), SPAN_NOTICE("You begin to clean \the [T] with [src]..."))
-		if(do_after(user, mopspeed, target = T))
-			to_chat(user, SPAN_NOTICE("You finish mopping."))
-			clean(T, user)
+		user.visible_message(SPAN_NOTICE("[user] cleans \the [T] with [src]."), SPAN_NOTICE("You clean \the [T] with [src]."))
+		clean(T, user)
 
 
 /obj/effect/attackby(obj/item/I, mob/user, params)
@@ -84,7 +85,7 @@
 	force = 12
 	throwforce = 14
 	throw_range = 4
-	mopspeed = 8
+	mopspeed = 4
 	var/refill_enabled = TRUE //Self-refill toggle for when a janitor decides to mop with something other than water.
 	/// Amount of reagent to refill per second
 	var/refill_rate = 0.5

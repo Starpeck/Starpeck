@@ -445,8 +445,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "<table width='100%'><tr><td width='17%' valign='top'>"
 					dat += "<b>Species:</b><BR><a href='?_src_=prefs;preference=species;task=input'>[pref_species.name]</a><BR>"
 					dat += "<b>Species Naming:</b><BR><a href='?_src_=prefs;preference=custom_species;task=input'>[(features["custom_species"]) ? features["custom_species"] : "Default"]</a><BR>"
-					if(!pref_species.body_size_restricted)
-						dat += "<b>Sprite body size:</b><BR><a href='?_src_=prefs;preference=body_size;task=input'>[(features["body_size"] * 100)]%</a> <a href='?_src_=prefs;preference=show_body_size;task=input'>[show_body_size ? "Hide preview" : "Show preview"]</a><BR>"
+					//if(!pref_species.body_size_restricted)
+					//	dat += "<b>Sprite body size:</b><BR><a href='?_src_=prefs;preference=body_size;task=input'>[(features["body_size"] * 100)]%</a> <a href='?_src_=prefs;preference=show_body_size;task=input'>[show_body_size ? "Hide preview" : "Show preview"]</a><BR>"
 					dat += "<h2>Flavor Text</h2>"
 					// Carbon flavor text
 					dat += "<a href='?_src_=prefs;preference=flavor_text;task=input'><b>Set Examine Text</b></a><br>"
@@ -470,6 +470,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					else
 						dat += "[copytext(html_encode(features["silicon_flavor_text"]), 1, 40)]..."
 
+					/*
 					dat +=	"<h2>OOC Preferences</h2>"
 					dat += 	"<b>ERP:</b><a href='?_src_=prefs;preference=erp_pref;task=input'>[erp_pref]</a> "
 					dat += 	"<b>Non-Con:</b><a href='?_src_=prefs;preference=noncon_pref;task=input'>[noncon_pref]</a> "
@@ -483,6 +484,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					else
 						dat += "[copytext(html_encode(ooc_prefs), 1, 40)]..."
 					dat += "<br>"
+					*/
 
 
 					var/use_skintones = pref_species.use_skintones
@@ -2174,6 +2176,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					needs_update = TRUE
 					show_body_size = !show_body_size
 
+				/*
 				if("body_size")
 					if(pref_species.body_size_restricted)
 						return
@@ -2182,6 +2185,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(new_body_size)
 						new_body_size = clamp(new_body_size * 0.01, BODY_SIZE_MIN, BODY_SIZE_MAX)
 						features["body_size"] = new_body_size
+				*/
 
 				if("custom_species")
 					var/new_name = input(user, "Choose your character's species name:", "Character Preference")  as text|null

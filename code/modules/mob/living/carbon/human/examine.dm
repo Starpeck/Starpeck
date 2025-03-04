@@ -457,8 +457,10 @@
 				line = SPAN_NOTICE("[message]")
 			else
 				line = SPAN_NOTICE("[copytext_char(message, 1, 37)]... <a href='?src=[REF(src)];lookup_info=flavor_text'>More...</a>")
+		/*
 		if(client)
 			line += SPAN_NOTICE(" <a href='?src=[REF(src)];lookup_info=ooc_prefs'>\[OOC\]</a>")
+		*/
 		if(line)
 			. += line
 	//Temporary flavor text addition:
