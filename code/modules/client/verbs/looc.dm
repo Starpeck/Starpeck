@@ -1,3 +1,5 @@
+GLOBAL_VAR_INIT(looc_disabled, TRUE)
+
 /client/verb/looc(msg as text)
 	set name = "LOOC"
 	set desc = "Local OOC, seen only by those in view."
@@ -12,6 +14,10 @@
 
 	msg = copytext_char(sanitize(msg), 1, MAX_MESSAGE_LEN)
 	if(!msg)
+		return
+
+	if(GLOB.looc_disabled)
+		to_chat(usr, SPAN_DANGER("LOOC is currently disabled."))
 		return
 
 	if(!holder)
