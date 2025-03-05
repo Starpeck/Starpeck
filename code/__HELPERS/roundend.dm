@@ -243,6 +243,7 @@
 	SSdbcore.SetRoundEnd()
 	//Collects persistence features
 	SSpersistence.CollectData()
+	save_all_player_data()
 
 	//stop collecting feedback during grifftime
 	SSblackbox.Seal()

@@ -32,6 +32,12 @@
 	if(GLOB.admin_datums[ckey] || GLOB.deadmins[ckey])
 		admin = TRUE
 
+	var/discordurl = CONFIG_GET(string/forumurl)
+
+	if(CONFIG_GET(flag/playerdatawhitelist) && !admin && !ckey_whitelist_check(ckey))
+		log_access("Failed Login: [key] - New account attempting to connect without being whitelisted in Player Data")
+		message_admins(SPAN_ADMINNOTICE("Failed Login: [key] - New account attempting to connect without being whitelisted in Player Data"))
+		return list("reason"="whitelist", "desc" = "\nOnly approved members can play. Apply on Discord - [discordurl].")
 
 	//Whitelist
 	if(!real_bans_only && !C && CONFIG_GET(flag/usewhitelist))

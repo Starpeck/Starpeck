@@ -239,6 +239,9 @@ CHECK_RANDOMIZER
 ## Set to prevent anyone but those ckeys listed in config/whitelist.txt and config/admins.txt from joining your server
 #USEWHITELIST
 
+## Set to prevent anyone but those ckeys whitelisted through Evaluation Panel on Player Data (which is a DB-less player data system)
+PLAYERDATAWHITELIST
+
 ## set a server location for world reboot. Don't include the byond://, just give the address and port.
 ## Don't set this to the same server, BYOND will automatically restart players to the server when it has restarted.
 # SERVER ss13.example.com:2506
@@ -247,7 +250,7 @@ CHECK_RANDOMIZER
 # WEBSITEURL https://example.com
 
 ## forum address
-# FORUMURL https://example.com/forum
+FORUMURL https://discord.com
 
 ## Wiki address
 # WIKIURL https://example.com/wiki
