@@ -61,6 +61,8 @@ GLOBAL_PROTECT(href_token)
 	href_token = GenerateToken()
 	if(R.rights & R_DEBUG) //grant profile access
 		world.SetConfig("APP/admin", ckey, "role=admin")
+	evaluation_panel = new /datum/evaluation_panel(src)
+	player_data_panel = new /datum/player_data_panel(src)
 	//only admins with +ADMIN start admined
 	if(protected)
 		GLOB.protected_admins[target] = src
@@ -75,6 +77,8 @@ GLOBAL_PROTECT(href_token)
 		message_admins("[key_name_admin(usr)][msg]")
 		log_admin("[key_name(usr)][msg]")
 		return QDEL_HINT_LETMELIVE
+	QDEL_NULL(evaluation_panel)
+	QDEL_NULL(player_data_panel)
 	. = ..()
 
 /datum/admins/proc/activate()
