@@ -7,7 +7,7 @@ on:
 
 jobs:
   update-dmapi:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     name: Update the TGS DMAPI
     steps:
     - name: Clone
@@ -17,10 +17,10 @@ jobs:
       run: |
         git branch -f tgs-dmapi-update
         git checkout tgs-dmapi-update
-        git reset --hard main
+        git reset --hard master
 
     - name: Apply DMAPI update
-      uses: tgstation/tgs-dmapi-updater@v2
+      uses: tgstation/tgs-dmapi-updater@v2.1.2
       with:
         header-path: 'code/__DEFINES/tgs.dm'
         library-path: 'code/modules/tgs'
