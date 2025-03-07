@@ -9613,19 +9613,11 @@
 /turf/open/floor/iron,
 /area/ai_monitored/command/storage/eva)
 "aCd" = (
-/obj/structure/bed,
 /obj/machinery/airalarm{
 	pixel_y = 23
 	},
-/obj/machinery/button/door{
-	id = "Dorm1";
-	name = "Dorm Bolt Control";
-	normaldoorcontrol = 1;
-	pixel_x = 25;
-	specialfunctions = 4
-	},
-/obj/item/bedsheet/dorms,
-/turf/open/floor/wood,
+/obj/machinery/cryopod,
+/turf/open/floor/iron/dark,
 /area/commons/dorms)
 "aCe" = (
 /obj/effect/landmark/xeno_spawn,
@@ -10189,17 +10181,13 @@
 /turf/closed/wall/r_wall,
 /area/ai_monitored/command/storage/eva)
 "aDK" = (
-/obj/machinery/door/airlock{
-	id_tag = "Dorm1";
-	name = "Dorm 1"
-	},
 /obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
 /obj/effect/mapping_helpers/smart_pipe/simple/supply/hidden/layer4{
 	dir = 4
 	},
-/turf/open/floor/wood,
+/turf/open/floor/iron/dark,
 /area/commons/dorms)
 "aDL" = (
 /obj/structure/sink{
@@ -41531,6 +41519,10 @@
 	},
 /turf/open/floor/plating,
 /area/hallway/secondary/entry)
+"cIz" = (
+/obj/machinery/griddle,
+/turf/open/floor/iron/cafeteria,
+/area/service/kitchen)
 "cJd" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/public/glass{
@@ -48527,6 +48519,13 @@
 /mob/living/carbon/human/species/monkey,
 /turf/open/floor/iron,
 /area/medical/virology)
+"mrv" = (
+/obj/machinery/computer/cryopod{
+	pixel_y = 32
+	},
+/obj/machinery/cryopod,
+/turf/open/floor/iron/dark,
+/area/commons/dorms)
 "mrO" = (
 /obj/structure/sink{
 	dir = 4;
@@ -50305,8 +50304,8 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/structure/table/wood,
-/turf/open/floor/wood,
+/obj/machinery/cryopod,
+/turf/open/floor/iron/dark,
 /area/commons/dorms)
 "pwG" = (
 /obj/effect/turf_decal/stripes/line,
@@ -51460,7 +51459,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 4
 	},
-/turf/open/floor/wood,
+/turf/open/floor/iron/dark,
 /area/commons/dorms)
 "rkx" = (
 /obj/effect/mapping_helpers/smart_pipe/simple/scrubbers/visible{
@@ -52804,13 +52803,10 @@
 /turf/closed/wall,
 /area/ai_monitored/turret_protected/ai)
 "tti" = (
-/obj/structure/chair/stool{
-	pixel_y = 8
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4
 	},
-/turf/open/floor/wood,
+/turf/open/floor/iron/dark,
 /area/commons/dorms)
 "tuC" = (
 /obj/effect/turf_decal/tile/red{
@@ -86207,7 +86203,7 @@ arf
 apY
 rDX
 arf
-whK
+mrv
 rkf
 arf
 anF
@@ -86465,7 +86461,7 @@ ayV
 ath
 arf
 aCd
-lID
+aDK
 arf
 anF
 ahn
@@ -94445,7 +94441,7 @@ aJI
 aRB
 aSL
 aTN
-cCq
+cIz
 aVz
 cAg
 bak
